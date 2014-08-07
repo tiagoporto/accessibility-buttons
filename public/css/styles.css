@@ -9,12 +9,23 @@ body {
   -ms-font-feature-settings: "frac", "liga";
   -o-font-feature-settings: "frac", "liga";
   -webkit-font-feature-settings: "frac", "liga";
-  font-feature-settings: "frac", "liga"; }
+  font-feature-settings: "frac", "liga";
+}
 
 /* Main */
+body {
+  -webkit-transition: all 1s ease-in;
+  -moz-transition: all 1s ease-in;
+  -o-transition: all 1s ease-in;
+  transition: all 1s ease-in;
+}
+
+/* Accessibility */
 .accessibility-font {
-  font-size: 1.125em; }
+  font-size: 1.125em;
+}
 
 .accessibility-contrast {
   color: white;
-  background: black; }
+  background: black;
+}
