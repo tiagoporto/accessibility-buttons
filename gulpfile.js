@@ -62,9 +62,9 @@ gulp.task('scripts', function() {
 		      js_path + 'onread/open_onread.js',
 		      js_path + '/**/*.js',
 		      js_path + 'onread/close_onread.js'])
-		.pipe(concat('main.js'))
+		.pipe(concat('accessibility-buttons.js'))
 		.pipe(gulp.dest(public_scripts))
-		.pipe(rename('main.min.js'))
+		.pipe(rename('accessibility-buttons.min.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest(public_scripts))
 		.pipe(livereload(server))
