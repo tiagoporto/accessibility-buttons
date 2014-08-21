@@ -7,6 +7,7 @@
     "**/.*",
     "src",
     "config.rb",
+    "bower.json",
     "gulpfile.js",
     "package.json"
   ],
@@ -19,6 +20,6 @@
     { "name": "Tiago Porto", "email": "me@tiagoporto.com"," homepage": "http://tiagoporto.com" }
   ],
   "dependencies": {
-    "jquery": "https://github.com/jquery/jquery"
+    "jquery": "1.11.1"
   }
 }
