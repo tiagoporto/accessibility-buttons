@@ -7,7 +7,7 @@ Accessibility functions
 * Font Size
 
 
-[Example Page](http://tiagoporto.github.io/accessibility/)
+[Example Page](http://tiagoporto.github.io/accessibility-buttons/)
 
 ## Usage
 
