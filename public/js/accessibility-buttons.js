@@ -1,18 +1,29 @@
-//Main Scripts
+/*
+	Accessibility Buttons
+	Version: 2.0.0
+	Author: Tiago Porto - http://www.tiagoporto.com
+	https://github.com/tiagoporto
+	Contact: me@tiagoporto.com
+*/
+
 $(document).ready(function(){
 	//Font Button
-	var nameButtonIncreaseFont = "+A";
-	var nameTitleButtonIncreaseFont = "Increase Font";
-
-	var nameButtonDecreaseFont = "-A";
-	var nameTitleButtonDecreaseFont = "Decrease Font";
-
+	var nameButtonIncreaseFont		  = "+A",
+		ariaLabelButtonIncreaseFont   = "Increase Font",
+		nameButtonDecreaseFont		  = "-A",
+		ariaLabelButtonDecreaseFont   = "Decrease Font",
 	//Contrast Button
-	var nameButtonAddContrast = "Add Contrast";
-	var nameTitleButtonAddContrast = "Add Contrast";
-
-	var nameButtonRemoveContrast = "Remove Contrast";
-	var nameTitleButtonRemoveContrast = "Remove Contrast";
+		nameButtonAddContrast		  = "Add Contrast",
+		ariaLabelButtonAddContrast 	  = "Add Contrast",
+		nameButtonRemoveContrast	  = "Remove Contrast",
+		ariaLabelButtonRemoveContrast = "Remove Contrast",
+	//Cache jQuery Elements
+		$_body = $('body'),
+		$_fontButton = $("#accessibility-font"),
+		$_contrastButton = $("#accessibility-contrast"),
+	//Cookies
+		cookieFont = getCookie("accessibility_font"),
+		cookieContrast = getCookie("accessibility_contrast");
 
 
 	function getCookie(cname){
@@ -25,62 +36,57 @@ $(document).ready(function(){
 		return "";
 	}
 
-	var body = $('body');
-
-	var cookieFont = getCookie("accessibility_font");
-
-	var cookieContrast = getCookie("accessibility_contrast");
-
-
 	if (cookieFont) {
-		body.addClass('accessibility-font');
+		$_body.addClass('accessibility-font');
 
-		$("#accessibility-font").html(nameButtonDecreaseFont).attr('title', nameTitleButtonDecreaseFont);
+		$_fontButton.html(nameButtonDecreaseFont).attr('aria-label', ariaLabelButtonDecreaseFont);
 	}else{
-		$("#accessibility-font").html(nameButtonIncreaseFont).attr('title', nameTitleButtonIncreaseFont);
+		$_fontButton.html(nameButtonIncreaseFont).attr('aria-label', ariaLabelButtonIncreaseFont);
 	};
 
 	if (cookieContrast) {
-		body.addClass('accessibility-contrast');
+		$_body.addClass('accessibility-contrast');
 
-		$("#accessibility-contrast").html(nameButtonRemoveContrast).attr('title', nameTitleButtonRemoveContrast);
+		$_contrastButton.html(nameButtonRemoveContrast).attr('aria-label', ariaLabelButtonRemoveContrast);
 	}else{
-		$("#accessibility-contrast").html(nameButtonAddContrast).attr('title', nameTitleButtonAddContrast);
+		$_contrastButton.html(nameButtonAddContrast).attr('aria-label', ariaLabelButtonAddContrast);
 	};
 
 	$('.js-acessibility').click(function(event) {
-		if(body.hasClass($(this).attr('id'))){
+		var $_this = $(this);
 
-			body.removeClass($(this).attr('id'));
+		if($_body.hasClass($_this.attr('id'))){
 
-			if ($(this).attr('id') == 'accessibility-font') {
+			$_body.removeClass($_this.attr('id'));
 
-				$(this).html(nameButtonIncreaseFont).attr('title', nameTitleButtonIncreaseFont);
+			if ($_this.attr('id') == 'accessibility-font') {
+
+				$_this.html(nameButtonIncreaseFont).attr('aria-label', ariaLabelButtonIncreaseFont);
 
 				document.cookie = "accessibility_font=True; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
-
 			}else{
-				$(this).html(nameButtonAddContrast).attr('title', nameTitleButtonAddContrast);
+				$_this.html(nameButtonAddContrast).attr('aria-label', ariaLabelButtonAddContrast);
 
 				document.cookie = "accessibility_contrast=True; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
 			};
 
 		}else{
-			body.addClass($(this).attr('id'));
+			$_body.addClass($_this.attr('id'));
 
-			if ($(this).attr('id') == 'accessibility-font') {
+			if ($_this.attr('id') == 'accessibility-font') {
 				if (!cookieFont) {
 					document.cookie = "accessibility_font=True; path=/";
 				};
-				$(this).html(nameButtonDecreaseFont).attr('title', nameTitleButtonDecreaseFont);
+				$_this.html(nameButtonDecreaseFont).attr('aria-label', ariaLabelButtonDecreaseFont);
 
 			}else{
 				if (!cookieContrast) {
 					document.cookie = "accessibility_contrast=True; path=/";
 				};
 
-				$(this).html(nameButtonRemoveContrast).attr('title', nameTitleButtonRemoveContrast);
+				$_this.html(nameButtonRemoveContrast).attr('aria-label', ariaLabelButtonRemoveContrast);
 			};
 		}
 	});
+
 });

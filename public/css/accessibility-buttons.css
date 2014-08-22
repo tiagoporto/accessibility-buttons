@@ -1,18 +1,18 @@
+/*
+	Accessibility Buttons
+	Version: 2.0.0
+	Author: Tiago Porto - http://www.tiagoporto.com
+	https://github.com/tiagoporto
+	Contact: me@tiagoporto.com
+*/
+
 /* Typography */
 body {
-  font: normal normal 1em/1.1875em Helvetica, Arial, sans-serif;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -moz-font-feature-settings: "frac", "liga";
-  -moz-font-feature-settings: "frac=1, liga=1";
-  -ms-font-feature-settings: "frac", "liga";
-  -o-font-feature-settings: "frac", "liga";
-  -webkit-font-feature-settings: "frac", "liga";
-  font-feature-settings: "frac", "liga";
+  font-size: 1em;
+  line-height: 1.1875em;
 }
 
-/* Main */
+/* Transition */
 body {
   -webkit-transition: all 1s ease-in;
   -moz-transition: all 1s ease-in;

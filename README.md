@@ -1,11 +1,11 @@
 # Accessibility Buttons
 
-Accessibility functions
+Version: 2.0.0
+
+**Accessibility functions**
 
 * Contrast
-
 * Font Size
-
 
 [Example Page](http://tiagoporto.github.io/accessibility-buttons/)
 
@@ -13,50 +13,64 @@ Accessibility functions
 
 * Requires [Jquery](http://jquery.com/download/).
 
-* Include `main.js` or `main.min.js` and `styles.css`.
+* Include `accessibility-buttons.js` or `accessibility-buttons.min.js` and `accessibility-buttons.css`.
 
 * Insert the buttons in HTML
 
 	```html
-	<button title="" id="accessibility-font" class="js-acessibility"></button>
-	<button title="" id="accessibility-contrast" class="js-acessibility"></button>
+	<button aria-label="" id="accessibility-font" class="js-acessibility"></button>
+	<button aria-label="" id="accessibility-contrast" class="js-acessibility"></button>
 	```
 
-To `font-size` works it's necessary work with `em` unit.
+**Note:** To `font-size` works, it's necessary work with `em` unit.
 
 ##Configure
 
-To setup names and buttons titles, change the variables in the `main.js` or `main.min.js` at the initial lines.
+To setup names and buttons aria-labels, change the variables in the `accessibility-buttons.js` or `accessibility-buttons.min.js` at the initial lines.
 
 ```javascript
 	//Font Button
-	var nameButtonIncreaseFont = "+A";
-	var nameTitleButtonIncreaseFont = "Increase Font";
-
-	var nameButtonDecreaseFont = "-A";
-	var nameTitleButtonDecreaseFont = "Decrease Font";
-
+	var nameButtonIncreaseFont		  = "+A",
+		ariaLabelButtonIncreaseFont   = "Increase Font",
+		nameButtonDecreaseFont		  = "-A",
+		ariaLabelButtonDecreaseFont   = "Decrease Font",
 	//Contrast Button
-	var nameButtonAddContrast = "Add Contrast";
-	var nameTitleButtonAddContrast = "Add Contrast";
-
-	var nameButtonRemoveContrast = "Remove Contrast";
-	var nameTitleButtonRemoveContrast = "Remove Contrast";
+		nameButtonAddContrast		  = "Add Contrast",
+		ariaLabelButtonAddContrast 	  = "Add Contrast",
+		nameButtonRemoveContrast	  = "Remove Contrast",
+		ariaLabelButtonRemoveContrast = "Remove Contrast",
 ```
 
-To change font-size and contrast colors change the values in the `styles.css`.
+To change font-size and contrast colors change the values in the `accessibility-buttons.css`.
 
 ```css
 /* Accessibility */
 .accessibility-font {
-  font-size: 1.125em;
+	font-size: 1.125em;
 }
 
 .accessibility-contrast {
-  color: white;
-  background: black;
+	color: white;
+	background: black;
 }
 ```
+
+##Bower
+
+To download with [Bower](http://bower.io/)
+
+```sh
+	$ bower install accessibility-buttons --save
+```
+
+##Credit
+
+Accessibility `arial-label` tip - [brunopulis](https://github.com/brunopulis)
+
+##License
+[MIT License](http://opensource.org/licenses/MIT)
+
+
 
 
 

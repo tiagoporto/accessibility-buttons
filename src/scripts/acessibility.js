@@ -1,16 +1,20 @@
 	//Font Button
-	var nameButtonIncreaseFont = "+A";
-	var nameTitleButtonIncreaseFont = "Increase Font";
-
-	var nameButtonDecreaseFont = "-A";
-	var nameTitleButtonDecreaseFont = "Decrease Font";
-
+	var nameButtonIncreaseFont		  = "+A",
+		ariaLabelButtonIncreaseFont   = "Increase Font",
+		nameButtonDecreaseFont		  = "-A",
+		ariaLabelButtonDecreaseFont   = "Decrease Font",
 	//Contrast Button
-	var nameButtonAddContrast = "Add Contrast";
-	var nameTitleButtonAddContrast = "Add Contrast";
-
-	var nameButtonRemoveContrast = "Remove Contrast";
-	var nameTitleButtonRemoveContrast = "Remove Contrast";
+		nameButtonAddContrast		  = "Add Contrast",
+		ariaLabelButtonAddContrast 	  = "Add Contrast",
+		nameButtonRemoveContrast	  = "Remove Contrast",
+		ariaLabelButtonRemoveContrast = "Remove Contrast",
+	//Cache jQuery Elements
+		$_body = $('body'),
+		$_fontButton = $("#accessibility-font"),
+		$_contrastButton = $("#accessibility-contrast"),
+	//Cookies
+		cookieFont = getCookie("accessibility_font"),
+		cookieContrast = getCookie("accessibility_contrast");
 
 
 	function getCookie(cname){
@@ -23,44 +27,36 @@
 		return "";
 	}
 
-	var $_body = $('body');
-
-	var cookieFont = getCookie("accessibility_font");
-
-	var cookieContrast = getCookie("accessibility_contrast");
-
-
 	if (cookieFont) {
 		$_body.addClass('accessibility-font');
 
-		$("#accessibility-font").html(nameButtonDecreaseFont).attr('title', nameTitleButtonDecreaseFont);
+		$_fontButton.html(nameButtonDecreaseFont).attr('aria-label', ariaLabelButtonDecreaseFont);
 	}else{
-		$("#accessibility-font").html(nameButtonIncreaseFont).attr('title', nameTitleButtonIncreaseFont);
+		$_fontButton.html(nameButtonIncreaseFont).attr('aria-label', ariaLabelButtonIncreaseFont);
 	};
 
 	if (cookieContrast) {
 		$_body.addClass('accessibility-contrast');
 
-		$("#accessibility-contrast").html(nameButtonRemoveContrast).attr('title', nameTitleButtonRemoveContrast);
+		$_contrastButton.html(nameButtonRemoveContrast).attr('aria-label', ariaLabelButtonRemoveContrast);
 	}else{
-		$("#accessibility-contrast").html(nameButtonAddContrast).attr('title', nameTitleButtonAddContrast);
+		$_contrastButton.html(nameButtonAddContrast).attr('aria-label', ariaLabelButtonAddContrast);
 	};
 
 	$('.js-acessibility').click(function(event) {
 		var $_this = $(this);
-		
+
 		if($_body.hasClass($_this.attr('id'))){
 
 			$_body.removeClass($_this.attr('id'));
 
 			if ($_this.attr('id') == 'accessibility-font') {
 
-				$_this.html(nameButtonIncreaseFont).attr('title', nameTitleButtonIncreaseFont);
+				$_this.html(nameButtonIncreaseFont).attr('aria-label', ariaLabelButtonIncreaseFont);
 
 				document.cookie = "accessibility_font=True; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
-
 			}else{
-				$_this.html(nameButtonAddContrast).attr('title', nameTitleButtonAddContrast);
+				$_this.html(nameButtonAddContrast).attr('aria-label', ariaLabelButtonAddContrast);
 
 				document.cookie = "accessibility_contrast=True; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
 			};
@@ -72,14 +68,14 @@
 				if (!cookieFont) {
 					document.cookie = "accessibility_font=True; path=/";
 				};
-				$_this.html(nameButtonDecreaseFont).attr('title', nameTitleButtonDecreaseFont);
+				$_this.html(nameButtonDecreaseFont).attr('aria-label', ariaLabelButtonDecreaseFont);
 
 			}else{
 				if (!cookieContrast) {
 					document.cookie = "accessibility_contrast=True; path=/";
 				};
 
-				$_this.html(nameButtonRemoveContrast).attr('title', nameTitleButtonRemoveContrast);
+				$_this.html(nameButtonRemoveContrast).attr('aria-label', ariaLabelButtonRemoveContrast);
 			};
 		}
 	});

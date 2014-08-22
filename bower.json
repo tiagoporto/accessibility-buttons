@@ -1,11 +1,12 @@
 {
   "name": "accessibility-buttons",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "public/accessibility-buttons.js",
   "license": "MIT",
   "ignore": [
     "**/.*",
     "src",
+    "bower.json",
     "config.rb",
     "gulpfile.js",
     "package.json"
