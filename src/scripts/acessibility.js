@@ -23,7 +23,7 @@
 		return "";
 	}
 
-	var body = $('body');
+	var $_body = $('body');
 
 	var cookieFont = getCookie("accessibility_font");
 
@@ -31,7 +31,7 @@
 
 
 	if (cookieFont) {
-		body.addClass('accessibility-font');
+		$_body.addClass('accessibility-font');
 
 		$("#accessibility-font").html(nameButtonDecreaseFont).attr('title', nameTitleButtonDecreaseFont);
 	}else{
@@ -39,7 +39,7 @@
 	};
 
 	if (cookieContrast) {
-		body.addClass('accessibility-contrast');
+		$_body.addClass('accessibility-contrast');
 
 		$("#accessibility-contrast").html(nameButtonRemoveContrast).attr('title', nameTitleButtonRemoveContrast);
 	}else{
@@ -47,37 +47,39 @@
 	};
 
 	$('.js-acessibility').click(function(event) {
-		if(body.hasClass($(this).attr('id'))){
+		var $_this = $(this);
+		
+		if($_body.hasClass($_this.attr('id'))){
 
-			body.removeClass($(this).attr('id'));
+			$_body.removeClass($_this.attr('id'));
 
-			if ($(this).attr('id') == 'accessibility-font') {
+			if ($_this.attr('id') == 'accessibility-font') {
 
-				$(this).html(nameButtonIncreaseFont).attr('title', nameTitleButtonIncreaseFont);
+				$_this.html(nameButtonIncreaseFont).attr('title', nameTitleButtonIncreaseFont);
 
 				document.cookie = "accessibility_font=True; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
 
 			}else{
-				$(this).html(nameButtonAddContrast).attr('title', nameTitleButtonAddContrast);
+				$_this.html(nameButtonAddContrast).attr('title', nameTitleButtonAddContrast);
 
 				document.cookie = "accessibility_contrast=True; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
 			};
 
 		}else{
-			body.addClass($(this).attr('id'));
+			$_body.addClass($_this.attr('id'));
 
-			if ($(this).attr('id') == 'accessibility-font') {
+			if ($_this.attr('id') == 'accessibility-font') {
 				if (!cookieFont) {
 					document.cookie = "accessibility_font=True; path=/";
 				};
-				$(this).html(nameButtonDecreaseFont).attr('title', nameTitleButtonDecreaseFont);
+				$_this.html(nameButtonDecreaseFont).attr('title', nameTitleButtonDecreaseFont);
 
 			}else{
 				if (!cookieContrast) {
 					document.cookie = "accessibility_contrast=True; path=/";
 				};
 
-				$(this).html(nameButtonRemoveContrast).attr('title', nameTitleButtonRemoveContrast);
+				$_this.html(nameButtonRemoveContrast).attr('title', nameTitleButtonRemoveContrast);
 			};
 		}
 	});
