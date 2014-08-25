@@ -65,7 +65,9 @@ To download with [Bower](http://bower.io/)
 
 ##Credit
 
-Accessibility `arial-label` tip - [brunopulis](https://github.com/brunopulis)
+Accessibility `arial-label` tip - [Bruno Pulis](https://github.com/brunopulis)
+
+Included the $ sign in the name of the jQuery element cache variable for easy identification  - [Adler Parnas](https://github.com/adlerparnas)
 
 ##License
 [MIT License](http://opensource.org/licenses/MIT)
