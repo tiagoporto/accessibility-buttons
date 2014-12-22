@@ -1,0 +1,24 @@
+=radial-gradient($startColor, $lastColor, $shape:null, $size:null, $position:null)
+
+	$sizePosition:null
+
+	@if $size != null and $position != null
+		$sizePosition: unquote($size) at unquote($position) + ","
+		$shape:null
+
+	@if $shape != null
+		$shape: unquote($shape) + ","
+
+	@if $size != null
+		$size: unquote($size) + ","
+
+	@if $position != null
+		$position: unquote($position) + ","
+
+
+	background-color: $startColor // Old browsers
+	background-image: -webkit-radial-gradient($shape unquote($size) unquote($position) unquote($startColor), unquote($lastColor)) // Chrome 10+, Saf5.1+, iOS 5+
+	background-image:    -moz-radial-gradient($shape unquote($size) unquote($position) unquote($startColor), unquote($lastColor)) // FF3.6+
+	background-image:     -ms-radial-gradient($shape unquote($size) unquote($position) unquote($startColor), unquote($lastColor)) // IE10+
+	background-image:      -o-radial-gradient($shape unquote($size) unquote($position) unquote($startColor), unquote($lastColor)) // Opera 11.10+
+	background-image:         radial-gradient($shape $sizePosition  unquote($startColor), unquote($lastColor)) // W3C

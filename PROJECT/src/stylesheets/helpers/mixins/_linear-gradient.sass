@@ -1,0 +1,22 @@
+=linear-gradient($direction, $startColor, $lastColor)
+
+	$reverseDirection: null
+
+	@if $direction == top
+		$reverseDirection: bottom
+
+	@if $direction == bottom
+		$reverseDirection: top
+
+	@if $direction == left
+		$reverseDirection: right
+
+	@if $direction == right
+		$reverseDirection: left
+
+	background-color: $startColor // Old browsers
+	background-image: -webkit-linear-gradient($reverseDirection, unquote($startColor), unquote($lastColor)) // Chrome 10+, Saf5.1+, iOS 5+
+	background-image:    -moz-linear-gradient($reverseDirection, unquote($startColor), unquote($lastColor)) // FF3.6+
+	background-image:     -ms-linear-gradient($reverseDirection, unquote($startColor), unquote($lastColor)) // IE10+
+	background-image:      -o-linear-gradient($reverseDirection, unquote($startColor), unquote($lastColor)) // Opera 11.10+
+	background-image:         linear-gradient(to $direction, unquote($startColor), unquote($lastColor)) // W3C

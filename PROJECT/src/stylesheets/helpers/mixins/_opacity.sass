@@ -1,0 +1,5 @@
+=opacity($value)
+	$value-ie: $value * 100
+
+	opacity: $value
+	filter: alpha(opacity=$value-ie) //IE8 and earlier

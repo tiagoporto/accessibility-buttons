@@ -1,0 +1,11 @@
+=columns($count, $width:null, $gap:null)
+
+	-webkit-columns: $width $count // Chrome, Safari, Opera
+	-moz-columns: $width $count // Firefox
+	columns: $width $count
+
+	@if $gap != null
+
+		-webkit-column-gap: $gap // Chrome, Safari, Opera
+		-moz-column-gap: $gap // Firefox
+		column-gap: $gap
