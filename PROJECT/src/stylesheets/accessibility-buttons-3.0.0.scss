@@ -1,4 +1,4 @@
-/*
+/*!
 	Accessibility Buttons
 	Version: 3.0.0
 	Author: Tiago Porto - http://www.tiagoporto.com
@@ -13,11 +13,4 @@
 
 @import "helpers/functions";
 
-/* Typography */
-@import "typography/typography";
-
-/* Transition */
-@import "base";
-
-/* Accessibility */
 @import "accessibility";
