@@ -227,11 +227,3 @@ PROJECT/node_modules/**/*
 #################
 
 PROJECT/.sass-cache/**/*
-
-#################
-## Gulp.js Template
-#################
-
-PROJECT/public/css/**
-PROJECT/public/images/**
-PROJECT/public/js/**
