@@ -1,0 +1,39 @@
+/*
+*	Accessibility Buttons v3.0.0
+*	https://github.com/tiagoporto/accessibility-buttons
+*	Copyright (c) 2014-2015 Tiago Porto (http://www.tiagoporto.com)
+*	Released under the MIT license
+*/
+html {
+  font-size: 100%;
+}
+body {
+  -webkit-transition: background 1s ease, font-size 0.7s linear;
+          transition: background 1s ease, font-size 0.7s linear;
+}
+input,
+textarea,
+keygen,
+select,
+button {
+  -webkit-transition: all 0.6s linear;
+          transition: all 0.6s linear;
+}
+.accessibility-font {
+/* First font-size fallback to older browsers*/
+  font-size: 1.25em;
+  font-size: 1.25rem;
+}
+.accessibility-font input,
+.accessibility-font textarea,
+.accessibility-font keygen,
+.accessibility-font select,
+.accessibility-font button {
+/* The default font-size of these elements is approximately 20% less than the body */
+  font-size: 1.041625em;
+  font-size: 1.04163rem;
+}
+.accessibility-contrast {
+  color: #fff;
+  background: #000;
+}

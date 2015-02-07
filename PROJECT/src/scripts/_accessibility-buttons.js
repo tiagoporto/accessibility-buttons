@@ -1,9 +1,8 @@
-/*
-	Accessibility Buttons
-	Version: 3.0.0
-	Author: Tiago Porto - http://www.tiagoporto.com
-	https://github.com/tiagoporto/accessibility-buttons
-	Contact: me@tiagoporto.com
+/*!
+*	Accessibility Buttons v3.0.0
+*	https://github.com/tiagoporto/accessibility-buttons
+*	Copyright (c) 2014-2015 Tiago Porto (http://www.tiagoporto.com)
+*	Released under the MIT license
 */
 
 	//Font Button
@@ -45,14 +44,22 @@ function hasClass(element, clazz) {
 	return (' ' + element.className + ' ' ).indexOf( ' '+clazz+' ' ) > -1;
 }
 
-// if (cookieFont) {
-// 	$_body.classList.add('accessibility-font');
-// }else if (cookieContrast) {
-// 	$_body.classList.add('accessibility-contrast');
-// }
+function addLoadEvent(func) {
+    var oldonload = window.onload;
+    if (typeof window.onload !== 'function') {
+        window.onload = func;
+    } else {
+        window.onload = function() {
+            if (oldonload) {
+                oldonload();
+            }
+            func();
+        };
+    }
+}
 
 // Init
-window.onload = function (){
+addLoadEvent(function(){
 	//Set buttons names and aria attributes
 	if (cookieFont) {
 		$_body.classList.add('accessibility-font');
@@ -117,9 +124,4 @@ window.onload = function (){
 	for(var i = 0; i < $_accessibilityButtons.length; i++) {
 		$_accessibilityButtons[i].addEventListener('click', makeClickHandler(i));
 	}
-};
-
-	// for(var i = 0; i < $_accessibilityButtons.length; i++) {
-	// 	$_accessibilityButtons[i].onclick = function(e){
-	// 	};
-	// }
+});
