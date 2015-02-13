@@ -16,9 +16,8 @@ __Version:__ 3.0.0
 
     ```html
     <link rel="stylesheet" href="css/accessibility-buttons.css">
-    ```
 
-    ```html
+
     <script src="js/accessibility-buttons.js"></script>
     ```
 
@@ -32,21 +31,33 @@ __Version:__ 3.0.0
 
 **Note:** To `font-size` works, it's necessary work with `em` or `rem` unitr.
 
-## Configure
 
-To setup buttons names and aria-labels, change the variables in the `accessibility-buttons.js`.
+Init the plugin
+
+```
+    accessibilityButtons();
+```
+
+# Settings
+
+To setup buttons names and aria-labels, call the plugin with additional options.
 
 ```javascript
-	//Font Button
-	var nameButtonIncreaseFont		  = "+A",
-		ariaLabelButtonIncreaseFont   = "Increase Font",
-		nameButtonDecreaseFont		  = "-A",
-		ariaLabelButtonDecreaseFont   = "Decrease Font",
-	//Contrast Button
-		nameButtonAddContrast		  = "Add Contrast",
-		ariaLabelButtonAddContrast 	  = "Add Contrast",
-		nameButtonRemoveContrast	  = "Remove Contrast",
-		ariaLabelButtonRemoveContrast = "Remove Contrast",
+    accessibilityButtons(
+        font: {
+            nameButtonIncrease: '+A', //Default
+            ariaLabelButtonIncrease: 'Increase Font', //Default
+            nameButtonDecrease: '-A', //Default
+            ariaLabelButtonDecrease: 'Decrease Font' //Default
+        },
+
+        contrast: {
+            nameButtonAdd: 'Add Contrast', //Default
+            ariaLabelButtonAdd: 'Add Contrast', //Default
+            nameButtonRemove: 'Remove Contrast', //Default
+            ariaLabelButtonRemove: 'Remove Contrast' //Default
+        }
+    };
 ```
 
 To change font-size and contrast colors change the values in the `accessibility-buttons.css`.
