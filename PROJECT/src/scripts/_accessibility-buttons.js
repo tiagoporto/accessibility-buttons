@@ -5,83 +5,103 @@
 *	Released under the MIT license
 */
 
-	//Font Button
-var	nameButtonIncreaseFont		  = '+A',
-	ariaLabelButtonIncreaseFont   = 'Increase Font',
-	nameButtonDecreaseFont		  = '-A',
-	ariaLabelButtonDecreaseFont   = 'Decrease Font',
 
-	//Contrast Button
-	nameButtonAddContrast		  = 'Add Contrast',
-	ariaLabelButtonAddContrast 	  = 'Add Contrast',
-	nameButtonRemoveContrast	  = 'Remove Contrast',
-	ariaLabelButtonRemoveContrast = 'Remove Contrast',
+var accessibilityButtons = function(options) {
+	'use strict';
 
-	//Cache Elements
-	$_body = document.body,
-	$_fontButton = document.getElementById('accessibility-font'),
-	$_contrastButton = document.getElementById('accessibility-contrast'),
-	$_accessibilityButtons = document.getElementsByClassName('js-acessibility'),
+	var setting = {
+		font: {
+			nameButtonIncrease: '+A',
+			ariaLabelButtonIncrease: 'Increase Font',
+			nameButtonDecrease: '-A',
+			ariaLabelButtonDecrease: 'Decrease Font'
+		},
 
-	//Cookies
-	cookieFont = getCookie('accessibility_font'),
-	cookieContrast = getCookie('accessibility_contrast');
+		contrast: {
+			nameButtonAdd: 'Add Contrast',
+			ariaLabelButtonAdd: 'Add Contrast',
+			nameButtonRemove: 'Remove Contrast',
+			ariaLabelButtonRemove: 'Remove Contrast'
+		}
+	};
 
-// Functions
-function getCookie(cname){
-	var name = cname + '=';
-	var ca = document.cookie.split(';');
-	for(var i=0; i<ca.length; i++){
-		var c = ca[i].trim();
-		if (c.indexOf(name)===0){
-			return c.substring(name.length,c.length);
+	if (options) {
+		for (var key in options) {
+
+			var obj = options[key];
+
+			for (var prop in obj) {
+				setting[key][prop] = obj[prop];
+			}
 		}
 	}
-	return '';
-}
 
-function hasClass(element, clazz) {
-	return (' ' + element.className + ' ' ).indexOf( ' '+clazz+' ' ) > -1;
-}
+	var	$_body = document.body,
+		$_fontButton = document.getElementById('accessibility-font'),
+		$_contrastButton = document.getElementById('accessibility-contrast'),
+		$_accessibilityButtons = document.getElementsByClassName('js-acessibility'),
 
-function addLoadEvent(func) {
-    var oldonload = window.onload;
-    if (typeof window.onload !== 'function') {
-        window.onload = func;
-    } else {
-        window.onload = function() {
-            if (oldonload) {
-                oldonload();
-            }
-            func();
-        };
-    }
-}
+		cookieFont = getCookie('accessibility_font'),
+		cookieContrast = getCookie('accessibility_contrast');
 
-// Init
-addLoadEvent(function(){
-	//Set buttons names and aria attributes
+	/**
+	* getCookie
+	* @param  {string} cname - Cookie name
+	* @return {string}       - Return the name of the cookie if they exist or return empty
+	*/
+	function getCookie(cname){
+		var name = cname + '=';
+		var ca = document.cookie.split(';');
+		for(var i=0; i<ca.length; i++){
+			var c = ca[i].trim();
+			if (c.indexOf(name)===0){
+				return c.substring(name.length,c.length);
+			}
+		}
+		return '';
+	}
+
+	/**
+	 * hasClass
+	 * @param  {string}  element - DOM element
+	 * @param  {string}  clazz   - Class Name
+	 * @return {Boolean}
+	 */
+	function hasClass(element, clazz) {
+		return (' ' + element.className + ' ' ).indexOf( ' '+clazz+' ' ) > -1;
+	}
+
+	/**
+	 * Check if exist cookies and set the correct button names and aria attributes
+	 */
 	if (cookieFont) {
 		$_body.classList.add('accessibility-font');
 
-		$_fontButton.innerHTML = nameButtonDecreaseFont;
-		$_fontButton.setAttribute('aria-label', ariaLabelButtonDecreaseFont);
+		$_fontButton.innerHTML = setting.font.nameButtonDecrease;
+		$_fontButton.setAttribute('aria-label', setting.font.ariaLabelButtonDecrease);
 	}else{
-		$_fontButton.innerHTML = nameButtonIncreaseFont;
-		$_fontButton.setAttribute('aria-label', ariaLabelButtonIncreaseFont);
+		$_fontButton.innerHTML = setting.font.nameButtonIncrease;
+		$_fontButton.setAttribute('aria-label', setting.font.ariaLabelButtonIncrease);
 	}
 
 	if (cookieContrast) {
 		$_body.classList.add('accessibility-contrast');
 
-		$_contrastButton.innerHTML = nameButtonRemoveContrast;
-		$_contrastButton.setAttribute('aria-label', ariaLabelButtonRemoveContrast);
+		$_contrastButton.innerHTML = setting.contrast.nameButtonRemove;
+		$_contrastButton.setAttribute('aria-label', setting.contrast.ariaLabelButtonRemove);
 	}else{
-		$_contrastButton.innerHTML = nameButtonAddContrast;
-		$_contrastButton.setAttribute('aria-label', ariaLabelButtonAddContrast);
+		$_contrastButton.innerHTML = setting.contrast.nameButtonAdd;
+		$_contrastButton.setAttribute('aria-label', setting.contrast.ariaLabelButtonAdd);
 	}
 
-	function makeClickHandler(i) {
+	/**
+	 * accessibility
+	 * Get the click event
+	 * Rename the buttons
+	 * Apply/Remove Contrast or Font Size
+	 * Manage cookies
+	 */
+	function accessibility() {
 		return function () {
 			var $_this = this;
 
@@ -89,13 +109,13 @@ addLoadEvent(function(){
 				$_body.classList.remove($_this.getAttribute('id'));
 
 				if ($_this.getAttribute('id') === 'accessibility-font') {
-					$_this.innerHTML = nameButtonIncreaseFont;
-					$_this.setAttribute('aria-label', ariaLabelButtonIncreaseFont);
+					$_this.innerHTML = setting.font.nameButtonIncrease;
+					$_this.setAttribute('aria-label', setting.font.ariaLabelButtonIncrease);
 
 					document.cookie = 'accessibility_font=True; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
 				}else{
-					$_this.innerHTML = nameButtonAddContrast;
-					$_this.setAttribute('aria-label', ariaLabelButtonAddContrast);
+					$_this.innerHTML = setting.contrast.nameButtonAdd;
+					$_this.setAttribute('aria-label', setting.contrast.ariaLabelButtonAdd);
 
 					document.cookie = 'accessibility_contrast=True; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
 				}
@@ -106,22 +126,24 @@ addLoadEvent(function(){
 					if (!cookieFont) {
 						document.cookie = 'accessibility_font=True; path=/';
 					}
-					$_this.innerHTML = nameButtonDecreaseFont;
-					$_this.setAttribute('aria-label', ariaLabelButtonDecreaseFont);
+					$_this.innerHTML = setting.font.nameButtonDecrease;
+					$_this.setAttribute('aria-label', setting.font.ariaLabelButtonDecrease);
 
 				}else{
 					if (!cookieContrast) {
 						document.cookie = 'accessibility_contrast=True; path=/';
 					}
-					$_this.innerHTML = nameButtonRemoveContrast;
-					$_this.setAttribute('aria-label', ariaLabelButtonRemoveContrast);
+					$_this.innerHTML = setting.contrast.nameButtonRemove;
+					$_this.setAttribute('aria-label', setting.contrast.ariaLabelButtonRemove);
 				}
 			}
 		};
 	}
 
-	//get onclick
+	/**
+	 * Listening Click Event
+	 */
 	for(var i = 0; i < $_accessibilityButtons.length; i++) {
-		$_accessibilityButtons[i].addEventListener('click', makeClickHandler(i));
+		$_accessibilityButtons[i].addEventListener('click', accessibility());
 	}
-});
+};
