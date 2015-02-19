@@ -29,7 +29,7 @@ __Version:__ 3.0.0
 	<button aria-label="" id="accessibility-contrast" class="js-acessibility"></button>
 	```
 
-**Note:** To `font-size` works, it's necessary work with `em` or `rem` unitr.
+**Note:** To `font-size` works, it's necessary work with `em` or `rem` units.
 
 
 Init the plugin
