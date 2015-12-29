@@ -1,11 +1,11 @@
 # Accessibility Buttons
 
-[![Build Status](https://travis-ci.org/tiagoporto/accessibility-buttons-cpf.svg?branch=master&style=flat-square)](https://travis-ci.org/tiagoporto/accessibility-buttons-cpf)
-[![Coverage Status](https://img.shields.io/coveralls/tiagoporto/accessibility-buttons-cpf.svg)](https://coveralls.io/github/tiagoporto/accessibility-buttons-cpf)
-[![Github Release](https://img.shields.io/github/release/tiagoporto/accessibility-buttons.svg)](https://github.com/tiagoporto/accessibility-buttons-cpf)
-[![Github Issues](https://img.shields.io/github/issues/tiagoporto/accessibility-buttons-cpf.svg)](https://github.com/tiagoporto/accessibility-buttons-cpf/issues)
-[![Issues Stats](http://issuestats.com/github/Tiagoporto/accessibility-buttons-cpf/badge/issue)](https://github.com/tiagoporto/accessibility-buttons-cpf/issues)
-[![Github License](https://img.shields.io/github/license/tiagoporto/accessibility-buttons-cpf.svg)](http://opensource.org/licenses/MIT)
+[![Build Status](https://travis-ci.org/tiagoporto/accessibility-buttons.svg?branch=master&style=flat-square)](https://travis-ci.org/tiagoporto/accessibility-buttons)
+[![Coverage Status](https://img.shields.io/coveralls/tiagoporto/accessibility-buttons.svg)](https://coveralls.io/github/tiagoporto/accessibility-buttons)
+[![Github Release](https://img.shields.io/github/release/tiagoporto/accessibility-buttons.svg)](https://github.com/tiagoporto/accessibility-buttons)
+[![Github Issues](https://img.shields.io/github/issues/tiagoporto/accessibility-buttons.svg)](https://github.com/tiagoporto/accessibility-buttons/issues)
+[![Issues Stats](http://issuestats.com/github/tiagoporto/accessibility-buttons/badge/issue)](https://github.com/tiagoporto/accessibility-buttons/issues)
+[![Github License](https://img.shields.io/github/license/tiagoporto/accessibility-buttons.svg)](http://opensource.org/licenses/MIT)
 
 Accessibility Buttons to contrast and font size. [Demo Page](http://tiagoporto.github.io/accessibility-buttons/)
 
