@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/tiagoporto/accessibility-buttons.svg?branch=master&style=flat-square)](https://travis-ci.org/tiagoporto/accessibility-buttons)
 [![Coverage Status](https://img.shields.io/coveralls/tiagoporto/accessibility-buttons.svg)](https://coveralls.io/github/tiagoporto/accessibility-buttons)
-[![Github Release](https://img.shields.io/github/release/tiagoporto/accessibility-buttons.svg)](https://github.com/tiagoporto/accessibility-buttons)
+[![Github Release](https://img.shields.io/github/release/tiagoporto/accessibility-buttons.svg)](https://github.com/tiagoporto/accessibility-buttons/releases)
 [![Github Issues](https://img.shields.io/github/issues/tiagoporto/accessibility-buttons.svg)](https://github.com/tiagoporto/accessibility-buttons/issues)
 [![Issues Stats](http://issuestats.com/github/tiagoporto/accessibility-buttons/badge/issue)](https://github.com/tiagoporto/accessibility-buttons/issues)
 [![Github License](https://img.shields.io/github/license/tiagoporto/accessibility-buttons.svg)](http://opensource.org/licenses/MIT)
