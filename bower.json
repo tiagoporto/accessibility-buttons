@@ -1,36 +1,27 @@
 {
-  "name": "swill-boilerplate",
-  "description": "Customizable front-end boilerplate for Gulp to quick multi-device development.",
-  "keywords": [
-    "template",
-    "gulp",
-    "boilerplate",
-    "customizable",
-    "automation",
-    "stylus",
-    "sass",
-    "less",
-    "image optimization",
-    "scripts concatenation",
-    "live browser reloading",
-    "cross-device synchronization"
-  ],
-  "homepage": "https://github.com/tiagoporto/swill-boilerplate",
-  "authors": [
-    {
-      "name": "Tiago Porto",
-      "homepage": "http://tiagoporto.com/"
-    }
-  ],
+  "name": "accessibility-buttons",
+  "homepage": "http://tiagoporto.github.io/gerador-validador-cpf/",
+  "author": {
+  	"name": "Tiago Porto", "email": "tiago@tiagoporto.com",
+  	" homepage": "http://tiagoporto.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tiagoporto/gerador-validador-cpf.git"
+  },
+  "main": "PROJECT/public/js/accessibility-buttons.js",
   "license": "MIT",
-  "private": true,
   "ignore": [
-    "node_modules",
-    "bower_components"
+    "**/*",
+    "!PROJECT/public/js/accessibility-buttons.js",
+    "!PROJECT/public/js/accessibility-buttons.min.js",
+    "!PROJECT/public/css/accessibility-buttons.css",
+    "!PROJECT/public/css/accessibility-buttons.min.css",
+    "!README.md"
   ],
-  "devDependencies": {
-    "normalize.css": "~3.0.3",
-    "outdated-browser": "~1.1.2",
-    "jquery-logo-downloadtip": "~2.0.0"
-  }
+  "keywords": [
+    "accessibility",
+    "contrast",
+    "font size"
+  ]
 }

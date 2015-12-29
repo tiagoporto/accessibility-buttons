@@ -1,0 +1,22 @@
+$svg-common 
+	background url("../img/vetor-sprite.svg") no-repeat
+
+.svg-icon,
+.svg-icon\\:regular
+	@extend $svg-common
+	background-position 0 0
+
+.svg-icon-dims
+	width 104px
+	height 104px
+
+.svg-icon:hover,
+.svg-icon\\:hover
+	@extend $svg-common
+	background-position 0 100%
+
+.svg-icon-dims:hover,
+.svg-icon\\:hover-dims
+	width 104px
+	height 104px
+
