@@ -49,27 +49,11 @@ Init the plugin
 To setup buttons names and aria-labels, call the plugin with additional options.
 
 ```javascript
-    accessibilityButtons(
-        font: {
-            nameButtonIncrease: '+A', //Default
-            ariaLabelButtonIncrease: 'Increase Font', //Default
-            nameButtonDecrease: '-A', //Default
-            ariaLabelButtonDecrease: 'Decrease Font' //Default
-        },
-
-        contrast: {
-            nameButtonAdd: 'Add Contrast', //Default
-            ariaLabelButtonAdd: 'Add Contrast', //Default
-            nameButtonRemove: 'Remove Contrast', //Default
-            ariaLabelButtonRemove: 'Remove Contrast' //Default
-        }
-    };
-
     accessibilityButtons({
         font: {
             nameButtonIncrease: '+A', //Default
             ariaLabelButtonIncrease: 'Increase Font', //Default
-        	nameButtonDecrease: '-A', //Default
+            nameButtonDecrease: '-A', //Default
             ariaLabelButtonDecrease: 'Decrease Font' //Default
         },
 
