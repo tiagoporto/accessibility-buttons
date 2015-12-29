@@ -7,7 +7,7 @@ module.exports = function (gulp, plugins, paths, headerProject, autoprefixerBrow
 					browsers: autoprefixerBrowsers
 			}))
 			.pipe(plugins.wrapper({
-				header: headerProject
+				header: headerProject + '\r\n'
 			}))
 			.pipe(plugins.if(lintCSS, plugins.csslint('./.csslintrc')))
 			.pipe(plugins.if(lintCSS, plugins.csslint.reporter()))

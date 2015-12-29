@@ -1,5 +1,5 @@
 /*!
-*	Accessibility Buttons v3.0.0
+*	Accessibility Buttons v3.0.1
 *	https://github.com/tiagoporto/accessibility-buttons
 *	Copyright (c) 2014-2015 Tiago Porto (http://www.tiagoporto.com)
 *	Released under the MIT license

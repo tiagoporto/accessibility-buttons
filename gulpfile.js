@@ -201,7 +201,7 @@ gulp.task('scripts', function () {
 							})
 						))
 						.pipe(plugins.wrapper({
-							header: headerProject
+							header: headerProject + '\r\n'
 						}))
 						.pipe(gulp.dest(paths.scripts.dest))
 						.pipe(plugins.rename({suffix: '.min'}))

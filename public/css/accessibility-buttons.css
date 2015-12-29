@@ -1,9 +1,10 @@
 /*!
-*	Accessibility Buttons v3.0.0
+*	Accessibility Buttons v3.0.1
 *	https://github.com/tiagoporto/accessibility-buttons
 *	Copyright (c) 2014-2015 Tiago Porto (http://www.tiagoporto.com)
 *	Released under the MIT license
-*/html {
+*/
+html {
   font-size: 100%;
 }
 body {
@@ -20,7 +21,7 @@ button {
 }
 .accessibility-font {
 /* First font-size fallback to older browsers*/
-  font-size: em(20);
+  font-size: 1.25em;
   font-size: 1.25rem;
 }
 .accessibility-font input,
@@ -29,7 +30,7 @@ button {
 .accessibility-font select,
 .accessibility-font button {
 /* The default font-size of these elements is approximately 20% less than the body */
-  font-size: em(16.666);
+  font-size: 1.041625em;
   font-size: 1.04163rem;
 }
 .accessibility-contrast {

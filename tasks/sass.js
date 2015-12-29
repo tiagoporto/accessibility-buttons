@@ -6,7 +6,7 @@ module.exports = function (gulp, plugins, paths, headerProject, autoprefixerBrow
 						browsers: autoprefixerBrowsers
 					}))
 					.pipe(plugins.wrapper({
-						header: headerProject
+						header: headerProject + '\r\n'
 					}))
 					.on('error', function (err) {
 						console.error('Error', err.message);
