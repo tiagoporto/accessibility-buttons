@@ -75,7 +75,6 @@ paths = {
 gulp.task('coverall', function(){
 	gulp.src('coverage/**/lcov.info')
 		.pipe(plugins.coveralls());
-
 });
 
 gulp.task('karma', function (done) {
