@@ -1,5 +1,4 @@
 // Karma configuration
-// Generated on Fri Oct 16 2015 18:47:24 GMT-0300 (E. South America Standard Time)
 
 module.exports = function(config) {
 	var configuration = {
@@ -14,7 +13,10 @@ module.exports = function(config) {
 
 		// list of files / patterns to load in the browser
 		files: [
+			'node_modules/jquery/dist/jquery.js',
+			'node_modules/jasmine-jquery/lib/jasmine-jquery.js',
 			'src/scripts/accessibility-buttons_SEPARATE.js',
+			'spec/fixtures/example.html',
 			'spec/accessibility-buttons-spec.js'
 		],
 
@@ -62,7 +64,7 @@ module.exports = function(config) {
 
 		// start these browsers
 		// available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-		browsers: ['Chrome'],
+		browsers: ['Firefox'],
 
 		customLaunchers: {
 			Chrome_travis_ci: {

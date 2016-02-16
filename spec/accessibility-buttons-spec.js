@@ -1,35 +1,41 @@
+// jasmine.getFixtures().fixturesPath = 'accessibility-buttons/spec/fixtures';
+
 describe("iniciando função", function () {
-	function hasClass(element, clazz) {
-		return (' ' + element.className + ' ' ).indexOf( ' '+clazz+' ' ) > -1;
-	}
+	var fixture;
 
 	beforeEach(function() {
-		var buttons = '<button aria-label="" id="accessibility-font" class="js-acessibility"></button><button aria-label="" id="accessibility-contrast" class="js-acessibility"></button>';
+		// loadFixtures('example.html');
+		fixture = setFixtures('<body><button aria-label="" id="accessibility-font" class="js-acessibility"></button><button aria-label="" id="accessibility-contrast" class="js-acessibility"></button></body>');
 
-
-		document.body.innerHTML += buttons;
+		body = $('body');
 
 		accessibilityButtons();
 	});
 
 
-	it("Click font buttonnn", function () {
+	it("Click font button", function () {
 
-		document.getElementById('accessibility-font').click();
+		body.removeClass('accessibility-font');
 
+		$('#accessibility-font').click();
 
-		expect( hasClass(document.body, 'accessibility-font') ).toBeTruly;
+		expect(body).toHaveClass('accessibility-font');
+	})
 
-		// console.log(document.body,  hasClass(document.body, 'accessibility-font'));
+	it("Click font button again", function () {
+		body.removeClass('accessibility-font');
 
+		$('#accessibility-font').click().click();
+
+		expect(body).not.toHaveClass('accessibility-font');
 	})
 
 	it("Click font contrast", function () {
-		document.getElementById('accessibility-contrast').click();
 
-		expect(hasClass(document.body, 'accessibility-contrast') ).toBeTruly;
+		$('#accessibility-contrast').click();
 
-		// console.log(document.body, hasClass(document.body, 'accessibility-contrast'));
+		expect(body).toHaveClass('accessibility-contrast');
 	})
+
 
 });
