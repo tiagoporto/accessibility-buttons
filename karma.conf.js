@@ -81,7 +81,6 @@ module.exports = function(config) {
 	};
 
 	if(process.env.TRAVIS){
-		configuration.browsers = ['Chrome_travis_ci'],
 		configuration.coverageReporter = {
 			type : 'lcov',
 			dir : 'coverage/'
