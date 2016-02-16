@@ -1,6 +1,6 @@
 // jasmine.getFixtures().fixturesPath = 'accessibility-buttons/spec/fixtures';
 
-describe("iniciando função", function () {
+describe("Functions events", function () {
 	var fixture;
 
 	beforeEach(function() {
@@ -13,16 +13,18 @@ describe("iniciando função", function () {
 	});
 
 
-	it("Click font button", function () {
+	it("Clicked font button", function () {
 
 		body.removeClass('accessibility-font');
 
 		$('#accessibility-font').click();
 
+		expect($('#accessibility-font')).toHaveText('-A');
+
 		expect(body).toHaveClass('accessibility-font');
 	})
 
-	it("Click font button again", function () {
+	it("Clicked font button twice", function () {
 		body.removeClass('accessibility-font');
 
 		$('#accessibility-font').click().click();
@@ -30,12 +32,21 @@ describe("iniciando função", function () {
 		expect(body).not.toHaveClass('accessibility-font');
 	})
 
-	it("Click font contrast", function () {
+	it("Clicked font contrast", function () {
+		body.removeClass('accessibility-contrast');
 
 		$('#accessibility-contrast').click();
 
 		expect(body).toHaveClass('accessibility-contrast');
 	})
 
+
+	it("Clicked font contrast twice", function () {
+		body.removeClass('accessibility-contrast');
+
+		$('#accessibility-contrast').click().click();
+
+		expect(body).not.toHaveClass('accessibility-contrast');
+	})
 
 });

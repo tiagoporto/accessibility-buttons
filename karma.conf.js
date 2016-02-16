@@ -17,7 +17,8 @@ module.exports = function(config) {
 			'node_modules/jasmine-jquery/lib/jasmine-jquery.js',
 			'src/scripts/accessibility-buttons_SEPARATE.js',
 			'spec/fixtures/example.html',
-			'spec/accessibility-buttons-spec.js'
+			'spec/init.js',
+			'spec/buttons.js'
 		],
 
 
@@ -65,14 +66,6 @@ module.exports = function(config) {
 		// start these browsers
 		// available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
 		browsers: ['Firefox'],
-
-		customLaunchers: {
-			Chrome_travis_ci: {
-					base: 'Chrome',
-					flags: ['--no-sandbox']
-			}
-		},
-
 
 		// Continuous Integration mode
 		// if true, Karma captures browsers, runs the tests and exits
