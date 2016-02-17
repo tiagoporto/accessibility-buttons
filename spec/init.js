@@ -14,26 +14,34 @@ describe("Init Acessibilit Buttons", function () {
 	});
 
 
-	it("Button Font Inner", function () {
+	it("Button Font", function () {
 		 accessibilityButtons({
-	        font: {
-	            nameButtonIncrease: 'A+',
-	            ariaLabelButtonIncrease: 'Plus Font',
-	            nameButtonDecrease: 'A-',
-	            ariaLabelButtonDecrease: 'Minus Font'
-	        },
+			font: {
+				nameButtonIncrease: 'A+',
+				ariaLabelButtonIncrease: 'Plus Font',
+				nameButtonDecrease: 'A-',
+				ariaLabelButtonDecrease: 'Minus Font'
+			}
+		});
 
-	        contrast: {
-	            nameButtonAdd: 'Add Contrast',
-	            ariaLabelButtonAdd: 'Add Contrast',
-	            nameButtonRemove: 'Remove Contrast',
-	            ariaLabelButtonRemove: 'Remove Contrast'
-	        }
-	    });
+		expect($_fontButton).toHaveText('A+');
 
-		 console.log($('body').html())
+		expect($_fontButton).toHaveAttr('aria-label', 'Plus Font');
+	})
 
-		expect($('#accessibility-font')).toHaveText('A+');
+	it("Contratast Font", function () {
+		 accessibilityButtons({
+			contrast: {
+				nameButtonAdd: 'Add Contrast',
+				ariaLabelButtonAdd: 'Add Contrast',
+				nameButtonRemove: 'Remove Contrast',
+				ariaLabelButtonRemove: 'Remove Contrast'
+			}
+		});
+
+		expect($_contrastButton).toHaveText('Add Contrast');
+
+		expect($_contrastButton).toHaveAttr('aria-label', 'Add Contrast');
 	})
 
 	// it("Clicked font button twice", function () {

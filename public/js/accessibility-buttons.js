@@ -63,15 +63,10 @@ var accessibilityButtons = function(options) {
 	if (options) {
 		for (var key in options) {
 
-			if(options.hasOwnProperty(i)) {
+			var obj = options[key];
 
-				var obj = options[key];
-
-				for (var prop in obj) {
-					if(obj.hasOwnProperty(i)) {
-						setting[key][prop] = obj[prop];
-					}
-				}
+			for (var prop in obj) {
+				setting[key][prop] = obj[prop];
 			}
 		}
 	}
