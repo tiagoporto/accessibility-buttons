@@ -1,5 +1,5 @@
 /*
-*	Swill Boilerplate v4.1.0beta
+*	Swill Boilerplate v4.3.1
 *	https://github.com/tiagoporto/swill-boilerplate
 *	Copyright (c) 2014-2015 Tiago Porto (http://tiagoporto.com)
 *	Released under the MIT license
@@ -7,25 +7,22 @@
 
 'use strict';
 
-var		 gulp = require('gulp'),
+var		 args = require('yargs').argv,
   browserSync = require('browser-sync'),
+	   buffer = require('vinyl-buffer'),
+	   config = require('./config.json'),
 		  del = require('del'),
 		   fs = require('fs'),
+	  ghPages = require('gulp-gh-pages'),
+		 gulp = require('gulp'),
+	  jasmine = require('gulp-jasmine'),
+		Karma = require('karma').Server,
 		merge = require('merge-stream'),
-   minifyHTML = require('gulp-minify-html'),
+	  plugins = require('gulp-load-plugins')(),
 	 sequence = require('run-sequence'),
-		 sass = require('gulp-ruby-sass'),
   spritesmith = require('gulp.spritesmith'),
 	svgSprite = require('gulp-svg-sprite'),
-	  stylish = require('jshint-stylish'),
-		 args = require('yargs').argv,
-	  plugins = require('gulp-load-plugins')(),
-   	   buffer = require('vinyl-buffer'),
    vinylPaths = require('vinyl-paths'),
-	  ghPages = require('gulp-gh-pages'),
-		Karma = require('karma').Server,
-	  jasmine = require('gulp-jasmine'),
-	   config = require('./config.json'),
 
 //***************************** Path configs *****************************//
 
@@ -65,8 +62,6 @@ paths = {
 		extensionStyle = "scss";
 	}else if(preprocessor === "stylus"){
 		extensionStyle = "styl";
-	}else if(preprocessor === "less"){
-		extensionStyle = preprocessor;
 	}
 
 
@@ -87,9 +82,19 @@ gulp.task('test', function(){
 	sequence('karma', 'coverall');
 });
 
-gulp.task('styles-helpers', require('./tasks/' + preprocessor + '-helpers')(gulp, plugins, paths, merge));
+gulp.task('styles-helpers', function(){
+	   var mixins = gulp.src(paths.styles.src + 'helpers/mixins/*.{styl,scss}')
+						.pipe(plugins.concat('_mixins.styl'))
+						.pipe(gulp.dest(paths.styles.src + 'helpers'));
 
-gulp.task('styles', require('./tasks/' + preprocessor)(gulp, plugins, paths, headerProject, config.autoprefixerBrowsers, config.lintCSS, sass));
+	var functions = gulp.src(paths.styles.src + 'helpers/functions/*.{styl,scss}')
+						.pipe(plugins.concat('_functions.styl'))
+						.pipe(gulp.dest(paths.styles.src + 'helpers'));
+
+	return merge(mixins, functions);
+});
+
+gulp.task('styles', require('./tasks/' + preprocessor)(gulp, plugins, paths, headerProject, config.autoprefixerBrowsers, config.lintCSS));
 
 // Generate Bitmap Sprite
 gulp.task('bitmap-sprite', function () {
@@ -99,6 +104,16 @@ gulp.task('bitmap-sprite', function () {
 						spritesmith({
 							imgName: 'bitmap-sprite.png',
 							cssName: "_bitmap-sprite." + extensionStyle,
+							cssOpts: {
+								cssSelector: function (item) {
+									if (item.name.indexOf('~hover') !== -1) {
+										return '.icon-' + item.name.replace('~hover', ':hover');
+									}
+									else {
+										return '.icon-' + item.name;
+									}
+								}
+							},
 							imgPath: '../' + basePaths.images.dest + 'bitmap-sprite.png',
 							padding: 2,
 							algorithm: 'top-down'
@@ -119,18 +134,19 @@ gulp.task('bitmap-sprite', function () {
 // Generate SVG Sprite
 gulp.task('vetor-sprite', function() {
 	var spriteOptions = {
-					shape : {
-						spacing : {
-							padding : 2
+					shape: {
+						spacing: {
+							padding: 2
 						}
 					},
 					mode : {
 						css : {
-							dest : './',
+							prefix: ".icon-%s",
+							dest: './',
 							sprite: '../' + basePaths.images.dest + 'vetor-sprite.svg',
 							layout: 'vertical',
-							bust : false,
-							render : {}
+							bust: false,
+							render: {}
 						},
 					}
 				};
@@ -184,8 +200,6 @@ gulp.task('vendor-scripts', function () {
 	return gulp.src([
 					'!' + paths.scripts.src + '**/*_IGNORE.js',
 					paths.scripts.src + 'settings/google_analytics.js',
-					paths.scripts.src + 'vendor/frameworks_libs/*',
-					paths.scripts.src + 'vendor/plugins/**',
 					paths.scripts.src + 'settings/*.js'
 				])
 				.pipe(plugins.plumber())
@@ -207,18 +221,24 @@ gulp.task('scripts', function () {
 						.pipe(plugins.cached('scripts'))
 						.pipe(plugins.remember('scripts'))
 						.pipe(plugins.plumber())
-						.pipe(plugins.if(config.lintJS, plugins.jshint()))
-						.pipe(plugins.if(config.lintJS, plugins.jshint.reporter('jshint-stylish')))
+						.pipe(plugins.if(config.lintJS, plugins.eslint()))
+						.pipe(plugins.if(config.lintJS, plugins.eslint.format()))
+						.pipe(plugins.if(
+							config.es6,
+							plugins.babel({
+								presets: ['es2015']
+							})
+						))
 						.pipe(plugins.concat('scripts.js'))
 						.pipe( plugins.if(
-							config.jquery,
+							config.jQuery,
 							plugins.wrapper({
 								header: 'jQuery(document).ready(function($) {\n\n',
 								footer: '\n});'
 							})
 						))
 						.pipe(plugins.wrapper({
-							header: headerProject + '\r\n'
+							header: headerProject + '\n'
 						}))
 						.pipe(gulp.dest(paths.scripts.dest))
 						.pipe(plugins.rename({suffix: '.min'}))
@@ -232,10 +252,13 @@ gulp.task('scripts', function () {
 						.pipe(plugins.plumber())
 						.pipe(plugins.newer(paths.scripts.dest))
 						.pipe(plugins.plumber())
-						.pipe(plugins.if(config.lintJS, plugins.jshint()))
-						.pipe(plugins.if(config.lintJS, plugins.jshint.reporter('jshint-stylish')))
+						.pipe(plugins.if(config.lintJS, plugins.eslint()))
+						.pipe(plugins.if(config.lintJS, plugins.eslint.format()))
 						.pipe(plugins.rename(function(path){
 							path.basename = path.basename.substring(0,  path.basename.length -9)
+						}))
+						.pipe(plugins.wrapper({
+							header: headerProject + '\n'
 						}))
 						.pipe(gulp.dest(paths.scripts.dest))
 						.pipe(plugins.rename({suffix: '.min'}))
@@ -255,38 +278,26 @@ gulp.task('copy', function () {
 	// Minify and Copy HTML
 	var  html    = gulp.src([
 						basePaths.dest + '**/*.{html,php}',
-						'!public/bower_components{,/**}'
+						'!' + basePaths.bower + '{,/**}'
 					])
 						.pipe(plugins.useref(assets))
 						.pipe(plugins.if('*.js', plugins.uglify()))
 						.pipe(plugins.if('*.css', plugins.csso()))
-						.pipe(plugins.if('*.html', minifyHTML({spare:true, empty: true})))
-						.pipe(plugins.if('*.php', minifyHTML({spare:true, empty: true})))
+						.pipe(plugins.if('*.html', plugins.htmlmin({collapseWhitespace: true, spare:true, empty: true, conditionals: true})))
+						.pipe(plugins.if('*.php', plugins.htmlmin({collapseWhitespace: true, spare:true, empty: true, conditionals: true})))
 						.pipe(gulp.dest(basePaths.build));
 
 	// Copy All Other files except HTML, PHP, CSS e JS Files
 	var allFiles = gulp.src([
-							'!public/bower_components{,/**}',
+							'!' + basePaths.bower + '{,/**}',
 							basePaths.dest + '**/*',
 							'!' + paths.styles.dest + '**/*',
 							'!' + paths.scripts.dest + '**/*',
 							'!' + basePaths.dest + '**/*.{html,php}'
 						], {dot: true})
 						.pipe(gulp.dest(basePaths.build));
-});
 
-// Copy Bower dependencies to public folder
-gulp.task('bower', function() {
-	var outdatedBrowserLangs = gulp.src(basePaths.bower + '/outdated-browser/outdatedbrowser/lang/*')
-									.pipe(gulp.dest(basePaths.dest + 'lang/outdated_browser'));
-
-	var    fonts    = gulp.src([
-							basePaths.bower + '/bootstrap/dist/fonts/*',
-							basePaths.bower + '/font-awesome/fonts/*'
-						])
-						.pipe(gulp.dest(basePaths.dest + 'fonts'));
-
-	return merge(outdatedBrowserLangs, fonts);
+	return merge(html, allFiles);
 });
 
 gulp.task('get-preprocessor', function(){
@@ -294,14 +305,12 @@ gulp.task('get-preprocessor', function(){
 		argProcessor = 'sass';
 	}else if(args.stylus == true){
 		argProcessor = 'stylus';
-	}else if(args.less == true){
-		argProcessor = 'less';
 	}
 });
 
 //Set the preprocessor in variable
 gulp.task('set-preprocessor', function(){
-	if(args.sass || args.less || args.stylus){
+	if(args.sass || args.stylus){
 		return gulp.src(['gulpfile.js'])
 			.pipe(plugins.replace(/preprocessor\s=\s'[a-z]{4,6}/g, "preprocessor = \'" + argProcessor))
 			.pipe(gulp.dest('./'));
@@ -310,7 +319,7 @@ gulp.task('set-preprocessor', function(){
 
 //Copy the files to use
 gulp.task('folder-preprocessor', function(){
-	if(args.sass || args.less || args.stylus){
+	if(args.sass || args.stylus){
 		return gulp.src(paths.styles.src + argProcessor + "/**/*")
 			.pipe(gulp.dest(paths.styles.src));
 	}
@@ -318,51 +327,130 @@ gulp.task('folder-preprocessor', function(){
 
 //Removes unnecessary folders
 gulp.task('remove-preprocessors', function(cb){
-	if(args.sass || args.less || args.stylus){
-		del([
-			paths.styles.src + "sass",
-			paths.styles.src + "stylus",
-			paths.styles.src + "less"
-			], cb)
+
+	var deletePath = [];
+
+	if(!config.components){
+		deletePath.push(paths.styles.src + "**/components");
+	}
+
+	if(args.sass || args.stylus){
+		deletePath.push(paths.styles.src + "sass", paths.styles.src + "stylus");
+	}
+
+	return del(deletePath, cb)
+});
+
+//Install bower dependencies
+gulp.task('bower', function(){
+	return plugins.bower();
+})
+
+gulp.task('logodownload', ['outdatedbrowser'], function(){
+	if((config.logoDownloadtip && !config.jQuery) || !config.logoDownloadtip){
+		var htmlLogo = gulp.src(basePaths.dest + 'index.html')
+					.pipe(plugins.replace(
+						/\t\t<link rel="stylesheet" href="bower_components\/jquery-logo-downloadtip\/css\/jquery-logo-downloadtip.css">\n/g, ''))
+					.pipe(plugins.replace(
+						/\t\t<script src="bower_components\/jquery-logo-downloadtip\/js\/jquery-logo-downloadtip.min.js"><\/script>\n/g, ''))
+					.pipe(plugins.replace(
+						/\t\t<!-- Logos[\w\W]+.eps\)\" \/>\n\n/g, ''))
+					.pipe(gulp.dest(basePaths.dest));
+
+		var bowerLogo = gulp.src('bower.json')
+								.pipe(plugins.replace(/\s{4}"jquery-logo-downloadtip[0-9\s:"~.]+,\n/g, ''))
+								.pipe(gulp.dest('./'));
+
+		return merge(htmlLogo, bowerLogo);
+	}
+})
+
+gulp.task('outdatedbrowser', ['jquery'], function(){
+	if(!config.outdatedBrowser){
+		var htmlOut =  gulp.src(basePaths.dest + '*.html')
+						.pipe(plugins.replace(/\t\t<link rel="stylesheet" href="bower_components\/outdated-browser\/outdatedbrowser\/outdatedbrowser.css">\n/g, ''))
+						.pipe(plugins.replace(/\t\t<script src="bower_components\/outdated-browser\/outdatedbrowser\/outdatedbrowser.js"><\/script>\n/g, ''))
+						.pipe(plugins.replace(/\t\t<!-- [=]+ Outdated Browser[\s=\-\>\<a-zA-Z"\/!]+-->\n\n/g, ''))
+						.pipe(gulp.dest(basePaths.dest));
+
+
+		var bowerOut = gulp.src('bower.json')
+								.pipe(plugins.replace(/\s{4}"outdated-browser[0-9\s:"~.]+,\n/g, ''))
+								.pipe(gulp.dest('./'));
+
+		return merge(htmlOut, bowerOut);
+
+
+	}else{
+		return gulp.src(basePaths.bower + '/outdated-browser/outdatedbrowser/lang/*')
+										.pipe(gulp.dest(basePaths.dest + 'lang/outdated_browser'));
+
+	}
+})
+
+gulp.task('jquery', function() {
+	if(!config.jQuery){
+		var indexCalls = gulp.src(basePaths.dest + 'index.html')
+									.pipe(plugins.replace(
+										/\t\t<script src="bower_components\/jquery\/dist\/jquery.js"><\/script>\n/g, ''))
+									.pipe(gulp.dest(basePaths.dest));
+
+		var eslint = gulp.src('./.eslintrc')
+								.pipe(plugins.replace(/jquery":\strue/g, 'jquery": false'))
+								.pipe(gulp.dest('./'));
+
+		var bowerJquery = gulp.src('bower.json')
+								.pipe(plugins.replace(/\s{4}"jquery"[0-9\s:"~.]+,\n/g, ''))
+								.pipe(gulp.dest('./'));
+
+		return merge(indexCalls, eslint, bowerJquery);
 	}
 });
 
 //Set the use of components
-gulp.task('set-dependencies', function(){
-	if(config.components){
-		var component_script = gulp.src(paths.scripts.src + '**/custom-input-file_IGNORE.js')
-								.pipe(vinylPaths(del))
-								.pipe(plugins.rename(function(path){
-										path.basename = path.basename.substring(0,  path.basename.length -7)
-									}))
-								.pipe(gulp.dest(paths.scripts.src));
+gulp.task('set-dependencies', ['logodownload'], function(){
+
+	if(!config.components){
+			var stylesComponents = gulp.src(paths.styles.src + '**/*.{styl,sass,scss}')
+						.pipe(plugins.replace(/@import "compo[\w\W]+area"/g, ''))
+						.pipe(gulp.dest(paths.styles.src));
 	}
 
-	if(config.jquery){
-		var jquery_indexcalls = gulp.src(basePaths.dest + 'index.html')
-									.pipe(plugins.replace(
-											/<!-- (<link rel="stylesheet" href="jquery-logo-downloadtip\/css\/jquery-logo-downloadtip.css">) -->/g, '$1'))
-									.pipe(plugins.replace(
-										/<!-- (<script src="jquery\/dist\/jquery.js"><\/script>) -->/g, '$1'))
-									.pipe(plugins.replace(
-										/<!-- (<script src="jquery-logo-downloadtip\/js\/jquery-logo-downloadtip.min.js"><\/script>) -->/g,  '$1'))
-									.pipe(gulp.dest(basePaths.dest));
+	//Remove outdated and leave logo
+	if(!config.outdatedBrowser && (config.logoDownloadtip && config.jQuery)){
+		var outdatedTrue = gulp.src(paths.scripts.src + 'settings/call_plugins.js')
+						.pipe(plugins.replace(/\toutdatedBrowser[\W\w]+,\n\n/g, ''))
+						.pipe(gulp.dest(paths.scripts.src + 'settings/'));
 
-		var jquery_jscalls = gulp.src(paths.scripts.src + '**/call_plugins.js')
-									.pipe(plugins.replace(/\/\/,/g, ","))
-									.pipe(plugins.replace(/\/\/\$\('#logo'\)/g, "$('#logo')"))
-									.pipe(gulp.dest(paths.scripts.src));
+	//Remove logo and leave outdated
+	}else if(config.outdatedBrowser && (!config.jQuery || !config.outdatedBrowser)){
+		var outdatedFalse = gulp.src(paths.scripts.src + 'settings/call_plugins.js')
+						.pipe(plugins.replace(/,\n\n\t[\W\w]+\}\)/g, ''))
+						.pipe(gulp.dest(paths.scripts.src + 'settings/'));
 
-		var jquery_jshint = gulp.src('./.jshintrc')
-								.pipe(plugins.replace(/jquery"[\s]{1,10}:\sfalse/g, 'jquery"        : true'))
-								.pipe(gulp.dest('./'));
+	//Remove both
+	}else if(!config.outdatedBrowser && (!config.jQuery || !config.outdatedBrowser)){
+		var allFalse = gulp.src(paths.scripts.src + 'settings/call_plugins.js')
+						.pipe(plugins.replace(/\toutdatedBrowser[\W\w]+\);/g, ');'))
+						.pipe(gulp.dest(paths.scripts.src + 'settings/'));
 	}
+
+	var bower_path = gulp.src('./.bowerrc')
+						.pipe(plugins.replace(/"directory" : "[a-z\/_]+"/g, '"directory" : "' + basePaths.bower + '"'))
+						.pipe(gulp.dest('./'));
+
+
+	var styles_var = gulp.src(paths.styles.src + '**/*.{styl,sass,scss}')
+						.pipe(plugins.replace(/(image-path[\s=:]+ ")[.\/a-z]+"/g, '$1../' + basePaths.images.dest + '"'))
+						.pipe(plugins.replace(/(font-path[\s=:]+ ")[.\/a-z]+"/g, '$1../' + basePaths.fonts.dest + '"'))
+						.pipe(gulp.dest(paths.styles.src));
+
 });
 
 //*************************** Utility Tasks ******************************//
 
 gulp.task('setup', function(cb){
-	sequence('bower',  'get-preprocessor', 'set-preprocessor', 'folder-preprocessor', 'remove-preprocessors', 'set-dependencies', cb);
+	sequence('get-preprocessor', 'set-preprocessor', 'folder-preprocessor', 'set-dependencies', 'bower', 'remove-preprocessors', cb);
 });
 
 gulp.task('combine-assets', function () {
@@ -382,8 +470,8 @@ gulp.task('clean', function (cb) {
 			basePaths.build,
 			paths.styles.dest,
 			paths.scripts.dest,
-			paths.styles.src + 'helpers/_bitmap-sprite.{styl,scss,less}',
-			paths.styles.src + 'helpers/_vetor-sprite.{styl,scss,less}',
+			paths.styles.src + 'helpers/_bitmap-sprite.{styl,scss}',
+			paths.styles.src + 'helpers/_vetor-sprite.{styl,scss}',
 			paths.images.dest + '**/*',
 			// Add here the folders that will not be deleted in public/img
 			'!' + paths.images.dest + 'copyright{,**/*{,**/*}}',
@@ -438,16 +526,16 @@ gulp.task('serve', function () {
 		);
 
 	gulp.watch([
-			paths.styles.src + '**/*.{styl,scss,sass,less}',
-			'!' + paths.styles.src + 'helpers/mixins/*.{styl,scss,sass,less}',
-			'!' + paths.styles.src + 'helpers/functions/*.{styl,scss,sass,less}'],
+			paths.styles.src + '**/*.{styl,scss,sass}',
+			'!' + paths.styles.src + 'helpers/mixins/*.{styl,scss,sass}',
+			'!' + paths.styles.src + 'helpers/functions/*.{styl,scss,sass}'],
 
 			['styles', browserSync.reload]
 		);
 
 	gulp.watch([
-			paths.styles.src + 'helpers/mixins/*.{styl,scss,sass,less}',
-			paths.styles.src + 'helpers/functions/*.{styl,scss,sass,less}'],
+			paths.styles.src + 'helpers/mixins/*.{styl,scss,sass}',
+			paths.styles.src + 'helpers/functions/*.{styl,scss,sass}'],
 
 			['styles-helpers']
 		);
@@ -455,7 +543,7 @@ gulp.task('serve', function () {
 	gulp.watch(basePaths.dest + '**/*.{html,php}', browserSync.reload);
 });
 
-// Compile, watch and serve project
+// Clean, compile, watch and serve project
 gulp.task('default', function () {
 	if(args.compile === true){
 		sequence('clean', ['images', 'bitmap-sprite', 'vetor-sprite', 'styles-helpers', 'vendor-scripts'], 'svg2png', 'styles', 'scripts', 'serve');
@@ -464,11 +552,18 @@ gulp.task('default', function () {
 		gulp.start('serve');
 	}
 });
-gulp.task('gh', function() {
-  return gulp.src( basePaths.build + '**/*')
-    .pipe(ghPages());
+
+// Clean and compile the project
+gulp.task('compile', function () {
+	sequence('clean', ['images', 'bitmap-sprite', 'vetor-sprite', 'styles-helpers', 'vendor-scripts'], 'svg2png', 'styles', 'scripts');
 });
 
+gulp.task('gh', function() {
+ return gulp.src( basePaths.build + '**/*')
+   .pipe(ghPages());
+});
+
+// Build the project and push the builded folder to gh-pages branch
 gulp.task('ghpages', function() {
 	sequence(['images', 'bitmap-sprite', 'vetor-sprite', 'styles-helpers', 'vendor-scripts'], 'svg2png', 'styles', 'scripts', 'copy', 'gh');
 });
