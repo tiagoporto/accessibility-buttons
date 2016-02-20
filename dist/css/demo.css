@@ -25,7 +25,7 @@ html {
        box-sizing: inherit;
 }
 body {
-  font: normal normal 16px/1.5em Helvetica, Arial, sans-serif;
+  font: normal normal 16px/1.5em Lora, 'Times New Roman', Times, Baskerville, Georgia, serif;
   background-color: #fff;
   color: #000;
   text-rendering: optimizeLegibility;
@@ -243,6 +243,25 @@ select {
 ::placeholder {
   color: #8c8c8c;
   font-size: 0.875em;
+}
+.main {
+  *zoom: 1;
+  width: auto;
+  max-width: 900px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+.main:before,
+.main:after {
+  content: '';
+  display: table;
+}
+.main:after {
+  clear: both;
 }
 /* ==================================================================
    Media Queries

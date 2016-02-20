@@ -2,7 +2,8 @@
   "name": "accessibility-buttons",
   "homepage": "http://tiagoporto.github.io/gerador-validador-cpf/",
   "author": {
-    "name": "Tiago Porto", "email": "tiago@tiagoporto.com",
+    "name": "Tiago Porto",
+    "email": "tiago@tiagoporto.com",
     " homepage": "http://tiagoporto.com"
   },
   "repository": {

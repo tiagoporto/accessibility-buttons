@@ -2,11 +2,11 @@
 accessibilityButtons({
 	font: {
 		nameButtonIncrease: 'Click me and things will be great',
-		nameButtonDecrease: '-A'
+		nameButtonDecrease: 'Click me and things will turn to normal size'
 	},
 
 	contrast: {
 		nameButtonAdd: 'Click me and things will be darken',
-		nameButtonRemove: 'Remove Contrasttt'
+		nameButtonRemove: 'Click me and things will be clean again'
 	}
 });

@@ -1,0 +1,15 @@
+{
+  "name": "accessibility-buttons",
+  "homepage": "https://github.com/tiagoporto/accessibility-buttons",
+  "authors": [
+    "Tiago Porto <tiagoporto@ymail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "devDependencies": {
+    "jeet": "^6.1.2",
+    "normalize-css": "normalize.css#^3.0.3"
+  }
+}

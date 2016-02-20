@@ -29,8 +29,8 @@ Download with [Bower](http://bower.io/)
 * Insert the buttons
 
 	```html
-	<button aria-label="Increase Font" id="accessibility-font" class="js-acessibility"></button>
-	<button aria-label="Add Contrast" id="accessibility-contrast" class="js-acessibility"></button>
+	<button aria-label="Increase Font" id="accessibility-font" class="js-acessibility">+A</button>
+	<button aria-label="Add Contrast" id="accessibility-contrast" class="js-acessibility">Add Contrast</button>
 	```
 
 **Note:** To `font-size` works, it's necessary work with `em` or `rem` units.
