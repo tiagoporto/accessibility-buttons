@@ -1,0 +1,32 @@
+/*!
+*
+* Box model reset
+* http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+*
+*/
+
+html
+	font-size: 100%
+	box-sizing border-box
+
+*, *:before, *:after
+	box-sizing inherit
+
+body
+	if $debug-vertical-rhythm == true
+		background-image: linear-gradient(to top, rgba($debug-color-line, 0.2) 1px, rgba(0, 0, 0, 0) 1px)
+		background-size: 100% em($base-line-height, $base-font-size)
+		background-position: left top
+
+	font: normal normal  $base-font-size\/em($base-line-height) $font-family-base
+	background-color: $bg-color
+	color: $base-text-color
+	text-rendering: optimizeLegibility
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+	font-smoothing: auto
+	font-feature-settings: "liga", "kern"
+
+::selection
+	background: $selection-bg-color
+	color: $selection-color

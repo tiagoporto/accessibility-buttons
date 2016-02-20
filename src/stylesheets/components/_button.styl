@@ -22,17 +22,20 @@ $basicButton
 	// 	outline none
 	// 	box-shadow 0 0 4px aqua
 
-.button
+button,
+input[type="button"]
+input[type="reset"]
+input[type="submit"]
 	@extend $basicButton
 
-	&:hover
+	&:hover:not([disabled])
 		background-color #2bbbad
 		box-shadow 0 1px 4px rgba(0, 0, 0, .15), 0 1px 4px rgba(0, 0, 0, .15)
 
 	// &:active
 
-.disabled-button
-	@extend $basicButton
-	background-color #DFDFDF
-	color #9F9F9F
-	cursor default
+	&:disabled
+		@extend $basicButton
+		background-color #DFDFDF
+		color #9F9F9F
+		cursor default

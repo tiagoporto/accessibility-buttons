@@ -5,7 +5,7 @@
 [![Github Release](https://img.shields.io/github/release/tiagoporto/accessibility-buttons.svg)](https://github.com/tiagoporto/accessibility-buttons/releases)
 [![Github License](https://img.shields.io/github/license/tiagoporto/accessibility-buttons.svg)](http://opensource.org/licenses/MIT)
 
-Accessibility Buttons to contrast and font size. [Demo Page](http://tiagoporto.github.io/accessibility-buttons/)
+Accessibility Buttons to add/remove contrast and increase/decrease font size.
 
 
 ## Usage
@@ -29,8 +29,8 @@ Download with [Bower](http://bower.io/)
 * Insert the buttons
 
 	```html
-	<button aria-label="" id="accessibility-font" class="js-acessibility"></button>
-	<button aria-label="" id="accessibility-contrast" class="js-acessibility"></button>
+	<button aria-label="Increase Font" id="accessibility-font" class="js-acessibility"></button>
+	<button aria-label="Add Contrast" id="accessibility-contrast" class="js-acessibility"></button>
 	```
 
 **Note:** To `font-size` works, it's necessary work with `em` or `rem` units.

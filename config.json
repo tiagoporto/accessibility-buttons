@@ -1,9 +1,9 @@
 {
 	"basePaths": {
 		   "src": "src/",
-		  "dest": "public/",
+		  "dest": "dist/",
 		 "build": "build/",
-		 "bower": "public/bower_components",
+		 "bower": "dist/bower_components",
 
 		"images": {
 			 "src": "images/",
@@ -50,7 +50,7 @@
 		"port": 80,
 		"logPrefix": "BrowserSync",
 		"server": {
-			"baseDir": ["public/"]
+			"baseDir": ["dist/"]
 		}
 	},
 

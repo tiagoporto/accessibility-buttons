@@ -2,21 +2,21 @@
   "name": "accessibility-buttons",
   "homepage": "http://tiagoporto.github.io/gerador-validador-cpf/",
   "author": {
-  	"name": "Tiago Porto", "email": "tiago@tiagoporto.com",
-  	" homepage": "http://tiagoporto.com"
+    "name": "Tiago Porto", "email": "tiago@tiagoporto.com",
+    " homepage": "http://tiagoporto.com"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/tiagoporto/gerador-validador-cpf.git"
   },
-  "main": "PROJECT/public/js/accessibility-buttons.js",
+  "main": "dist/js/accessibility-buttons.js",
   "license": "MIT",
   "ignore": [
     "**/*",
-    "!PROJECT/public/js/accessibility-buttons.js",
-    "!PROJECT/public/js/accessibility-buttons.min.js",
-    "!PROJECT/public/css/accessibility-buttons.css",
-    "!PROJECT/public/css/accessibility-buttons.min.css",
+    "!dist/js/accessibility-buttons.js",
+    "!dist/js/accessibility-buttons.min.js",
+    "!dist/css/accessibility-buttons.css",
+    "!dist/css/accessibility-buttons.min.css",
     "!README.md"
   ],
   "keywords": [
