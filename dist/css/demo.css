@@ -112,7 +112,7 @@ code {
   padding-top: 0.75em;
   padding-bottom: 0.75em;
   width: 100%;
-  overflow: scroll;
+  overflow: auto;
   display: inline-block;
   border-radius: 6px;
   margin-top: 1.5em;
