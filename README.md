@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/tiagoporto/accessibility-buttons.svg?branch=master&style=flat-square)](https://travis-ci.org/tiagoporto/accessibility-buttons)
 [![Coverage Status](https://img.shields.io/coveralls/tiagoporto/accessibility-buttons.svg)](https://coveralls.io/github/tiagoporto/accessibility-buttons)
 [![Github Release](https://img.shields.io/github/release/tiagoporto/accessibility-buttons.svg)](https://github.com/tiagoporto/accessibility-buttons/releases)
-[![Github License](https://img.shields.io/github/license/tiagoporto/accessibility-buttons.svg)](http://opensource.org/licenses/MIT)
+[![Github License](https://img.shields.io/github/license/tiagoporto/accessibility-buttons.svg)](https://github.com/tiagoporto/accessibility-buttons/blob/master/LICENSE.md)
 
 Accessibility Buttons to add/remove contrast and increase/decrease font size.
 
@@ -11,6 +11,12 @@ Accessibility Buttons to add/remove contrast and increase/decrease font size.
 ## Usage
 
 Download with [Bower](http://bower.io/)
+
+```sh
+	$ bower install accessibility-buttons --save
+```
+
+Download with [NPM](https://www.npmjs.com/)
 
 ```sh
 	$ bower install accessibility-buttons --save
@@ -88,4 +94,4 @@ Included the $ sign in the variable name of the cached elements for easy identif
 
 ## License
 
-Accessibility Buttons is released under the terms of the [MIT license](http://opensource.org/licenses/MIT).
+Accessibility Buttons is released under the terms of the [MIT license](https://github.com/tiagoporto/accessibility-buttons/blob/master/LICENSE.md).
