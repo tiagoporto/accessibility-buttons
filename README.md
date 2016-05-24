@@ -1,9 +1,11 @@
 # Accessibility Buttons
 
-[![Build Status](https://travis-ci.org/tiagoporto/accessibility-buttons.svg?branch=master&style=flat-square)](https://travis-ci.org/tiagoporto/accessibility-buttons)
+[![Build Status](https://travis-ci.org/tiagoporto/accessibility-buttons.svg)](https://travis-ci.org/tiagoporto/accessibility-buttons)
 [![Coverage Status](https://img.shields.io/coveralls/tiagoporto/accessibility-buttons.svg)](https://coveralls.io/github/tiagoporto/accessibility-buttons)
+[![NPM Downloads](https://img.shields.io/npm/dt/accessibility-buttons.svg)](https://www.npmjs.com/package/accessibility-buttons)
 [![Github Release](https://img.shields.io/github/release/tiagoporto/accessibility-buttons.svg)](https://github.com/tiagoporto/accessibility-buttons/releases)
-[![Github License](https://img.shields.io/github/license/tiagoporto/accessibility-buttons.svg)](https://github.com/tiagoporto/accessibility-buttons/blob/master/LICENSE.md)
+[![Github Issues](https://img.shields.io/github/issues/tiagoporto/accessibility-buttons.svg)](https://github.com/tiagoporto/accessibility-buttons/issues)
+[![Github License](https://img.shields.io/github/license/tiagoporto/accessibility-buttons.svg)](https://raw.githubusercontent.com/tiagoporto/accessibility-buttons/master/LICENSE.md)
 
 Accessibility Buttons to add/remove contrast and increase/decrease font size.
 
@@ -24,12 +26,12 @@ Download with [NPM](https://www.npmjs.com/)
 
 * Include the files
 
-    ```html
-    <link rel="stylesheet" href="css/accessibility-buttons.css">
+	```html
+	<link rel="stylesheet" href="css/accessibility-buttons.css">
 
 
-    <script src="js/accessibility-buttons.js"></script>
-    ```
+	<script src="js/accessibility-buttons.js"></script>
+	```
 
 
 * Insert the buttons
@@ -45,7 +47,7 @@ Download with [NPM](https://www.npmjs.com/)
 Init the plugin
 
 ```
-    accessibilityButtons();
+	accessibilityButtons();
 ```
 
 # Settings
@@ -53,21 +55,21 @@ Init the plugin
 To setup buttons names and aria-labels, call the plugin with additional options.
 
 ```javascript
-    accessibilityButtons({
-        font: {
-            nameButtonIncrease: '+A', //Default
-            ariaLabelButtonIncrease: 'Increase Font', //Default
-            nameButtonDecrease: '-A', //Default
-            ariaLabelButtonDecrease: 'Decrease Font' //Default
-        },
+	accessibilityButtons({
+		font: {
+			nameButtonIncrease: '+A', //Default
+			ariaLabelButtonIncrease: 'Increase Font', //Default
+			nameButtonDecrease: '-A', //Default
+			ariaLabelButtonDecrease: 'Decrease Font' //Default
+		},
 
-        contrast: {
-            nameButtonAdd: 'Add Contrast', //Default
-            ariaLabelButtonAdd: 'Add Contrast', //Default
-            nameButtonRemove: 'Remove Contrast', //Default
-            ariaLabelButtonRemove: 'Remove Contrast' //Default
-        }
-    });
+		contrast: {
+			nameButtonAdd: 'Add Contrast', //Default
+			ariaLabelButtonAdd: 'Add Contrast', //Default
+			nameButtonRemove: 'Remove Contrast', //Default
+			ariaLabelButtonRemove: 'Remove Contrast' //Default
+		}
+	});
 ```
 
 To change font-size and contrast colors change the values in the `accessibility-buttons.css`.
