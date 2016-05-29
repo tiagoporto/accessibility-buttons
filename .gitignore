@@ -24,17 +24,11 @@ coverage
 .tox
 
 #################
-## Cordova
-#################
-
-platforms/*
-plugins/*
-
-#################
-## NPM Dependencies
+## NPM
 #################
 
 node_modules/
+npm-debug.log
 
 #################
 ## Bower Components
@@ -46,7 +40,7 @@ bower_components/
 ## SASS Cache
 #################
 
-.sass-cache/
+.sass-cache
 
 #################
 ## Gh-pages
@@ -59,3 +53,7 @@ bower_components/
 #################
 
 build/
+app/templates/src/stylesheets/stylus/helpers/_functions.styl
+app/templates/src/stylesheets/stylus/helpers/_mixins.styl
+app/templates/src/stylesheets/sass/helpers/_functions.scss
+app/templates/src/stylesheets/sass/helpers/_mixins.scss
