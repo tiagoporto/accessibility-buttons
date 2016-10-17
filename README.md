@@ -52,7 +52,7 @@ Init the plugin
 
 # Settings
 
-To setup buttons names and aria-labels, call the plugin with additional options.
+To set up buttons names and aria-labels, call the plugin with additional options.
 
 ```javascript
 	accessibilityButtons({
@@ -72,7 +72,7 @@ To setup buttons names and aria-labels, call the plugin with additional options.
 	});
 ```
 
-To change font-size and contrast colors change the values in the `accessibility-buttons.css`.
+To change font-size and contrast colors, change the values in the `accessibility-buttons.css`.
 
 ```css
 .accessibility-font {
