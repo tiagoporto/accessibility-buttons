@@ -41,10 +41,10 @@ Download with [NPM](https://www.npmjs.com/)
 	<button aria-label="Add Contrast" id="accessibility-contrast" class="js-acessibility">Add Contrast</button>
 	```
 
-**Note:** To `font-size` works, it's necessary work with `em` or `rem` units.
+**Note:** To get `font-size` to work, it's necessary to use `em` or `rem` units.
 
 
-Init the plugin
+Initialize the plugin
 
 ```
 	accessibilityButtons();
