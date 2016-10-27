@@ -1,11 +1,9 @@
-# Guidelines to contribute
-
-Project dependencies
+# Project dependencies
 * [Node](https://nodejs.org/en/download/)
 * [Bower](https://bower.io/#install-bower)
 * [Gulp](http://gulpjs.com/)
 
-
+# Guidelines to contribute
 1. Fork it!
 1. `git checkout develop`
 1. Go to folder `accessibility-buttons`
