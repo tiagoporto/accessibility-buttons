@@ -1,11 +1,17 @@
 # Guidelines to contribute
 
+Project dependencies
+* [Node](https://nodejs.org/en/download/)
+* [Bower](https://bower.io/#install-bower)
+* [Gulp](http://gulpjs.com/)
+
+
 1. Fork it!
 1. `git checkout develop`
 1. Go to folder `accessibility-buttons`
 1. Run `npm install`
 1. `cd dist`
-1. `bower i`
+1. `bower install`
 1. `cd ../`
 1. To development run `gulp --compile`
 1. Develop in `src` folder
