@@ -1,6 +1,6 @@
 {
   "name": "accessibility-buttons",
-  "homepage": "http://github.com/tiagoporto/accessibility-buttons",
+  "homepage": "http://tiagoporto.github.io/accessibility-buttons",
   "author": {
     "name": "Tiago Porto",
     "homepage": "http://tiagoporto.com"
@@ -21,10 +21,12 @@
   "license": "MIT",
   "ignore": [
     "**/*",
+    "!CHANGELOG.md",
+    "!LICENSE.md",
     "!dist/js/accessibility-buttons.js",
     "!dist/js/accessibility-buttons.min.js",
     "!dist/css/accessibility-buttons.css",
     "!dist/css/accessibility-buttons.min.css",
     "!README.md"
-  ],
+  ]
 }
