@@ -1,0 +1,86 @@
+{{#> header
+    title="Accessibility Buttons"
+    description="Buttons to add/remove contrast and increase/decrease font size."
+    keywords="accessibility,button,contrast,font size,increase font,decrease font,lib"
+    lang=""
+}}
+    <main class="main">
+        <div>
+            <button type="button" aria-label="Increase Font" id="accessibility-font" class="js-acessibility">+A</button>
+            <button type="button" aria-label="Add Contrast" id="accessibility-contrast" class="js-acessibility">Add Contrast</button>
+        </div>
+
+
+        <h2>Usage</h2>
+
+        <p>Download with <a href="https://npmjs.com">NPM</a></p>
+
+        <code><pre>bower install accessibility-buttons --save</pre></code>
+
+
+        <p>Download with <a href="http://bower.io">Bower</a></p>
+
+        <code><pre>bower install accessibility-buttons --save</pre></code>
+
+
+        <p>Include the files</p>
+
+        <code><pre>&lt;link rel="stylesheet" href="css/accessibility-buttons.css"&gt;
+&lt;script src="js/accessibility-buttons.js"&gt;&lt;/script&gt;</pre></code>
+
+
+
+        <p>Insert the buttons</p>
+
+        <code>
+            <pre>&lt;button aria-label="Increase Font" id="accessibility-font" class="js-acessibility">+A</button>
+&lt;button aria-label="Add Contrast" id="accessibility-contrast" class="js-acessibility">Add Contrast</button></pre>
+        </code>
+
+        <p><strong>Note:</strong> To get <kbd>font-size</kbd> to work, it's necessary to use "em" or "rem" units.</p>
+
+
+        <p>Initialize the plugin</p>
+
+        <code>
+            <pre>accessibilityButtons();</pre>
+        </code>
+
+        <h2>Settings</h2>
+
+        <p>To set up buttons names and aria-labels, call the plugin with additional options.</p>
+
+        <code>
+            <pre>accessibilityButtons({
+    font: {
+        nameButtonIncrease: '+A', //Default
+        ariaLabelButtonIncrease: 'Increase Font', //Default
+        nameButtonDecrease: '-A', //Default
+        ariaLabelButtonDecrease: 'Decrease Font' //Default
+    },
+
+    contrast: {
+        nameButtonAdd: 'Add Contrast', //Default
+        ariaLabelButtonAdd: 'Add Contrast', //Default
+        nameButtonRemove: 'Remove Contrast', //Default
+        ariaLabelButtonRemove: 'Remove Contrast' //Default
+    }
+});</pre>
+        </code>
+
+        <p>To change font size and contrast colors, change the values in the <kbd>accessibility-buttons.css</kbd>.</p>
+
+        <code>
+            <pre>.accessibility-font {
+    /* First font-size fallback to older browsers*/
+    font-size: 1.25em;
+    font-size: 1.25rem;
+}
+
+.accessibility-contrast {
+    color: #fff;
+    background: #000;
+}</pre>
+        </code>
+    </main>
+{{/header}}
