@@ -1,65 +1,87 @@
 {
-	"basePaths": {
-		   "src": "src/",
-		  "dest": "dist/",
-		 "build": "build/",
-		 "bower": "dist/bower_components",
+  "basePaths": {
+    "src": "src/",
+    "dest": "dist/",
+    "build": "build/",
 
-		"images": {
-			 "src": "images/",
-			"dest": "img/"
-		},
+    "handlebars": {
+       "src": "handlebars/",
+       "partials": {
+          "src": "includes/"
+        }
+    },
 
-		"sprite": {
-			"src": "sprite/"
-		},
+    "images": {
+      "src": "images/",
+      "dest": "img/"
+    },
 
-		"scripts": {
-			 "src": "scripts/",
-			"dest": "js/"
-		},
+    "fonts": {
+      "dest": "fonts/"
+    },
 
-		"styles": {
-			 "src": "stylesheets/",
-			"dest": "css/"
-		}
-	},
+    "sprite": {
+      "src": "sprite/"
+    },
 
-	"components": false,
+    "scripts": {
+      "src": "scripts/",
+      "dest": "js/"
+    },
 
-	"jquery": false,
+    "styles": {
+      "src": "stylesheets/",
+      "dest": "css/"
+    },
 
-	"lintCSS": false,
+    "clean": {
+      "ignore": [
+        "!dist/img/{copyright,logos}{,**/*{,**/*}}"
+      ]
+    }
+  },
 
-	"lintJS": true,
+  "components": true,
 
-	"autoprefixerBrowsers": [
-		"ie >= 8",
-		"ie_mob >= 10",
-		"Firefox > 24",
-		"last 10 Chrome versions",
-		"safari >= 6",
-		"opera >= 24",
-		"ios >= 6",
-		"android >= 4",
-		"bb >= 10"
-	],
+  "jQuery": false,
 
-	"browserSync": {
-		"notify": false,
-		"port": 80,
-		"logPrefix": "BrowserSync",
-		"server": {
-			"baseDir": ["dist/"]
-		}
-	},
+  "lintCSS": false,
 
-	"browserSyncBuild": {
-		"notify": false,
-		"port": 80,
-		"logPrefix": "BrowserSync",
-		"server": {
-			"baseDir": ["build/"]
-		}
-	}
+  "lintJS": true,
+
+  "inlineSVG": false,
+
+  "handlebars": true,
+
+  "autoprefixerBrowsers": [
+    "ie > 7",
+    "ie_mob > 9",
+    "Firefox > 24",
+    "last 10 Chrome versions",
+    "safari > 5",
+    "opera > 24",
+    "ios > 5",
+    "android > 4",
+    "bb > 10"
+  ],
+
+  "browserSync": {
+    "notify": false,
+    "logPrefix": "BrowserSync",
+    "server": {
+      "baseDir": ["dist/", "./"]
+    },
+    "routes": {
+        "/bower_components": "bower_components",
+        "/node_modules": "node_modules"
+    }
+  },
+
+  "browserSyncBuild": {
+    "notify": false,
+    "logPrefix": "BrowserSync",
+    "server": {
+      "baseDir": ["build/"]
+    }
+  }
 }
