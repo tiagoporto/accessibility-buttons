@@ -18,17 +18,18 @@ Accessibility Buttons to add/remove contrast and increase/decrease font size.
 
 ## Usage
 
+###Download with [NPM](https://npmjs.com)
+
+```sh
+    $ bower install accessibility-buttons --save
+```
+
 ###Download with [Bower](http://bower.io/)
 
 ```sh
     $ bower install accessibility-buttons --save
 ```
 
-###Download with [NPM](https://www.npmjs.com/)
-
-```sh
-    $ bower install accessibility-buttons --save
-```
 
 ###Include the Files
 
