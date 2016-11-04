@@ -9,37 +9,43 @@
 
 Accessibility Buttons to add/remove contrast and increase/decrease font size.
 
+## Table of Contents
+
+* [Usage](#usage)
+* [Settings](#settings)
+* [Credits](#credits)
+* [License](license)
 
 ## Usage
 
 ###Download with [Bower](http://bower.io/)
 
 ```sh
-	$ bower install accessibility-buttons --save
+    $ bower install accessibility-buttons --save
 ```
 
 ###Download with [NPM](https://www.npmjs.com/)
 
 ```sh
-	$ bower install accessibility-buttons --save
+    $ bower install accessibility-buttons --save
 ```
 
 ###Include the Files
 
-	```html
-	<link rel="stylesheet" href="css/accessibility-buttons.css">
+    ```html
+    <link rel="stylesheet" href="css/accessibility-buttons.css">
 
 
-	<script src="js/accessibility-buttons.js"></script>
-	```
+    <script src="js/accessibility-buttons.js"></script>
+    ```
 
 
 ###Insert the Buttons
 
-	```html
-	<button aria-label="Increase Font" id="accessibility-font" class="js-acessibility">+A</button>
-	<button aria-label="Add Contrast" id="accessibility-contrast" class="js-acessibility">Add Contrast</button>
-	```
+    ```html
+    <button aria-label="Increase Font" id="accessibility-font" class="js-acessibility">+A</button>
+    <button aria-label="Add Contrast" id="accessibility-contrast" class="js-acessibility">Add Contrast</button>
+    ```
 
 **Note:** To get `font-size` to work, it's necessary to use `em` or `rem` units.
 
@@ -47,7 +53,7 @@ Accessibility Buttons to add/remove contrast and increase/decrease font size.
 ###Initialize the Plugin
 
 ```
-	accessibilityButtons();
+    accessibilityButtons();
 ```
 
 # Settings
@@ -55,21 +61,21 @@ Accessibility Buttons to add/remove contrast and increase/decrease font size.
 To set up button names and aria-labels, call the plugin with additional options as shown below:
 
 ```javascript
-	accessibilityButtons({
-		font: {
-			nameButtonIncrease: '+A', // Default
-			ariaLabelButtonIncrease: 'Increase Font', // Default
-			nameButtonDecrease: '-A', // Default
-			ariaLabelButtonDecrease: 'Decrease Font' // Default
-		},
+    accessibilityButtons({
+        font: {
+            nameButtonIncrease: '+A', // Default
+            ariaLabelButtonIncrease: 'Increase Font', // Default
+            nameButtonDecrease: '-A', // Default
+            ariaLabelButtonDecrease: 'Decrease Font' // Default
+        },
 
-		contrast: {
-			nameButtonAdd: 'Add Contrast', // Default
-			ariaLabelButtonAdd: 'Add Contrast', // Default
-			nameButtonRemove: 'Remove Contrast', // Default
-			ariaLabelButtonRemove: 'Remove Contrast' // Default
-		}
-	});
+        contrast: {
+            nameButtonAdd: 'Add Contrast', // Default
+            ariaLabelButtonAdd: 'Add Contrast', // Default
+            nameButtonRemove: 'Remove Contrast', // Default
+            ariaLabelButtonRemove: 'Remove Contrast' // Default
+        }
+    });
 ```
 
 To change `font-size` and contrast colors, change the values in the `accessibility-buttons.css`.
@@ -88,6 +94,10 @@ To change `font-size` and contrast colors, change the values in the `accessibili
 ```
 
 
+## Contributing
+
+[See how to contribute](CONTRIBUTING.md).
+
 ## Credits
 
 Accessibility `arial-label` tip - [Bruno Pulis](https://github.com/brunopulis)
@@ -96,4 +106,4 @@ Included the `$` sign in the variable name of the cached elements for easy ident
 
 ## License
 
-Accessibility Buttons is released under the terms of the [MIT license](https://github.com/tiagoporto/accessibility-buttons/blob/master/LICENSE.md).
+Accessibility Buttons is released under the terms of the [MIT license](https://github.com/tiagoporto/accessibility-buttons/blob/master/LICENSE).
