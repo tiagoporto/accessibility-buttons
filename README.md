@@ -7,7 +7,7 @@
 [![Github Issues](https://img.shields.io/github/issues/tiagoporto/accessibility-buttons.svg)](https://github.com/tiagoporto/accessibility-buttons/issues)
 [![Github License](https://img.shields.io/github/license/tiagoporto/accessibility-buttons.svg)](https://raw.githubusercontent.com/tiagoporto/accessibility-buttons/master/LICENSE.md)
 
-Accessibility Buttons to add/remove contrast and increase/decrease font size.
+Buttons to add/remove contrast and increase/decrease font size.
 
 ## Table of Contents
 
