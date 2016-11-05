@@ -18,7 +18,7 @@
     "githubUser": "tiagoporto",
     "settingFolder": true,
     "srcFolder": "src",
-    "destFolder": "dest",
+    "destFolder": "dist",
     "buildFolder": "build",
     "fontsDestFolder": "fonts",
     "handlebarsSrcFolder": "handlebars",
@@ -40,6 +40,7 @@
       "readme",
       "contributing",
       "travis",
+      "npmignore",
       "bower"
     ]
   }
