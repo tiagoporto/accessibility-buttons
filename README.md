@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/tiagoporto/accessibility-buttons.svg)](https://travis-ci.org/tiagoporto/accessibility-buttons)
 [![Coverage Status](https://img.shields.io/coveralls/tiagoporto/accessibility-buttons.svg)](https://coveralls.io/github/tiagoporto/accessibility-buttons)
+[![devDependencies Status](https://david-dm.org/tiagoporto/accessibility-buttons/dev-status.svg)](https://david-dm.org/tiagoporto/accessibility-buttons?type=dev)
 [![NPM Downloads](https://img.shields.io/npm/dt/accessibility-buttons.svg)](https://www.npmjs.com/package/accessibility-buttons)
 [![Github Release](https://img.shields.io/github/release/tiagoporto/accessibility-buttons.svg)](https://github.com/tiagoporto/accessibility-buttons/releases)
 [![Github Issues](https://img.shields.io/github/issues/tiagoporto/accessibility-buttons.svg)](https://github.com/tiagoporto/accessibility-buttons/issues)
@@ -14,7 +15,7 @@ Buttons to add/remove contrast and increase/decrease font size.
 * [Usage](#usage)
 * [Settings](#settings)
 * [Credits](#credits)
-* [License](license)
+* [License](#license)
 
 ## Usage
 
