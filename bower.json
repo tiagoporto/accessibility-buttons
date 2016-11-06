@@ -1,14 +1,7 @@
 {
   "name": "accessibility-buttons",
+  "description": "Buttons to add/remove contrast and increase/decrease font size.",
   "homepage": "http://tiagoporto.github.io/accessibility-buttons",
-  "author": {
-    "name": "Tiago Porto",
-    "homepage": "http://tiagoporto.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tiagoporto/accessibility-buttons.git"
-  },
   "keywords": [
     "accessibility",
     "button",
@@ -17,16 +10,28 @@
     "increase font",
     "decrease font"
   ],
-  "main": "dist/js/accessibility-buttons.js",
-  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tiago Porto",
+      "homepage": "http://tiagoporto.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tiagoporto/accessibility-buttons.git"
+  },
+  "main": [
+    "dist/js/accessibility-buttons.js",
+    "dist/css/accessibility-buttons.css"
+  ],
   "ignore": [
     "**/*",
     "!CHANGELOG.md",
-    "!LICENSE.md",
-    "!dist/js/accessibility-buttons.js",
-    "!dist/js/accessibility-buttons.min.js",
-    "!dist/css/accessibility-buttons.css",
-    "!dist/css/accessibility-buttons.min.css",
-    "!README.md"
-  ]
+    "!LICENSE",
+    "!README.md",
+    "!dist/**/*"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "license": "MIT"
 }
