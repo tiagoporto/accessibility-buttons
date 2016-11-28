@@ -35,10 +35,10 @@ Buttons to add/remove contrast and increase/decrease font size.
 ###Include the Files
 
     ```html
-    <link rel="stylesheet" href="css/accessibility-buttons.css">
+    <link rel="stylesheet" href="node_modules/accessibility-buttons/dist/css/accessibility-buttons.css">
 
 
-    <script src="js/accessibility-buttons.js"></script>
+    <script src="node_modules/accessibility-buttons/dist/js/accessibility-buttons.js"></script>
     ```
 
 
