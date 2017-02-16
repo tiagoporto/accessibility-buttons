@@ -2,25 +2,39 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
-### Added
--
-
-## [0.1.0] - year-month-day
-### Added
-- New features.
-
-### Changed
-- Changes in existing functionality.
+## [3.1.2] - 2017-02-16
 
 ### Fixed
-- Any bug fixes.
+- Use of just on button.
 
-### Removed
-- Deprecated features removed in this release.
 
-### Deprecated
-- For once-stable features removed in upcoming releases.
+## [3.1.1] - 2016-08-31
 
-### Security
-- To invite users to upgrade in case of vulnerabilities.
+### Changed
+- Minor npm improvements package.
+
+
+## [3.1.0] - 2016-02-20
+
+### Changed
+- Use of cookies by localstorage
+
+
+## [3.0.0] - 2016-02-19
+
+### Changed
+- Removed jQuery dependency
+
+### Added
+- Option to pass parameter to plugin
+
+## [2.0.0] - 2016-08-14
+
+### Changed
+- Minor improvements
+
+
+## [1.0.0] - 2016-08-21
+
+### Added
+- Buttons to add/remove contrast and increase/decrease font size.
