@@ -1,7 +1,7 @@
 /*!
-*   Accessibility Buttons v3.1.1
+*   Accessibility Buttons v3.1.2
 *   http://tiagoporto.github.io/accessibility-buttons
-*   Copyright (c) 2014-2016 Tiago Porto (http://tiagoporto.com)
+*   Copyright (c) 2014-2017 Tiago Porto (http://tiagoporto.com)
 *   Released under the MIT license
 */
 html{font-size:100%}body{-webkit-transition:background 1s ease,font-size .7s linear;transition:background 1s ease,font-size .7s linear}button,input,keygen,select,textarea{-webkit-transition:all .6s linear;transition:all .6s linear}.accessibility-font{font-size:1.25em;font-size:1.25rem}.accessibility-font button,.accessibility-font input,.accessibility-font keygen,.accessibility-font select,.accessibility-font textarea{font-size:1.041625em;font-size:1.04163rem}.accessibility-contrast{color:#fff;background:#000}
