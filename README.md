@@ -27,31 +27,30 @@ Buttons to add/remove contrast and increase/decrease font size.
 Download with [NPM](https://npmjs.com)
 
 ```sh
-    $ npm install accessibility-buttons --save
+$ npm install accessibility-buttons --save
 ```
 
 Or download with [Bower](http://bower.io/)
 
 ```sh
-    $ bower install accessibility-buttons --save
+$ bower install accessibility-buttons --save
 ```
 
 Include the Files
 
-    ```html
-    <link rel="stylesheet" href="node_modules/accessibility-buttons/dist/css/accessibility-buttons.css">
+```html
+<link rel="stylesheet" href="node_modules/accessibility-buttons/dist/css/accessibility-buttons.css">
 
-
-    <script src="node_modules/accessibility-buttons/dist/js/accessibility-buttons.js"></script>
-    ```
+<script src="node_modules/accessibility-buttons/dist/js/accessibility-buttons.js"></script>
+```
 
 
 Insert the Buttons
 
-    ```html
-    <button aria-label="Increase Font" id="accessibility-font" class="js-acessibility">+A</button>
-    <button aria-label="Add Contrast" id="accessibility-contrast" class="js-acessibility">Add Contrast</button>
-    ```
+```html
+<button aria-label="Increase Font" id="accessibility-font" class="js-acessibility">+A</button>
+<button aria-label="Add Contrast" id="accessibility-contrast" class="js-acessibility">Add Contrast</button>
+```
 
 
 Initialize the Plugin after the dom ready
@@ -85,21 +84,21 @@ $(document).ready(function() {
 To set up button names and aria-labels, call the plugin with additional options as shown below:
 
 ```javascript
-    accessibilityButtons({
-        font: {
-            nameButtonIncrease: '+A', // Default
-            ariaLabelButtonIncrease: 'Increase Font', // Default
-            nameButtonDecrease: '-A', // Default
-            ariaLabelButtonDecrease: 'Decrease Font' // Default
-        },
+accessibilityButtons({
+    font: {
+        nameButtonIncrease: '+A', // Default
+        ariaLabelButtonIncrease: 'Increase Font', // Default
+        nameButtonDecrease: '-A', // Default
+        ariaLabelButtonDecrease: 'Decrease Font' // Default
+    },
 
-        contrast: {
-            nameButtonAdd: 'Add Contrast', // Default
-            ariaLabelButtonAdd: 'Add Contrast', // Default
-            nameButtonRemove: 'Remove Contrast', // Default
-            ariaLabelButtonRemove: 'Remove Contrast' // Default
-        }
-    });
+    contrast: {
+        nameButtonAdd: 'Add Contrast', // Default
+        ariaLabelButtonAdd: 'Add Contrast', // Default
+        nameButtonRemove: 'Remove Contrast', // Default
+        ariaLabelButtonRemove: 'Remove Contrast' // Default
+    }
+});
 ```
 
 To change `font-size` and contrast colors, change the values in the `accessibility-buttons.css`.
