@@ -39,17 +39,37 @@ $ bower install accessibility-buttons --save
 Include the Files
 
 ```html
-<link rel="stylesheet" href="node_modules/accessibility-buttons/dist/css/accessibility-buttons.css">
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="node_modules/accessibility-buttons/dist/css/accessibility-buttons.css">
+</head>
+<body>
+	<!-- content -->
 
-<script src="node_modules/accessibility-buttons/dist/js/accessibility-buttons.js"></script>
+	<script src="node_modules/accessibility-buttons/dist/js/accessibility-buttons.js"></script>
+</body>
+</html>
 ```
 
 
 Insert the Buttons
 
 ```html
-<button aria-label="Increase Font" id="accessibility-font" class="js-acessibility">+A</button>
-<button aria-label="Add Contrast" id="accessibility-contrast" class="js-acessibility">Add Contrast</button>
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="node_modules/accessibility-buttons/dist/css/accessibility-buttons.css">
+</head>
+<body>
+    <button aria-label="Increase Font" id="accessibility-font" class="js-acessibility">+A</button>
+    <button aria-label="Add Contrast" id="accessibility-contrast" class="js-acessibility">Add Contrast</button>
+
+	<!-- content -->
+
+	<script src="node_modules/accessibility-buttons/dist/js/accessibility-buttons.js"></script>
+</body>
+</html>
 ```
 
 
