@@ -58,22 +58,22 @@ const accessibilityButtons = options => {
         storageContrast = localStorage.accessibility_contrast;
 
     // Check if exist storage and set the correct button names and aria attributes
-    if (storageFont) {
+    if (storageFont && $fontButton) {
         $body.classList.add('accessibility-font');
 
         $fontButton.innerHTML = setting.font.nameButtonDecrease;
         $fontButton.setAttribute('aria-label', setting.font.ariaLabelButtonDecrease);
-    } else {
+    } else if ($fontButton) {
         $fontButton.innerHTML = setting.font.nameButtonIncrease;
         $fontButton.setAttribute('aria-label', setting.font.ariaLabelButtonIncrease);
     }
 
-    if (storageContrast) {
+    if (storageContrast && $contrastButton) {
         $body.classList.add('accessibility-contrast');
 
         $contrastButton.innerHTML = setting.contrast.nameButtonRemove;
         $contrastButton.setAttribute('aria-label', setting.contrast.ariaLabelButtonRemove);
-    } else {
+    } else if ($contrastButton) {
         $contrastButton.innerHTML = setting.contrast.nameButtonAdd;
         $contrastButton.setAttribute('aria-label', setting.contrast.ariaLabelButtonAdd);
     }
