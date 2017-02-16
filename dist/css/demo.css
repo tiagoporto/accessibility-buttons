@@ -267,6 +267,40 @@ i[class^="icon-"] {
             transform: rotate(10deg);
   }
 }
+.header {
+  width: auto;
+  max-width: 900px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 3em;
+}
+.header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.footer {
+  width: auto;
+  max-width: 900px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+}
+.footer::after {
+  content: '';
+  display: table;
+  clear: both;
+}
 .main {
   width: auto;
   max-width: 900px;
