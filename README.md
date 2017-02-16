@@ -5,10 +5,15 @@
 [![devDependencies Status](https://david-dm.org/tiagoporto/accessibility-buttons/dev-status.svg)](https://david-dm.org/tiagoporto/accessibility-buttons?type=dev)
 [![NPM Downloads](https://img.shields.io/npm/dt/accessibility-buttons.svg)](https://www.npmjs.com/package/accessibility-buttons)
 [![Github Release](https://img.shields.io/github/release/tiagoporto/accessibility-buttons.svg)](https://github.com/tiagoporto/accessibility-buttons/releases)
-[![Github Issues](https://img.shields.io/github/issues/tiagoporto/accessibility-buttons.svg)](https://github.com/tiagoporto/accessibility-buttons/issues)
 [![Github License](https://img.shields.io/github/license/tiagoporto/accessibility-buttons.svg)](https://raw.githubusercontent.com/tiagoporto/accessibility-buttons/master/LICENSE.md)
 
 Buttons to add/remove contrast and increase/decrease font size.
+
+<p align="right">
+  <img src="http://icons.iconarchive.com/icons/icons8/christmas-flat-color/256/star-icon.png" alt="Star" height="25"><img src="http://icons.iconarchive.com/icons/icons8/christmas-flat-color/256/star-icon.png" alt="Star" height="25"><img src="http://icons.iconarchive.com/icons/icons8/christmas-flat-color/256/star-icon.png" alt="Star" height="25"><br>
+  <code>LIKE ? Leave a <a href="https://github.com/tiagoporto/accessibility-buttons">Star</a> : Make a DEV sad</code>
+</p>
+
 
 ## Table of Contents
 
@@ -19,20 +24,19 @@ Buttons to add/remove contrast and increase/decrease font size.
 
 ## Usage
 
-###Download with [NPM](https://npmjs.com)
+Download with [NPM](https://npmjs.com)
+
+```sh
+    $ npm install accessibility-buttons --save
+```
+
+Or download with [Bower](http://bower.io/)
 
 ```sh
     $ bower install accessibility-buttons --save
 ```
 
-###Download with [Bower](http://bower.io/)
-
-```sh
-    $ bower install accessibility-buttons --save
-```
-
-
-###Include the Files
+Include the Files
 
     ```html
     <link rel="stylesheet" href="node_modules/accessibility-buttons/dist/css/accessibility-buttons.css">
@@ -42,21 +46,39 @@ Buttons to add/remove contrast and increase/decrease font size.
     ```
 
 
-###Insert the Buttons
+Insert the Buttons
 
     ```html
     <button aria-label="Increase Font" id="accessibility-font" class="js-acessibility">+A</button>
     <button aria-label="Add Contrast" id="accessibility-contrast" class="js-acessibility">Add Contrast</button>
     ```
 
-**Note:** To get `font-size` to work, it's necessary to use `em` or `rem` units.
 
+Initialize the Plugin after the dom ready
 
-###Initialize the Plugin
+If you don't use jQuery (support IE9+)
+```js
+function ready(fn) {
+    if (document.readyState !== 'loading') {
+        fn();
+    } else {
+        document.addEventListener('DOMContentLoaded', fn);
+    }
+}
 
-```
+ready(function() {
     accessibilityButtons();
+});
 ```
+
+If you use jQuery
+```js
+$(document).ready(function() {
+    accessibilityButtons();
+})
+```
+
+**Note:** To get `font-size` to work, it's necessary to use `em` or `rem` units.
 
 # Settings
 
