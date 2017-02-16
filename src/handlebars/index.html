@@ -37,14 +37,33 @@
 &lt;button aria-label="Add Contrast" id="accessibility-contrast" class="js-acessibility">Add Contrast&lt;/button></pre>
         </code>
 
-        <p><strong>Note:</strong> To get <kbd>font-size</kbd> to work, it's necessary to use "em" or "rem" units.</p>
 
 
-        <p>Initialize the plugin</p>
+        <p>Initialize the Plugin after the dom ready</p>
+
+        <p>If you don't use jQuery (support IE9+)</p>
 
         <code>
-            <pre>accessibilityButtons();</pre>
+            <pre>function ready(fn) {
+    if (document.readyState !== 'loading') {
+        fn();
+    } else {
+        document.addEventListener('DOMContentLoaded', fn);
+    }
+}
+
+ready(function() {
+    accessibilityButtons();
+});</pre>
         </code>
+
+        <p>If you use jQuery</p>
+
+        <code><pre>$(document).ready(function() {
+    accessibilityButtons();
+})</pre></code>
+
+        <p><strong>Note:</strong> To get <kbd>font-size</kbd> to work, it's necessary to use "em" or "rem" units.</p>
 
         <h2>Settings</h2>
 
