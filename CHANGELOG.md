@@ -32,9 +32,3 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Minor improvements
-
-
-## [1.0.0] - 2016-08-21
-
-### Added
-- Buttons to add/remove contrast and increase/decrease font size.
