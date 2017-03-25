@@ -301,6 +301,15 @@ i[class^="icon-"] {
   display: table;
   clear: both;
 }
+.accessibility-contrast .accessibility-buttons-logo__background,
+.accessibility-contrast .accessibility-buttons-logo__minus {
+  fill: #fff;
+}
+.accessibility-contrast .accessibility-buttons-logo__lettering,
+.accessibility-contrast .accessibility-buttons-logo__plus,
+.accessibility-contrast .accessibility-buttons-logo__box {
+  fill: #000;
+}
 .main {
   width: auto;
   max-width: 900px;

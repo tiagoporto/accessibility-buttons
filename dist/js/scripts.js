@@ -5,6 +5,8 @@
 *   Released under the MIT license
 */
 
+jQuery(document).ready(function($) {
+
 /* global accessibilityButtons */
 
 var ready = function ready(fn) {
@@ -33,4 +35,5 @@ ready(function () {
     });
 
     document.getElementById('year').innerHTML = new Date().getFullYear();
+});
 });

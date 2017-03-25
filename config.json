@@ -43,13 +43,13 @@
 
   "components": true,
 
-  "jQuery": false,
+  "jQuery": true,
 
   "lintCSS": false,
 
   "lintJS": true,
 
-  "inlineSVG": false,
+  "inlineSVG": true,
 
   "handlebars": true,
 

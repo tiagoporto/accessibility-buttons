@@ -8,6 +8,11 @@
         <meta name="keywords" content="{{#if keywords}}{{keywords}}{{else}}{-}{{/if}}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <!-- Logos downloadtip -->
+        <link rel="icon" type="image/png" href="img/logos/accessibility-buttons-logo.png" data-title="Screen Bitmap file (.png)" />
+        <link rel="icon" type="image/svg+xml" href="img/logos/accessibility-buttons-logo.svg" data-title="Screen Vector file (.svg)" />
+        <link rel="icon" type="image/eps" href="img/logos/accessibility-buttons-logo.eps" data-title="Print file (.eps)" />
+
         <!-- Add to homescreen for Chrome on Android -->
         <meta name="theme-color" content="#FFF">
         <meta name="mobile-web-app-capable" content="yes">
@@ -33,11 +38,17 @@
         <link rel="stylesheet" href="../node_modules/normalize.css/normalize.css">
         <link rel="stylesheet" href="css/demo.css">
         <link rel="stylesheet" href="css/accessibility-buttons.css">
+        <link rel="stylesheet" href="../node_modules/jquery-logo-downloadtip/css/jquery-logo-downloadtip.css">
         <!-- endbuild -->
     </head>
     <body>
         <header class="header">
-            <h1>Accessibility Buttons</h1>
+            <h1>
+                <a href="http://tiagoporto.github.io/accessibility-buttons/" id="logo">
+                    <img src="img/logos/accessibility-buttons-logo.svg" alt="Accessibility Buttons Logo, icon with plus and minus signal and a leterring wrote Acessibility Buttons with pixel font.">
+                </a>
+            </h1>
+
 
             <p>Buttons to add/remove contrast and increase/decrease font size.</p>
 
