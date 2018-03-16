@@ -52,7 +52,7 @@ const accessibilityButtons = options => {
     var $body = document.body,
         $fontButton = document.getElementById('accessibility-font'),
         $contrastButton = document.getElementById('accessibility-contrast'),
-        $accessibilityButtons = document.getElementsByClassName('js-acessibility'),
+        $accessibilityButtons = document.getElementsByClassName('js-accessibility'),
 
         storageFont = localStorage.accessibility_font,
         storageContrast = localStorage.accessibility_contrast;
