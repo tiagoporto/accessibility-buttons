@@ -4,7 +4,7 @@
   <code>LIKED ? Leave a <a href="https://github.com/tiagoporto/accessibility-buttons">⭐</a> : 😞</code>
 </p>
 
-[![Release](https://img.shields.io/npm/v/accessibility-buttons.svg?style=flat-square&label=version)](https://github.com/tiagoporto/accessibility-buttons/releases)
+[![Release](https://img.shields.io/npm/v/accessibility-buttons.svg?style=flat-square&label=release)](https://github.com/tiagoporto/accessibility-buttons/releases)
 [![Downloads](https://img.shields.io/npm/dt/accessibility-buttons.svg?style=flat-square)](https://www.npmjs.com/package/accessibility-buttons)
 [![License](https://img.shields.io/github/license/tiagoporto/accessibility-buttons.svg?style=flat-square)](https://raw.githubusercontent.com/tiagoporto/accessibility-buttons/master/LICENSE.md)
 [![Build Status](https://img.shields.io/travis/tiagoporto/accessibility-buttons.svg?style=flat-square&logo=travis)](https://travis-ci.org/tiagoporto/accessibility-buttons)
