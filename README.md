@@ -1,17 +1,18 @@
 # Accessibility Buttons
 
-[![Build Status](https://travis-ci.org/tiagoporto/accessibility-buttons.svg)](https://travis-ci.org/tiagoporto/accessibility-buttons)
-[![Coverage Status](https://img.shields.io/coveralls/tiagoporto/accessibility-buttons.svg)](https://coveralls.io/github/tiagoporto/accessibility-buttons)
-[![devDependencies Status](https://david-dm.org/tiagoporto/accessibility-buttons/dev-status.svg)](https://david-dm.org/tiagoporto/accessibility-buttons?type=dev)
-[![NPM Downloads](https://img.shields.io/npm/dt/accessibility-buttons.svg)](https://www.npmjs.com/package/accessibility-buttons)
-[![Github Release](https://img.shields.io/github/release/tiagoporto/accessibility-buttons.svg)](https://github.com/tiagoporto/accessibility-buttons/releases)
-[![Github License](https://img.shields.io/github/license/tiagoporto/accessibility-buttons.svg)](https://raw.githubusercontent.com/tiagoporto/accessibility-buttons/master/LICENSE.md)
+[![Release](https://img.shields.io/npm/v/accessibility-buttons.svg?style=flat-square&label=version)](https://github.com/tiagoporto/accessibility-buttons/releases)
+[![Downloads](https://img.shields.io/npm/dt/accessibility-buttons.svg?style=flat-square)](https://www.npmjs.com/package/accessibility-buttons)
+[![License](https://img.shields.io/github/license/tiagoporto/accessibility-buttons.svg?style=flat-square)](https://raw.githubusercontent.com/tiagoporto/accessibility-buttons/master/LICENSE.md)
+
+[![Build Status](https://img.shields.io/travis/tiagoporto/accessibility-buttons.svg?style=flat-square&logo=travis)](https://travis-ci.org/tiagoporto/accessibility-buttons)
+[![Coverage Status](https://img.shields.io/coveralls/tiagoporto/accessibility-buttons.svg?style=flat-square)](https://coveralls.io/github/tiagoporto/accessibility-buttons)
+[![devDependencies Status](https://img.shields.io/david/dev/tiagoporto/accessibility-buttons.svg?style=flat-square)](https://david-dm.org/tiagoporto/accessibility-buttons?type=dev)
 
 Buttons to add/remove contrast and increase/decrease font size.
 
 <p align="right">
   <img src="http://icons.iconarchive.com/icons/icons8/christmas-flat-color/256/star-icon.png" alt="Star" height="25"><img src="http://icons.iconarchive.com/icons/icons8/christmas-flat-color/256/star-icon.png" alt="Star" height="25"><img src="http://icons.iconarchive.com/icons/icons8/christmas-flat-color/256/star-icon.png" alt="Star" height="25"><br>
-  <code>LIKE ? Leave a <a href="https://github.com/tiagoporto/accessibility-buttons">Star</a> : Make a DEV sad</code>
+  <code>LIKED ? Leave a <a href="https://github.com/tiagoporto/accessibility-buttons">Star</a> : 😞</code>
 </p>
 
 
@@ -97,7 +98,7 @@ $(document).ready(function() {
 })
 ```
 
-**Note:** To get `font-size` to work, it's necessary to use `em` or `rem` units.
+**Note:** To get `font-size` to work, it's necessary use `em` or `rem` units.
 
 # Settings
 
