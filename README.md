@@ -1,8 +1,7 @@
 # Accessibility Buttons ![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)
 
 <p align="right">
-  <img src="http://icons.iconarchive.com/icons/icons8/christmas-flat-color/256/star-icon.png" alt="Star" height="25"><img src="http://icons.iconarchive.com/icons/icons8/christmas-flat-color/256/star-icon.png" alt="Star" height="25"><img src="http://icons.iconarchive.com/icons/icons8/christmas-flat-color/256/star-icon.png" alt="Star" height="25"><br>
-  <code>LIKED ? Leave a <a href="https://github.com/tiagoporto/accessibility-buttons">Star</a> : 😞</code>
+  <code>LIKED ? Leave a <a href="https://github.com/tiagoporto/accessibility-buttons">⭐</a> : 😞</code>
 </p>
 
 [![Release](https://img.shields.io/npm/v/accessibility-buttons.svg?style=flat-square&label=version)](https://github.com/tiagoporto/accessibility-buttons/releases)
