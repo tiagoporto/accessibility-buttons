@@ -30,12 +30,6 @@ Download with [NPM](https://npmjs.com)
 $ npm install accessibility-buttons --save
 ```
 
-Or download with [Bower](http://bower.io/)
-
-```sh
-$ bower install accessibility-buttons --save
-```
-
 Include the Files
 
 ```html
