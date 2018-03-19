@@ -72,25 +72,25 @@ If you don't use jQuery (support IE9+)
 ```js
 function ready(fn) {
     if (document.readyState !== 'loading') {
-        fn();
+        fn()
     } else {
-        document.addEventListener('DOMContentLoaded', fn);
+        document.addEventListener('DOMContentLoaded', fn)
     }
 }
 
 ready(function() {
-    accessibilityButtons();
+    accessibilityButtons()
 });
 ```
 
 If you use jQuery
 ```js
 $(document).ready(function() {
-    accessibilityButtons();
+    accessibilityButtons()
 })
 ```
 
-**Note:** To get `font-size` to work, it's necessary use `em` or `rem` units.
+**Note:** It's necessary use `em` or `rem` units in `font-size`.
 
 # Settings
 
@@ -111,7 +111,7 @@ accessibilityButtons({
         nameButtonRemove: 'Remove Contrast', // Default
         ariaLabelButtonRemove: 'Remove Contrast' // Default
     }
-});
+})
 ```
 
 To change `font-size` and contrast colors, change the values in the `accessibility-buttons.css`.
