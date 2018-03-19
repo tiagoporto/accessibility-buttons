@@ -1,4 +1,5 @@
-# Accessibility Buttons ![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)
+<p align="right"><img src="https://badges.frapsoft.com/os/v3/open-source.svg?v=103" alt="Open Source Love"></p>
+<h1 align="center"><img src="http://tiagoporto.github.io/accessibility-buttons/img/logos/accessibility-buttons-logo.svg" alt="Accessibility Buttons"/></h1>
 
 <p align="right">
   <code>LIKED ? Leave a <a href="https://github.com/tiagoporto/accessibility-buttons">⭐</a> : 😞</code>
