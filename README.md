@@ -132,7 +132,7 @@ To change `font-size` and contrast colors, change the values in the `accessibili
 
 ## Contributing
 
-[See how to contribute](CONTRIBUTING.md).
+[Check how to contribute](CONTRIBUTING.md).
 
 ## Credits
 
