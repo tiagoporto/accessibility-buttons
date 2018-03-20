@@ -26,8 +26,8 @@ Buttons to add/remove contrast and increase/decrease font size.
 
 Download with [NPM](https://npmjs.com)
 
-```sh
-$ npm install accessibility-buttons --save
+```
+npm install accessibility-buttons --save
 ```
 
 Include the Files
