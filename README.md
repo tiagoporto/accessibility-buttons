@@ -12,7 +12,7 @@
 [![Coverage Status](https://img.shields.io/coveralls/tiagoporto/accessibility-buttons.svg?style=flat-square)](https://coveralls.io/github/tiagoporto/accessibility-buttons)
 [![devDependencies Status](https://img.shields.io/david/dev/tiagoporto/accessibility-buttons.svg?style=flat-square)](https://david-dm.org/tiagoporto/accessibility-buttons?type=dev)
 
-Buttons to add/remove contrast and increase/decrease font size.
+> Buttons to add/remove contrast and increase/decrease font size.
 
 
 ## Table of Contents
