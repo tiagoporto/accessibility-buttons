@@ -2,7 +2,7 @@
 <p align="center"><img src="http://tiagoporto.github.io/accessibility-buttons/img/logos/accessibility-buttons-logo.svg" alt="Accessibility Buttons" width="600" /></p>
 
 <p align="right">
-  <code>LIKED ? Leave a <a href="https://github.com/tiagoporto/accessibility-buttons">⭐</a> : 😞</code>
+  <code>LIKED ? Leave a <a href="https://github.com/tiagoporto/accessibility-buttons">⭐</a> : <a href="https://github.com/tiagoporto/accessibility-buttons/issues">😞</a></code>
 </p>
 
 [![Release](https://img.shields.io/npm/v/accessibility-buttons.svg?style=flat-square&label=release)](https://github.com/tiagoporto/accessibility-buttons/releases)
