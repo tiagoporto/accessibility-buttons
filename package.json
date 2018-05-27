@@ -20,6 +20,10 @@
     "url": "https://github.com/tiagoporto/accessibility-buttons.git"
   },
   "main": "dist/js/accessibility-buttons.js",
+  "scripts": {
+    "tag": "git tag v$npm_package_version",
+    "postpublish": "npm run tag && git push --tags"
+  },
   "devDependencies": {
     "babel-preset-es2015-without-strict": "0.0.4",
     "browser-sync": "2.17.0",
