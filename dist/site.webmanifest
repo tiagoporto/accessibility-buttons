@@ -1,0 +1,21 @@
+{
+  "name": "Accessibility Buttons",
+  "short_name": "A11y Btns",
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
+  "icons": [{
+        "src": "img/touch/icon-128x128.png",
+        "sizes": "128x128"
+      }, {
+        "src": "apple-touch-icon.png",
+        "sizes": "152x152"
+      }, {
+        "src": "img/touch/chrome-touch-icon-192x192.png",
+        "sizes": "192x192"
+      }, {
+        "src": "img/touch/icon-512x512.png",
+        "sizes": "512x512"
+      }],
+  "start_url": "https://tiagoporto.github.io/accessibility-buttons/",
+  "display": "standalone"
+}
