@@ -127,8 +127,9 @@ blockquote {
 }
 kbd {
   color: #fff;
+  font-weight: bold;
   font-family: "Courier New", Courier, monospace;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.4);
   border-radius: 3px;
   padding: 0.2em;
 }
