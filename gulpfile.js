@@ -15,7 +15,6 @@ var args = require('yargs').argv,
     config = require('./config.json'),
     del = require('del'),
     fs = require('fs'),
-    ghPages = require('gulp-gh-pages'),
     gulp = require('gulp'),
     handlebars = require('gulp-hb'),
     Karma = require('karma').Server,
@@ -433,17 +432,6 @@ gulp.task('default', function() {
 // Clean and compile the project
 gulp.task('compile', function() {
     sequence('clean', ['outdatedbrowser', 'handlebars', 'images', 'bitmap-sprite', 'vetor-sprite', 'styles-helpers', 'vendor-scripts'], 'svg2png', 'svg-inline', 'styles', 'scripts');
-});
-
-gulp.task('gh', function() {
-    return gulp.src(basePaths.build + '**/*')
-                .pipe(ghPages());
-});
-
-// Build the project and push the builded folder to gh-pages branch
-gulp.task('gh-pages', function() {
-    env = 'prod';
-    sequence(['outdatedbrowser', 'handlebars', 'images', 'bitmap-sprite', 'vetor-sprite', 'styles-helpers', 'vendor-scripts'], 'svg2png', 'svg-inline', 'styles', 'scripts', 'copy', 'gh');
 });
 
 // Build Project and serve if pass the parameter --serve
