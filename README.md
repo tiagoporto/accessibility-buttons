@@ -22,6 +22,7 @@
 
 * [Usage](#usage)
 * [Settings](#settings)
+* [Contributing](#Contributing)
 * [Credits](#credits)
 * [License](#license)
 
