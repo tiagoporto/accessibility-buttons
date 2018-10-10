@@ -1,2 +1,12 @@
 .main
 	center(900px, 15px)
+
+.row
+	padding-bottom $padding-default
+
+.column
+	column(1/2, $cycle: 2, $gutter: 1rem)
+
+	@media (max-width $phone)
+		column(1)
+		margin-bottom 1rem
