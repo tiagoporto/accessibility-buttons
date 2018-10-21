@@ -14,7 +14,7 @@
 
 > Buttons to add/remove contrast and increase/decrease font size.
 
-#### *Read this in [other languages](translations/Translations.md).*
+## Read this in [other languages](translations/translations.md).
 
 [🇧🇷](translations/README.pt_br.md)
 

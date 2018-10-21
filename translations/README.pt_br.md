@@ -2,7 +2,7 @@
 <p align="center"><img src="http://tiagoporto.github.io/accessibility-buttons/img/logos/accessibility-buttons-logo.svg" alt="Accessibility Buttons" width="600" /></p>
 
 <p align="right">
-  <code>Curtiu ? Colabore <a href="https://github.com/tiagoporto/accessibility-buttons/stargazers">⭐</a> : <a href="https://github.com/tiagoporto/accessibility-buttons/issues">😞</a></code>
+  <code>CURTIU ? Deixe uma <a href="https://github.com/tiagoporto/accessibility-buttons/stargazers">⭐</a> : <a href="https://github.com/tiagoporto/accessibility-buttons/issues">😞</a></code>
 </p>
 
 [![Release](https://img.shields.io/npm/v/accessibility-buttons.svg?style=flat-square&label=release)](https://github.com/tiagoporto/accessibility-buttons/releases)
@@ -12,11 +12,11 @@
 [![Coverage Status](https://img.shields.io/coveralls/tiagoporto/accessibility-buttons.svg?style=flat-square)](https://coveralls.io/github/tiagoporto/accessibility-buttons)
 [![devDependencies Status](https://img.shields.io/david/dev/tiagoporto/accessibility-buttons.svg?style=flat-square)](https://david-dm.org/tiagoporto/accessibility-buttons?type=dev)
 
-> Botões para adicionar/remover contraste e aumentar ou diminuir o tamanho da fonte.
+> Botões para adicionar/remover contraste e aumentar/diminuir o tamanho da fonte.
 
-#### *Ler em [outros idiomas] (translations/Translations.md).*
+## Ler em [outros idiomas](./translations.md).
 
-[🇧🇷](translations/README.pt_br.md)
+[🇺🇸](../README.md)
 
 ## Índice
 
