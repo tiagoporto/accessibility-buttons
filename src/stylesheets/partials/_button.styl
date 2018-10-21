@@ -1,40 +1,37 @@
-$basicButton
-    adjust-font-size-to($base-font-size - 2)
-    border none
+button
+    border 2px solid black
     display block
     width 100%
+    font-size: em(14px)
     padding em(10px) em(20px)
     overflow hidden
     margin 0
     text-align center
     text-decoration none
-    text-transform uppercase
     user-select none
     -webkit-tap-highlight-color transparent
-    box-shadow 0 1px 2px rgba(0, 0, 0, .1), 0 1px 2px rgba(0, 0, 0, 0.1)
-    color #fff
-    background-color #3FAA96
+    color #000
+    background: transparent
     transition .15s ease-out
     cursor pointer
+    background-color none
 
-    // &:focus
-    //  outline none
-    //  box-shadow 0 0 4px aqua
+    &:hover
+        background: #000
+        color: #FFF
 
-button,
-input[type="button"]
-input[type="reset"]
-input[type="submit"]
-    @extend $basicButton
+    &:focus
+        box-shadow: 0 0 0 0.2rem rgba(#000,.5)
+        outline: none
 
-    &:hover:not([disabled])
-        background-color #2bbbad
-        box-shadow 0 1px 4px rgba(0, 0, 0, .15), 0 1px 4px rgba(0, 0, 0, .15)
+    .accessibility-contrast &
+        border-color: #E3FF17
+        color: #E3FF17
 
-    // &:active
+        &:hover
+            background: #E3FF17
+            color: #000
 
-    &:disabled
-        @extend $basicButton
-        background-color #DFDFDF
-        color #9F9F9F
-        cursor default
+        &:focus
+            box-shadow: 0 0 0 0.2rem rgba(#FFF,.5)
+            outline: none
