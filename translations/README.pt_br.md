@@ -14,7 +14,7 @@
 
 > Botões para adicionar/remover contraste e aumentar/diminuir o tamanho da fonte.
 
-## Ler em [outros idiomas](translations/Translations.md).
+## Ler em [outros idiomas](./translations.md).
 
 [🇺🇸](../README.md)
 
