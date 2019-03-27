@@ -1,4 +1,5 @@
-<p align="right"><img src="https://badges.frapsoft.com/os/v3/open-source.svg?v=103" alt="Open Source Love"></p>
+<p align="right"><img src="https://github.com/ellerbrock/open-source-badges/blob/master/badges/open-source-v3/open-source.svg" alt="Open Source Love"></p>
+
 <p align="center"><img src="http://tiagoporto.github.io/accessibility-buttons/img/logos/accessibility-buttons-logo.svg" alt="Accessibility Buttons" width="600" /></p>
 
 <p align="right">
