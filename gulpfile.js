@@ -63,22 +63,22 @@ var args = require('yargs').argv,
 
 // ******************************** Tasks ********************************* //
 
-gulp.task('coverall', function() {
+gulp.task('coverall', function () {
     gulp.src('coverage/**/lcov.info')
         .pipe(plugins.coveralls());
 });
 
-gulp.task('karma', function(done) {
+gulp.task('karma', function (done) {
     new Karma({
         configFile: __dirname + '/karma.conf.js'
     }, done).start();
 });
 
-gulp.task('test', function() {
+gulp.task('test', function () {
     sequence('karma', 'coverall');
 });
 
-gulp.task('handlebars', function() {
+gulp.task('handlebars', function () {
     if (config.handlebars) {
         return gulp
             .src(paths.html.src + '**/*.html')
@@ -89,7 +89,7 @@ gulp.task('handlebars', function() {
     }
 });
 
-gulp.task('svg-inline', function() {
+gulp.task('svg-inline', function () {
     if (config.inlineSVG) {
         return gulp.src(basePaths.dest + '**/*.html')
             .pipe(plugins.inline({
@@ -100,19 +100,19 @@ gulp.task('svg-inline', function() {
     }
 });
 
-gulp.task('styles-helpers', function() {
+gulp.task('styles-helpers', function () {
     var mixins = gulp.src(paths.styles.src + 'helpers/mixins/*.{styl,scss}')
-                    .pipe(plugins.concat('_mixins.' + extensionStyle))
-                    .pipe(gulp.dest(paths.styles.src + 'helpers'));
+        .pipe(plugins.concat('_mixins.' + extensionStyle))
+        .pipe(gulp.dest(paths.styles.src + 'helpers'));
 
     var functions = gulp.src(paths.styles.src + 'helpers/functions/*.{styl,scss}')
-                        .pipe(plugins.concat('_functions.' + extensionStyle))
-                        .pipe(gulp.dest(paths.styles.src + 'helpers'));
+        .pipe(plugins.concat('_functions.' + extensionStyle))
+        .pipe(gulp.dest(paths.styles.src + 'helpers'));
 
     return merge(mixins, functions);
 });
 
-gulp.task('styles', function() {
+gulp.task('styles', function () {
     return gulp.src(
         [
             paths.styles.src + '*.styl',
@@ -123,20 +123,20 @@ gulp.task('styles', function() {
             plugins.stylus({
                 'include css': true//,use:[koutoSwiss(), rupture()]
             })
-            .on('error', function(err) {
-                console.log(err.message);
+                .on('error', function (err) {
+                    console.log(err.message);
 
-                // If rename the stylus file change here
-                plugins.file('styles.css', 'body:before{white-space: pre; font-family: monospace; content: "' + err.message + '";}', { src: true })
-                    .pipe(plugins.replace('\\', '/'))
-                    .pipe(plugins.replace(/\n/gm, '\\A '))
-                    .pipe(plugins.replace('\"', '\''))
-                    .pipe(plugins.replace("content: '", 'content: "'))
-                    .pipe(plugins.replace('\';}', '";}'))
-                    .pipe(gulp.dest(paths.styles.dest))
-                    .pipe(plugins.rename({suffix: '.min'}))
-                    .pipe(gulp.dest(paths.styles.dest));
-            })
+                    // If rename the stylus file change here
+                    plugins.file('styles.css', 'body:before{white-space: pre; font-family: monospace; content: "' + err.message + '";}', { src: true })
+                        .pipe(plugins.replace('\\', '/'))
+                        .pipe(plugins.replace(/\n/gm, '\\A '))
+                        .pipe(plugins.replace('\"', '\''))
+                        .pipe(plugins.replace("content: '", 'content: "'))
+                        .pipe(plugins.replace('\';}', '";}'))
+                        .pipe(gulp.dest(paths.styles.dest))
+                        .pipe(plugins.rename({ suffix: '.min' }))
+                        .pipe(gulp.dest(paths.styles.dest));
+                })
         )
         .pipe(plugins.autoprefixer({
             browsers: config.autoprefixerBrowsers
@@ -144,37 +144,35 @@ gulp.task('styles', function() {
         .pipe(plugins.wrapper({
             header: headerProject + '\n'
         }))
-        .pipe(plugins.if(config.lintCSS, plugins.csslint('./.csslintrc')))
-        .pipe(plugins.if(config.lintCSS, plugins.csslint.formatter()))
         .pipe(gulp.dest(paths.styles.dest))
         .pipe(plugins.csso())
-        .pipe(plugins.rename({suffix: '.min'}))
+        .pipe(plugins.rename({ suffix: '.min' }))
         .pipe(gulp.dest(paths.styles.dest))
-        .pipe(plugins.notify({message: 'Styles task complete', onLast: true}));
+        .pipe(plugins.notify({ message: 'Styles task complete', onLast: true }));
 });
 
 // Generate Bitmap Sprite
-gulp.task('bitmap-sprite', function() {
+gulp.task('bitmap-sprite', function () {
     var sprite = gulp.src(paths.sprite.src + '**/*.png')
-                    .pipe(plugins.plumber())
-                    .pipe(
-                        spritesmith({
-                            imgName: 'bitmap-sprite.png',
-                            cssName: '_bitmap-sprite.' + extensionStyle,
-                            cssOpts: {
-                                cssSelector: function(item) {
-                                    if (item.name.indexOf('~hover') !== -1) {
-                                        return '.icon-' + item.name.replace('~hover', ':hover');
-                                    } else {
-                                        return '.icon-' + item.name;
-                                    }
-                                }
-                            },
-                            imgPath: '../' + basePaths.images.dest + 'bitmap-sprite.png',
-                            padding: 2,
-                            algorithm: 'top-down'
-                        })
-                    );
+        .pipe(plugins.plumber())
+        .pipe(
+            spritesmith({
+                imgName: 'bitmap-sprite.png',
+                cssName: '_bitmap-sprite.' + extensionStyle,
+                cssOpts: {
+                    cssSelector: function (item) {
+                        if (item.name.indexOf('~hover') !== -1) {
+                            return '.icon-' + item.name.replace('~hover', ':hover');
+                        } else {
+                            return '.icon-' + item.name;
+                        }
+                    }
+                },
+                imgPath: '../' + basePaths.images.dest + 'bitmap-sprite.png',
+                padding: 2,
+                algorithm: 'top-down'
+            })
+        );
 
     sprite.img
         .pipe(buffer())
@@ -182,13 +180,13 @@ gulp.task('bitmap-sprite', function() {
         .pipe(gulp.dest(paths.images.dest));
     sprite.css
         .pipe(gulp.dest(paths.styles.src + 'helpers'))
-        .pipe(plugins.notify({message: 'Bitmap sprite task complete', onLast: true}));
+        .pipe(plugins.notify({ message: 'Bitmap sprite task complete', onLast: true }));
 
     return sprite;
 });
 
 // Generate SVG Sprite
-gulp.task('vetor-sprite', function() {
+gulp.task('vetor-sprite', function () {
     var spriteOptions = {
         shape: {
             spacing: { padding: 2 }
@@ -210,22 +208,22 @@ gulp.task('vetor-sprite', function() {
     spriteOptions.mode.css.render[extensionStyle].dest = '../../' + paths.styles.src + 'helpers/_vetor-sprite.' + extensionStyle;
 
     return gulp.src(paths.sprite.src + '*.svg')
-                .pipe(plugins.plumber())
-                .pipe(svgSprite(spriteOptions))
-                .pipe(gulp.dest(paths.images.dest))
-                .pipe(plugins.notify({message: 'SVG sprite task complete', onLast: true}));
+        .pipe(plugins.plumber())
+        .pipe(svgSprite(spriteOptions))
+        .pipe(gulp.dest(paths.images.dest))
+        .pipe(plugins.notify({ message: 'SVG sprite task complete', onLast: true }));
 });
 
 // Fallback convert SVG to PNG
-gulp.task('svg2png', function() {
+gulp.task('svg2png', function () {
     return gulp.src(paths.images.dest + 'vetor-sprite.svg')
-                .pipe(plugins.plumber())
-                .pipe(plugins.svg2png())
-                .pipe(gulp.dest(paths.images.dest));
+        .pipe(plugins.plumber())
+        .pipe(plugins.svg2png())
+        .pipe(gulp.dest(paths.images.dest));
 });
 
 // Optimize Images
-gulp.task('images', function() {
+gulp.task('images', function () {
     var images = gulp.src(
         [
             paths.images.src + '**/*.{bmp,gif,jpg,jpeg,png,svg}',
@@ -233,7 +231,7 @@ gulp.task('images', function() {
         ])
         .pipe(plugins.plumber())
         .pipe(plugins.newer(paths.images.dest))
-        .pipe(plugins.imagemin({optimizationLevel: 5, progressive: true}))
+        .pipe(plugins.imagemin({ optimizationLevel: 5, progressive: true }))
         .pipe(gulp.dest(paths.images.dest));
 
     var svg = gulp.src(
@@ -245,14 +243,14 @@ gulp.task('images', function() {
         .pipe(plugins.newer(paths.images.dest))
         .pipe(plugins.svg2png())
         .pipe(gulp.dest(paths.images.dest))
-        .pipe(plugins.notify({message: 'Images task complete', onLast: true}));
+        .pipe(plugins.notify({ message: 'Images task complete', onLast: true }));
 
     return merge(images, svg);
 });
 
 
 // Concatenate vendor scripts and Minify
-gulp.task('vendor-scripts', function() {
+gulp.task('vendor-scripts', function () {
     var envProd = (env === 'prod') ? '' : '!';
 
     return gulp.src(
@@ -270,7 +268,7 @@ gulp.task('vendor-scripts', function() {
 });
 
 // Concatenate and Minify Main Scripts
-gulp.task('scripts', function() {
+gulp.task('scripts', function () {
     var babelOption = { presets: ['@babel/env'] };
     var headerWrapper = { header: headerProject + '\n' };
     var jQueryWrapper = {
@@ -294,33 +292,33 @@ gulp.task('scripts', function() {
         .pipe(plugins.if(config.jQuery, plugins.wrapper(jQueryWrapper)))
         .pipe(plugins.wrapper(headerWrapper))
         .pipe(gulp.dest(paths.scripts.dest))
-        .pipe(plugins.rename({suffix: '.min'}))
+        .pipe(plugins.rename({ suffix: '.min' }))
         .pipe(plugins.uglify())
         .pipe(gulp.dest(paths.scripts.dest));
 
     var copy = gulp.src(paths.scripts.src + '/**/*_SEPARATE.js')
-                    .pipe(plugins.plumber())
-                    .pipe(plugins.newer(paths.scripts.dest))
-                    .pipe(plugins.plumber())
-                    .pipe(plugins.if(config.lintJS, plugins.eslint()))
-                    .pipe(plugins.if(config.lintJS, plugins.eslint.format()))
-                    .pipe(plugins.rename(function(path) {
-                        path.basename = path.basename.substring(0, path.basename.length - 9);
-                    }))
-                    .pipe(plugins.babel(babelOption))
-                    .pipe(plugins.wrapper(headerWrapper))
-                    .pipe(gulp.dest(paths.scripts.dest))
-                    .pipe(plugins.rename({suffix: '.min'}))
-                    .pipe(plugins.uglify({preserveComments: 'some'}))
-                    .pipe(gulp.dest(paths.scripts.dest))
-                    .pipe(plugins.notify({message: 'Scripts task complete', onLast: true}));
+        .pipe(plugins.plumber())
+        .pipe(plugins.newer(paths.scripts.dest))
+        .pipe(plugins.plumber())
+        .pipe(plugins.if(config.lintJS, plugins.eslint()))
+        .pipe(plugins.if(config.lintJS, plugins.eslint.format()))
+        .pipe(plugins.rename(function (path) {
+            path.basename = path.basename.substring(0, path.basename.length - 9);
+        }))
+        .pipe(plugins.babel(babelOption))
+        .pipe(plugins.wrapper(headerWrapper))
+        .pipe(gulp.dest(paths.scripts.dest))
+        .pipe(plugins.rename({ suffix: '.min' }))
+        .pipe(plugins.uglify({ preserveComments: 'some' }))
+        .pipe(gulp.dest(paths.scripts.dest))
+        .pipe(plugins.notify({ message: 'Scripts task complete', onLast: true }));
 
     return merge(concatenate, copy);
 });
 
 // Copy Files to Build
-gulp.task('copy', function() {
-    var assets = {searchPath: basePaths.dest};
+gulp.task('copy', function () {
+    var assets = { searchPath: basePaths.dest };
 
     // Minify and Copy HTML
     var html = gulp.src(
@@ -330,8 +328,8 @@ gulp.task('copy', function() {
         .pipe(plugins.useref(assets))
         .pipe(plugins.if('*.js', plugins.uglify()))
         .pipe(plugins.if('*.css', plugins.csso()))
-        .pipe(plugins.if('*.html', plugins.htmlmin({collapseWhitespace: true, spare: true, empty: true, conditionals: true})))
-        .pipe(plugins.if('*.php', plugins.htmlmin({collapseWhitespace: true, spare: true, empty: true, conditionals: true})))
+        .pipe(plugins.if('*.html', plugins.htmlmin({ collapseWhitespace: true, spare: true, empty: true, conditionals: true })))
+        .pipe(plugins.if('*.php', plugins.htmlmin({ collapseWhitespace: true, spare: true, empty: true, conditionals: true })))
         .pipe(gulp.dest(basePaths.build));
 
     // Copy All Other files except HTML, PHP, CSS e JS Files
@@ -341,32 +339,32 @@ gulp.task('copy', function() {
             '!' + paths.styles.dest + '**/*',
             '!' + paths.scripts.dest + '**/*',
             '!' + basePaths.dest + '**/*.{html,php}'
-        ], {dot: true})
+        ], { dot: true })
         .pipe(gulp.dest(basePaths.build));
 
     return merge(html, allFiles);
 });
 
-gulp.task('outdatedbrowser', function() {
+gulp.task('outdatedbrowser', function () {
     return gulp.src('node_modules/outdated-browser/outdatedbrowser/lang/*')
         .pipe(gulp.dest(basePaths.dest + 'lang/outdated_browser'));
 });
 
 // *************************** Utility Tasks ****************************** //
 
-gulp.task('combine-assets', function() {
-    var assets = {searchPath: basePaths.dest};
+gulp.task('combine-assets', function () {
+    var assets = { searchPath: basePaths.dest };
 
     // Minify and Copy HTML
     return gulp.src(basePaths.dest + '**/*.{html,php}')
-                    .pipe(plugins.useref(assets))
-                    .pipe(plugins.if('*.js', plugins.uglify()))
-                    .pipe(plugins.if('*.css', plugins.csso()))
-                    .pipe(gulp.dest(basePaths.dest));
+        .pipe(plugins.useref(assets))
+        .pipe(plugins.if('*.js', plugins.uglify()))
+        .pipe(plugins.if('*.css', plugins.csso()))
+        .pipe(gulp.dest(basePaths.dest));
 });
 
 // Clean Directories
-gulp.task('clean', function(cb) {
+gulp.task('clean', function (cb) {
     var cleanPaths = [
         basePaths.build,
         paths.styles.dest,
@@ -381,7 +379,7 @@ gulp.task('clean', function(cb) {
 // ***************************** Main Tasks ******************************* //
 
 // Serve the project and watch
-gulp.task('serve', function() {
+gulp.task('serve', function () {
     browserSync(config.browserSync);
 
     gulp.watch(
@@ -409,7 +407,7 @@ gulp.task('serve', function() {
             '!' + paths.styles.src + 'helpers/{mixins,functions}/*.{styl,scss,sass}'
         ],
 
-       ['styles', browserSync.reload]
+        ['styles', browserSync.reload]
     );
 
     gulp.watch(paths.styles.src + 'helpers/{mixins,functions}/*.{styl,scss,sass}', ['styles-helpers']);
@@ -421,7 +419,7 @@ gulp.task('serve', function() {
 });
 
 // Serve project and clean, compile and watch if pass the parameter --compile
-gulp.task('default', function() {
+gulp.task('default', function () {
     if (args.compile) {
         sequence('clean', ['outdatedbrowser', 'handlebars', 'images', 'bitmap-sprite', 'vetor-sprite', 'styles-helpers', 'vendor-scripts'], 'svg2png', 'svg-inline', 'styles', 'scripts', 'serve');
     } else {
@@ -430,13 +428,13 @@ gulp.task('default', function() {
 });
 
 // Clean and compile the project
-gulp.task('compile', function() {
+gulp.task('compile', function () {
     sequence('clean', ['outdatedbrowser', 'handlebars', 'images', 'bitmap-sprite', 'vetor-sprite', 'styles-helpers', 'vendor-scripts'], 'svg2png', 'svg-inline', 'styles', 'scripts');
 });
 
 // Build Project and serve if pass the parameter --serve
-gulp.task('build', ['clean'], function() {
+gulp.task('build', ['clean'], function () {
     env = 'prod';
-    sequence(['outdatedbrowser', 'handlebars', 'images', 'bitmap-sprite', 'vetor-sprite', 'styles-helpers', 'vendor-scripts'], 'svg2png', 'svg-inline', 'styles', 'scripts', 'copy', function() {args.serve && browserSync(config.browserSyncBuild)}
+    sequence(['outdatedbrowser', 'handlebars', 'images', 'bitmap-sprite', 'vetor-sprite', 'styles-helpers', 'vendor-scripts'], 'svg2png', 'svg-inline', 'styles', 'scripts', 'copy', function () { args.serve && browserSync(config.browserSyncBuild) }
     );
 });
