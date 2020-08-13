@@ -7,103 +7,100 @@
     <main class="main">
         <div class="row">
             <div class="column">
-                <button type="button" aria-label="Increase Font" id="accessibility-font" class="js-accessibility">+A</button>
+                <button type="button" data-accessibility="font">+A</button>
             </div>
             <div class="column">
-                <button type="button" aria-label="Add Contrast" id="accessibility-contrast" class="js-accessibility">Add Contrast</button>
+                <button type="button" data-accessibility="contrast">Add Contrast</button>
             </div>
         </div>
 
 
-        <h2>Usage</h2>
-
-        <p>Download with <a href="https://npmjs.com">NPM</a></p>
+        <h2>Install</h2>
 
         <code><pre>npm install accessibility-buttons --save</pre></code>
 
+        <h2>Usage</h2>
 
-        <p>Or download with <a href="http://bower.io">Bower</a></p>
-
-        <code><pre>bower install accessibility-buttons --save</pre></code>
-
-
-        <p>Include the files</p>
-
-        <code><pre>&lt;link rel="stylesheet" href="node_modules/accessibility-buttons/dist/css/accessibility-buttons.css"&gt;
-&lt;script src="node_modules/accessibility-buttons/dist/js/accessibility-buttons.js"&gt;&lt;/script&gt;</pre></code>
-
-
+        <p>Import</p>
+        <ul>
+            <li><kbd>accessibility-buttons/dist/css/accessibility-buttons.css</kbd></li>
+            <li><kbd>accessibility-buttons/dist/js/accessibility-buttons.js</kbd></li>
+        </ul>
 
         <p>Insert the buttons</p>
 
         <code>
-            <pre>&lt;button aria-label="Increase Font" id="accessibility-font" class="js-accessibility">+A&lt;/button>
-&lt;button aria-label="Add Contrast" id="accessibility-contrast" class="js-accessibility">Add Contrast&lt;/button></pre>
+            <pre>&lt;button type="button" data-accessibility="font">+A&lt;/button>
+&lt;button type="button" data-accessibility="contrast">Add Contrast&lt;/button></pre>
         </code>
 
 
 
         <p>Initialize the Plugin after the dom ready</p>
 
-        <p>If you don't use jQuery (support IE9+)</p>
-
         <code>
-            <pre>function ready(fn) {
-    if (document.readyState !== 'loading') {
-        fn();
-    } else {
-        document.addEventListener('DOMContentLoaded', fn);
-    }
-}
-
-ready(function() {
-    accessibilityButtons();
-});</pre>
+            <pre>accessibilityButtons();</pre>
         </code>
 
-        <p>If you use jQuery</p>
 
-        <code><pre>$(document).ready(function() {
-    accessibilityButtons();
-})</pre></code>
-
-        <p><strong>Note:</strong> To get <kbd>font-size</kbd> to work, it's necessary to use "em" or "rem" units.</p>
+        <p><strong>Note:</strong> Font size works only with "em" or "rem" units.</p>
 
         <h2>Settings</h2>
 
         <p>To set up buttons names and aria-labels, call the plugin with additional options.</p>
 
         <code>
-            <pre>accessibilityButtons({
+            <pre>// default values
+accessibilityButtons({
     font: {
-        nameButtonIncrease: '+A', //Default
-        ariaLabelButtonIncrease: 'Increase Font', //Default
-        nameButtonDecrease: '-A', //Default
-        ariaLabelButtonDecrease: 'Decrease Font' //Default
+        nameButtonIncrease: '+A',
+        ariaLabelButtonIncrease: 'Increase Font',
+        nameButtonDecrease: '-A',
+        ariaLabelButtonDecrease: 'Decrease Font'
     },
 
     contrast: {
-        nameButtonAdd: 'Add Contrast', //Default
-        ariaLabelButtonAdd: 'Add Contrast', //Default
-        nameButtonRemove: 'Remove Contrast', //Default
-        ariaLabelButtonRemove: 'Remove Contrast' //Default
+        nameButtonAdd: 'Add Contrast',
+        ariaLabelButtonAdd: 'Add Contrast',
+        nameButtonRemove: 'Remove Contrast',
+        ariaLabelButtonRemove: 'Remove Contrast'
     }
 });</pre>
         </code>
 
-        <p>To change font size and contrast colors, change the values in the <kbd>accessibility-buttons.css</kbd>.</p>
+        <p>Font size and contrast colors could be customized only overwritting class values</p>
 
-        <code>
-            <pre>.accessibility-font {
-    /* First font-size fallback to older browsers*/
-    font-size: 1.25em;
-    font-size: 1.25rem;
+        <p>Example</p>
+
+        <code><pre>body {
+    font-size: 1em;
+    color: #a9a9a9;
+    background: #000;
 }
 
-.accessibility-contrast {
-    color: #fff;
-    background: #000;
-}</pre>
-        </code>
+body input,
+body textarea,
+body select,
+body button {
+/* The default font-size of these elements is approximately 20% less than the body */
+  font-size: 0.9em;
+}
+
+body.accessibility-font {
+    font-size: 1.5em;
+}
+
+body.accessibility-font input,
+body.accessibility-font textarea,
+body.accessibility-font select,
+body.accessibility-font button {
+/* The default font-size of these elements is approximately 20% less than the body */
+  font-size: 1.2em;
+}
+
+body.accessibility-contrast {
+    color: #000;
+    background: #a9a9a9;
+}</pre></code>
     </main>
 {{/header}}
