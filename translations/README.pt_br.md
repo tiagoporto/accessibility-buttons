@@ -8,7 +8,7 @@
 [![Release](https://img.shields.io/npm/v/accessibility-buttons.svg?style=flat-square&label=release)](https://github.com/tiagoporto/accessibility-buttons/releases)
 [![Downloads](https://img.shields.io/npm/dt/accessibility-buttons.svg?style=flat-square)](https://www.npmjs.com/package/accessibility-buttons)
 [![License](https://img.shields.io/github/license/tiagoporto/accessibility-buttons.svg?style=flat-square)](https://raw.githubusercontent.com/tiagoporto/accessibility-buttons/master/LICENSE)
-[![Build Status](https://img.shields.io/travis/tiagoporto/accessibility-buttons/master.svg?style=flat-square&logo=travis&label=test)](https://travis-ci.org/tiagoporto/accessibility-buttons)
+<!-- [![Build Status](https://img.shields.io/travis/tiagoporto/accessibility-buttons/master.svg?style=flat-square&logo=travis&label=test)](https://travis-ci.org/tiagoporto/accessibility-buttons) -->
 [![Coverage Status](https://img.shields.io/coveralls/tiagoporto/accessibility-buttons.svg?style=flat-square)](https://coveralls.io/github/tiagoporto/accessibility-buttons)
 [![devDependencies Status](https://img.shields.io/david/dev/tiagoporto/accessibility-buttons.svg?style=flat-square)](https://david-dm.org/tiagoporto/accessibility-buttons?type=dev)
 
@@ -18,133 +18,99 @@
 
 [🇺🇸](../README.md)
 
-## Índice
-
-* [Como usar](#como-usar)
-* [Configurações](#configurações)
-* [Contribuindo](#contribuindo)
-* [Creditos](#creditos)
-* [Licença](#licença)
-
-## Como usar
-
-Baixe com o [NPM](https://npmjs.com)
+## Instalação
 
 ```
 npm install accessibility-buttons --save
 ```
+## Usage
 
-Inclua os arquivos
+Importe
 
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <!-- css dos botões -->
-	<link rel="stylesheet" href="node_modules/accessibility-buttons/dist/css/accessibility-buttons.css">
-</head>
-<body>
-	<!-- conteúdo da página -->
+- accessibility-buttons/dist/css/accessibility-buttons.css
+- accessibility-buttons/dist/js/accessibility-buttons.js
 
-    <!-- javascript dos botões -->
-	<script src="node_modules/accessibility-buttons/dist/js/accessibility-buttons.js"></script>
-</body>
-</html>
-```
-
-
-Inserir os botões
+Insira os botões
 
 ```html
-<!DOCTYPE html>
-<html>
-<head>
-    <!-- css dos botões -->
-	<link rel="stylesheet" href="node_modules/accessibility-buttons/dist/css/accessibility-buttons.css">
-</head>
-<body>
-    <!-- Exemplo de botões -->
-    <button aria-label="Increase Font" id="accessibility-font" class="js-acessibility">+A</button>
-    <button aria-label="Add Contrast" id="accessibility-contrast" class="js-acessibility">Add Contrast</button>
-
-	<!-- conteúdo da página -->
-
-    <!-- javascript dos botões -->
-	<script src="node_modules/accessibility-buttons/dist/js/accessibility-buttons.js"></script>
-</body>
-</html>
+<button type="button" data-accessibility="font">+A</button>
+<button type="button" data-accessibility="contrast">Add Contrast</button>
 ```
 
+Inicializando após o DOM ser carregado
 
-Inicializando o plugin após o DOM ser carregado
-
-Se você não usa jQuery (suporte para IE9+)
 ```js
-function ready(fn) {
-    if (document.readyState !== 'loading') {
-        fn()
-    } else {
-        document.addEventListener('DOMContentLoaded', fn)
-    }
-}
-
-ready(function() {
-    accessibilityButtons()
-});
+accessibilityButtons()
 ```
 
-Se você usa Jquery
-```js
-$(document).ready(function() {
-    accessibilityButtons()
-})
-```
-
-**Observação:** É necessário usar as unidades `em` ou `rem` no `font-size` (tamanho da fonte).
+**Observação:** Font size só funciona com as unidades `em` ou `rem`.
 
 # Configurações
 
-Para configurar os nomes dos botões e aria-labels, invoque o plugin com opções adicionais, como é mostrado abaixo:
+Para configurar os `nomes dos botões` e `aria-labels`, use os seguinte parâmetros:
 
-```javascript
+```js
+// default values
 accessibilityButtons({
     font: {
-        nameButtonIncrease: '+A', // Default
-        ariaLabelButtonIncrease: 'Increase Font', // Default
-        nameButtonDecrease: '-A', // Default
-        ariaLabelButtonDecrease: 'Decrease Font' // Default
+        nameButtonIncrease: '+A',
+        ariaLabelButtonIncrease: 'Increase Font',
+        nameButtonDecrease: '-A',
+        ariaLabelButtonDecrease: 'Decrease Font'
     },
 
     contrast: {
-        nameButtonAdd: 'Add Contrast', // Default
-        ariaLabelButtonAdd: 'Add Contrast', // Default
-        nameButtonRemove: 'Remove Contrast', // Default
-        ariaLabelButtonRemove: 'Remove Contrast' // Default
+        nameButtonAdd: 'Add Contrast',
+        ariaLabelButtonAdd: 'Add Contrast',
+        nameButtonRemove: 'Remove Contrast',
+        ariaLabelButtonRemove: 'Remove Contrast'
     }
 })
 ```
 
-Para alterar o `font-size` (tamanho da fonte) e cores de contraste, altere os valores no arquivo CSS: `accessibility-buttons.css`.
+`Font size` e `cores do contraste` podem ser customizados sobreescrevendo as classes.
+
+Exemplo
 
 ```css
-.accessibility-font {
-  /* O primeiro `font-size` (tamanho de fonte) é o padrão e o segundo é para o modo fallback em navegadores antigos */
-  font-size: 1.25em;
-  font-size: 1.25rem;
+body {
+    font-size: 1em;
+    color: #a9a9a9;
+    background: #000;
 }
 
-.accessibility-contrast {
-  color: #fff;
-  background: #000;
+body input,
+body textarea,
+body select,
+body button {
+/* The default font-size of these elements is approximately 20% less than the body */
+  font-size: 0.9em;
+}
+
+body.accessibility-font {
+    font-size: 1.5em;
+}
+
+body.accessibility-font input,
+body.accessibility-font textarea,
+body.accessibility-font select,
+body.accessibility-font button {
+/* The default font-size of these elements is approximately 20% less than the body */
+  font-size: 1.2em;
+}
+
+body.accessibility-contrast {
+    color: #000;
+    background: #a9a9a9;
 }
 ```
 
 
-## Contribuindo
+## Contribua
 
 [Veja como contribuir](CONTRIBUTING.md).
 
-## Creditos
+## Créditos
 
 Dica de acessibilidade `arial-label` - [Bruno Pulis](https://github.com/brunopulis)
 

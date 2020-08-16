@@ -15,123 +15,95 @@
 
 > Buttons to add/remove contrast and increase/decrease font size.
 
-## Read this in [other languages](translations/translations.md).
+## Read in [other languages](translations/translations.md).
 
 [🇧🇷](translations/README.pt_br.md)
 
-## Table of Contents
-
-* [Usage](#usage)
-* [Settings](#settings)
-* [Contributing](#Contributing)
-* [Credits](#credits)
-* [License](#license)
-
-## Usage
-
-Download with [NPM](https://npmjs.com)
+## Install
 
 ```
 npm install accessibility-buttons --save
 ```
 
-Include the Files
+## Usage
+
+Import
+
+- accessibility-buttons/dist/css/accessibility-buttons.css
+- accessibility-buttons/dist/js/accessibility-buttons.js
+
+Add buttons
 
 ```html
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" href="node_modules/accessibility-buttons/dist/css/accessibility-buttons.css">
-</head>
-<body>
-	<!-- content -->
-
-	<script src="node_modules/accessibility-buttons/dist/js/accessibility-buttons.js"></script>
-</body>
-</html>
+<button type="button" data-accessibility="font">+A</button>
+<button type="button" data-accessibility="contrast">Add Contrast</button>
 ```
 
+Initialize after DOM ready
 
-Insert the Buttons
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" href="node_modules/accessibility-buttons/dist/css/accessibility-buttons.css">
-</head>
-<body>
-    <button aria-label="Increase Font" id="accessibility-font" class="js-acessibility">+A</button>
-    <button aria-label="Add Contrast" id="accessibility-contrast" class="js-acessibility">Add Contrast</button>
-
-	<!-- content -->
-
-	<script src="node_modules/accessibility-buttons/dist/js/accessibility-buttons.js"></script>
-</body>
-</html>
-```
-
-
-Initialize the Plugin after the dom ready
-
-If you don't use jQuery (support IE9+)
 ```js
-function ready(fn) {
-    if (document.readyState !== 'loading') {
-        fn()
-    } else {
-        document.addEventListener('DOMContentLoaded', fn)
-    }
-}
-
-ready(function() {
-    accessibilityButtons()
-});
+accessibilityButtons()
 ```
 
-If you use jQuery
-```js
-$(document).ready(function() {
-    accessibilityButtons()
-})
-```
-
-**Note:** It's necessary use `em` or `rem` units in `font-size`.
+**Note:** Note: Font size works only with `em` or `rem` units.
 
 # Settings
 
-To set up button names and aria-labels, call the plugin with additional options as shown below:
+To set up `buttons names` and `aria-labels`, use the following parameters.
 
-```javascript
+```js
+// default values
 accessibilityButtons({
     font: {
-        nameButtonIncrease: '+A', // Default
-        ariaLabelButtonIncrease: 'Increase Font', // Default
-        nameButtonDecrease: '-A', // Default
-        ariaLabelButtonDecrease: 'Decrease Font' // Default
+        nameButtonIncrease: '+A',
+        ariaLabelButtonIncrease: 'Increase Font',
+        nameButtonDecrease: '-A',
+        ariaLabelButtonDecrease: 'Decrease Font'
     },
 
     contrast: {
-        nameButtonAdd: 'Add Contrast', // Default
-        ariaLabelButtonAdd: 'Add Contrast', // Default
-        nameButtonRemove: 'Remove Contrast', // Default
-        ariaLabelButtonRemove: 'Remove Contrast' // Default
+        nameButtonAdd: 'Add Contrast',
+        ariaLabelButtonAdd: 'Add Contrast',
+        nameButtonRemove: 'Remove Contrast',
+        ariaLabelButtonRemove: 'Remove Contrast'
     }
 })
 ```
 
-To change `font-size` and contrast colors, change the values in the `accessibility-buttons.css`.
+`Font size` and `contrast colors` could be customized only overwritting class values.
+
+Example:
 
 ```css
-.accessibility-font {
-  /* First font-size fallback to older browsers */
-  font-size: 1.25em;
-  font-size: 1.25rem;
+body {
+    font-size: 1em;
+    color: #a9a9a9;
+    background: #000;
 }
 
-.accessibility-contrast {
-  color: #fff;
-  background: #000;
+body input,
+body textarea,
+body select,
+body button {
+/* The default font-size of these elements is approximately 20% less than the body */
+  font-size: 0.9em;
+}
+
+body.accessibility-font {
+    font-size: 1.5em;
+}
+
+body.accessibility-font input,
+body.accessibility-font textarea,
+body.accessibility-font select,
+body.accessibility-font button {
+/* The default font-size of these elements is approximately 20% less than the body */
+  font-size: 1.2em;
+}
+
+body.accessibility-contrast {
+    color: #000;
+    background: #a9a9a9;
 }
 ```
 
