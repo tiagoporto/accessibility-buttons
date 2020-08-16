@@ -15,13 +15,13 @@ ready(() => {
 
     accessibilityButtons({
         font: {
-            nameButtonIncrease: 'Click me and things will be great',
-            nameButtonDecrease: 'Click me and things will turn to normal size'
+            nameButtonIncrease: 'Click me and things will be big',
+            nameButtonDecrease: 'Click me and things will be back to normal'
         },
 
         contrast: {
             nameButtonAdd: 'Click me and things will be darken',
-            nameButtonRemove: 'Click me and things will be clean again'
+            nameButtonRemove: 'Click me and things will be lighten again'
         }
     });
 
@@ -33,7 +33,7 @@ ready(() => {
     }
 
     function analytics() {
-        return function() {
+        return function () {
             var $this = this;
             var $body = document.body;
 

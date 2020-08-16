@@ -27,19 +27,17 @@
             <li><kbd>accessibility-buttons/dist/js/accessibility-buttons.js</kbd></li>
         </ul>
 
-        <p>Insert the buttons</p>
+        <p>Add buttons</p>
 
         <code>
             <pre>&lt;button type="button" data-accessibility="font">+A&lt;/button>
 &lt;button type="button" data-accessibility="contrast">Add Contrast&lt;/button></pre>
         </code>
 
-
-
-        <p>Initialize the Plugin after the dom ready</p>
+        <p>Initialize after DOM ready</p>
 
         <code>
-            <pre>accessibilityButtons();</pre>
+            <pre>accessibilityButtons()</pre>
         </code>
 
 
@@ -47,60 +45,6 @@
 
         <h2>Settings</h2>
 
-        <p>To set up buttons names and aria-labels, call the plugin with additional options.</p>
-
-        <code>
-            <pre>// default values
-accessibilityButtons({
-    font: {
-        nameButtonIncrease: '+A',
-        ariaLabelButtonIncrease: 'Increase Font',
-        nameButtonDecrease: '-A',
-        ariaLabelButtonDecrease: 'Decrease Font'
-    },
-
-    contrast: {
-        nameButtonAdd: 'Add Contrast',
-        ariaLabelButtonAdd: 'Add Contrast',
-        nameButtonRemove: 'Remove Contrast',
-        ariaLabelButtonRemove: 'Remove Contrast'
-    }
-});</pre>
-        </code>
-
-        <p>Font size and contrast colors could be customized only overwritting class values</p>
-
-        <p>Example</p>
-
-        <code><pre>body {
-    font-size: 1em;
-    color: #a9a9a9;
-    background: #000;
-}
-
-body input,
-body textarea,
-body select,
-body button {
-/* The default font-size of these elements is approximately 20% less than the body */
-  font-size: 0.9em;
-}
-
-body.accessibility-font {
-    font-size: 1.5em;
-}
-
-body.accessibility-font input,
-body.accessibility-font textarea,
-body.accessibility-font select,
-body.accessibility-font button {
-/* The default font-size of these elements is approximately 20% less than the body */
-  font-size: 1.2em;
-}
-
-body.accessibility-contrast {
-    color: #000;
-    background: #a9a9a9;
-}</pre></code>
+        <p>Check <a href="https://github.com/tiagoporto/accessibility-buttons/blob/master/README.md">github.com/tiagoporto/accessibility-buttons</a> for more details</p>
     </main>
 {{/header}}
