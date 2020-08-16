@@ -1,7 +1,7 @@
 /*!
 *   Accessibility Buttons v4.0.0
 *   http://tiagoporto.github.io/accessibility-buttons
-*   Copyright (c) 2014-2020 Tiago Porto (http://tiagoporto.com)
+*   Copyright (c) 2014-present Tiago Porto (http://tiagoporto.com)
 *   Released under the MIT license
 */
 
@@ -25,12 +25,12 @@ ready(function () {
 
   accessibilityButtons({
     font: {
-      nameButtonIncrease: 'Click me and things will be great',
-      nameButtonDecrease: 'Click me and things will turn to normal size'
+      nameButtonIncrease: 'Click me and things will be big',
+      nameButtonDecrease: 'Click me and things will be back to normal'
     },
     contrast: {
       nameButtonAdd: 'Click me and things will be darken',
-      nameButtonRemove: 'Click me and things will be clean again'
+      nameButtonRemove: 'Click me and things will be lighten again'
     }
   });
   document.getElementById('year').innerHTML = new Date().getFullYear();

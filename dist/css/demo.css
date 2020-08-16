@@ -1,7 +1,7 @@
 /*!
 *   Accessibility Buttons v4.0.0
 *   http://tiagoporto.github.io/accessibility-buttons
-*   Copyright (c) 2014-2020 Tiago Porto (http://tiagoporto.com)
+*   Copyright (c) 2014-present Tiago Porto (http://tiagoporto.com)
 *   Released under the MIT license
 */
 
@@ -47,14 +47,6 @@ body {
   body {
     -webkit-font-smoothing: subpixel-antialiased;
   }
-}
-::-moz-selection {
-  background: #000;
-  color: #fff;
-}
-::selection {
-  background: #000;
-  color: #fff;
 }
 h1,
 h2,
