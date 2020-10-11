@@ -23,9 +23,9 @@
 ```
 npm install accessibility-buttons --save
 ```
-## Usage
+## Uso
 
-Importe
+Importante
 
 - accessibility-buttons/dist/css/accessibility-buttons.css
 - accessibility-buttons/dist/js/accessibility-buttons.js
@@ -68,7 +68,7 @@ accessibilityButtons({
 })
 ```
 
-`Font size` e `cores do contraste` podem ser customizados sobreescrevendo as classes.
+`Font size` e `cores do contraste` podem ser customizados sobrescrevendo as classes.
 
 Exemplo
 
