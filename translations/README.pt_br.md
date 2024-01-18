@@ -108,7 +108,7 @@ body.accessibility-contrast {
 
 ## Contribua
 
-[Veja como contribuir](CONTRIBUTING.md).
+[Veja como contribuir](CONTRIBUTING.pt_br.md).
 
 ## Créditos
 
