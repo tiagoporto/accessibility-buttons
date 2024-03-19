@@ -2,7 +2,6 @@
 
 ## Project dependencies
 * [Node](https://nodejs.org/en/download/)
-* [Gulp](http://gulpjs.com/)
 
 
 ## Contribute
