@@ -1,64 +1,62 @@
 // jasmine.getFixtures().fixturesPath = 'accessibility-buttons/spec/fixtures';
 
 describe("Functions events", function () {
-	var fixture;
+  var fixture;
 
-	beforeEach(function() {
-		// loadFixtures('example.html');
-		fixture = setFixtures('<body><button aria-label="" id="accessibility-font" class="js-acessibility"></button><button aria-label="" id="accessibility-contrast" class="js-acessibility"></button></body>');
+  beforeEach(function () {
+    // loadFixtures('example.html');
+    fixture = setFixtures(
+      '<body><button aria-label="" id="accessibility-font" class="js-acessibility"></button><button aria-label="" id="accessibility-contrast" class="js-acessibility"></button></body>'
+    );
 
-		body = $('body');
+    body = $("body");
 
-		$_fontButton = $('#accessibility-font');
+    $_fontButton = $("#accessibility-font");
 
-		$_contrastButton = $('#accessibility-contrast');
+    $_contrastButton = $("#accessibility-contrast");
 
-		accessibilityButtons();
-	});
+    accessibilityButtons();
+  });
 
+  it("Clicked font button", function () {
+    body.removeClass("accessibility-font");
 
-	it("Clicked font button", function () {
+    $("#accessibility-font").click();
 
-		body.removeClass('accessibility-font');
+    expect($("#accessibility-font")).toHaveText("-A");
 
-		$('#accessibility-font').click();
+    expect(body).toHaveClass("accessibility-font");
+    expect($_fontButton).toHaveText("-A");
+    expect($_fontButton).toHaveAttr("aria-label", "Decrease Font");
+  });
 
-		expect($('#accessibility-font')).toHaveText('-A');
+  it("Clicked font button twice", function () {
+    body.removeClass("accessibility-font");
 
-		expect(body).toHaveClass('accessibility-font');
-		expect($_fontButton).toHaveText('-A');
-		expect($_fontButton).toHaveAttr('aria-label', 'Decrease Font');
-	})
+    $("#accessibility-font").click().click();
 
-	it("Clicked font button twice", function () {
-		body.removeClass('accessibility-font');
+    expect(body).not.toHaveClass("accessibility-font");
+    expect($_fontButton).toHaveText("+A");
+    expect($_fontButton).toHaveAttr("aria-label", "Increase Font");
+  });
 
-		$('#accessibility-font').click().click();
+  it("Clicked font contrast", function () {
+    body.removeClass("accessibility-contrast");
 
-		expect(body).not.toHaveClass('accessibility-font');
-		expect($_fontButton).toHaveText('+A');
-		expect($_fontButton).toHaveAttr('aria-label', 'Increase Font');
-	})
+    $("#accessibility-contrast").click();
 
-	it("Clicked font contrast", function () {
-		body.removeClass('accessibility-contrast');
+    expect(body).toHaveClass("accessibility-contrast");
+    expect($_contrastButton).toHaveText("Remove Contrast");
+    expect($_contrastButton).toHaveAttr("aria-label", "Remove Contrast");
+  });
 
-		$('#accessibility-contrast').click();
+  it("Clicked font contrast twice", function () {
+    body.removeClass("accessibility-contrast");
 
-		expect(body).toHaveClass('accessibility-contrast');
-		expect($_contrastButton).toHaveText('Remove Contrast');
-		expect($_contrastButton).toHaveAttr('aria-label', 'Remove Contrast');
-	})
+    $("#accessibility-contrast").click().click();
 
-
-	it("Clicked font contrast twice", function () {
-		body.removeClass('accessibility-contrast');
-
-		$('#accessibility-contrast').click().click();
-
-		expect(body).not.toHaveClass('accessibility-contrast');
-		expect($_contrastButton).toHaveText('Add Contrast');
-		expect($_contrastButton).toHaveAttr('aria-label', 'Add Contrast');
-	})
-
+    expect(body).not.toHaveClass("accessibility-contrast");
+    expect($_contrastButton).toHaveText("Add Contrast");
+    expect($_contrastButton).toHaveAttr("aria-label", "Add Contrast");
+  });
 });

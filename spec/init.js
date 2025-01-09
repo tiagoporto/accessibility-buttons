@@ -1,54 +1,54 @@
 // jasmine.getFixtures().fixturesPath = 'accessibility-buttons/spec/fixtures';
 
 describe("Init Acessibilit Buttons", function () {
-	var fixture;
+  var fixture;
 
-	beforeEach(function() {
-		// loadFixtures('example.html');
-		fixture = setFixtures('<body><button aria-label="" id="accessibility-font" class="js-acessibility"></button><button aria-label="" id="accessibility-contrast" class="js-acessibility"></button></body>');
+  beforeEach(function () {
+    // loadFixtures('example.html');
+    fixture = setFixtures(
+      '<body><button aria-label="" id="accessibility-font" class="js-acessibility"></button><button aria-label="" id="accessibility-contrast" class="js-acessibility"></button></body>'
+    );
 
-		$_fontButton = $('#accessibility-font');
+    $_fontButton = $("#accessibility-font");
 
-		$_contrastButton = $('#accessibility-contrast');
+    $_contrastButton = $("#accessibility-contrast");
+  });
 
-	});
+  it("Button Font", function () {
+    accessibilityButtons({
+      font: {
+        nameButtonIncrease: "A+",
+        ariaLabelButtonIncrease: "Plus Font",
+        nameButtonDecrease: "A-",
+        ariaLabelButtonDecrease: "Minus Font",
+      },
+    });
 
+    expect($_fontButton).toHaveText("A+");
 
-	it("Button Font", function () {
-		 accessibilityButtons({
-			font: {
-				nameButtonIncrease: 'A+',
-				ariaLabelButtonIncrease: 'Plus Font',
-				nameButtonDecrease: 'A-',
-				ariaLabelButtonDecrease: 'Minus Font'
-			}
-		});
+    expect($_fontButton).toHaveAttr("aria-label", "Plus Font");
+  });
 
-		expect($_fontButton).toHaveText('A+');
+  it("Contratast Font", function () {
+    accessibilityButtons({
+      contrast: {
+        nameButtonAdd: "Add Contrast",
+        ariaLabelButtonAdd: "Add Contrast",
+        nameButtonRemove: "Remove Contrast",
+        ariaLabelButtonRemove: "Remove Contrast",
+      },
+    });
 
-		expect($_fontButton).toHaveAttr('aria-label', 'Plus Font');
-	})
+    expect($_contrastButton).toHaveText("Add Contrast");
 
-	it("Contratast Font", function () {
-		 accessibilityButtons({
-			contrast: {
-				nameButtonAdd: 'Add Contrast',
-				ariaLabelButtonAdd: 'Add Contrast',
-				nameButtonRemove: 'Remove Contrast',
-				ariaLabelButtonRemove: 'Remove Contrast'
-			}
-		});
+    expect($_contrastButton).toHaveAttr("aria-label", "Add Contrast");
+  });
 
-		expect($_contrastButton).toHaveText('Add Contrast');
+  // it("Clicked font button twice", function () {
+  // 	body.removeClass('accessibility-font');
 
-		expect($_contrastButton).toHaveAttr('aria-label', 'Add Contrast');
-	})
+  // 	$('#accessibility-font').click().click();
 
-	// it("Clicked font button twice", function () {
-	// 	body.removeClass('accessibility-font');
-
-	// 	$('#accessibility-font').click().click();
-
-	// 	expect(body).not.toHaveClass('accessibility-font');
-	// })
+  // 	expect(body).not.toHaveClass('accessibility-font');
+  // })
 });
