@@ -20,6 +20,11 @@
     "url": "https://github.com/tiagoporto/accessibility-buttons.git"
   },
   "main": "dist/js/accessibility-buttons.js",
+  "type": "module",
+  "engines": {
+    "node": ">=22",
+    "npm": ">=10"
+  },
   "scripts": {
     "start": "gulp --compile",
     "serve": "gulp",
