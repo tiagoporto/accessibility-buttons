@@ -34,6 +34,8 @@
     "lint:fix": "npm run lint -- --write"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
     "@tiagoporto/dependabot-config": "^1.0.0",
     "@tiagoporto/editor-config": "^1.0.0",
     "@tiagoporto/eslint-config": "^2.0.0",
