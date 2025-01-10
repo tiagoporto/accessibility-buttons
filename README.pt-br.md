@@ -1,31 +1,31 @@
-<p align="right"><img src="https://badges.frapsoft.com/os/v3/open-source.svg?v=103" alt="Open Source Love"></p>
-<p align="center"><img src="http://tiagoporto.github.io/accessibility-buttons/img/logos/accessibility-buttons-logo.svg" alt="Accessibility Buttons" width="600" /></p>
+<p align="right"><img src="https://raw.githubusercontent.com/ellerbrock/open-source-badges/refs/heads/master/badges/open-source-v3/open-source.svg" alt="Open Source Love"></p>
 
-<p align="right">
-  <code>CURTIU ? Deixe uma <a href="https://github.com/tiagoporto/accessibility-buttons/stargazers">⭐</a> : <a href="https://github.com/tiagoporto/accessibility-buttons/issues">😞</a></code>
-</p>
+<p align="center"><img src="./public/img//logos/accessibility-buttons-logo.svg" alt="Accessibility Buttons" width="600" /></p>
+
+Botões para adicionar/remover contraste e aumentar/diminuir o tamanho da fonte.
 
 [![Release](https://img.shields.io/npm/v/accessibility-buttons.svg?style=flat-square&label=release)](https://github.com/tiagoporto/accessibility-buttons/releases)
-[![Downloads](https://img.shields.io/npm/dt/accessibility-buttons.svg?style=flat-square)](https://www.npmjs.com/package/accessibility-buttons)
+[![Downloads](https://img.shields.io/npm/d18m/accessibility-buttons.svg?style=flat-square)](https://www.npmjs.com/package/accessibility-buttons)
 [![License](https://img.shields.io/github/license/tiagoporto/accessibility-buttons.svg?style=flat-square)](https://raw.githubusercontent.com/tiagoporto/accessibility-buttons/master/LICENSE)
+
 <!-- [![Build Status](https://img.shields.io/travis/tiagoporto/accessibility-buttons/master.svg?style=flat-square&logo=travis&label=test)](https://travis-ci.org/tiagoporto/accessibility-buttons) -->
-[![Coverage Status](https://img.shields.io/coveralls/tiagoporto/accessibility-buttons.svg?style=flat-square)](https://coveralls.io/github/tiagoporto/accessibility-buttons)
-[![devDependencies Status](https://img.shields.io/david/dev/tiagoporto/accessibility-buttons.svg?style=flat-square)](https://david-dm.org/tiagoporto/accessibility-buttons?type=dev)
 
-> Botões para adicionar/remover contraste e aumentar/diminuir o tamanho da fonte.
+[![Coverage Status](https://img.shields.io/coverallsCoverage/github/tiagoporto/accessibility-buttons.svg?style=flat-square)](https://coveralls.io/github/tiagoporto/accessibility-buttons)
 
-## Ler em [outros idiomas](./translations.md).
+## Ler em outros idiomas
 
-[🇺🇸](../README.md)
+- 🇧🇷
+- [🇺🇸](./README.md)
 
 ## Instalação
 
-```
+```bash
 npm install accessibility-buttons --save
 ```
+
 ## Uso
 
-Importante
+Importe
 
 - accessibility-buttons/dist/css/accessibility-buttons.css
 - accessibility-buttons/dist/js/accessibility-buttons.js
@@ -105,16 +105,9 @@ body.accessibility-contrast {
 }
 ```
 
-
 ## Contribua
 
-[Veja como contribuir](CONTRIBUTING.pt_br.md).
-
-## Créditos
-
-Dica de acessibilidade `arial-label` - [Bruno Pulis](https://github.com/brunopulis)
-
-Incluido o sinal `$` no nome da variável dos elementos cacheados para facilitar a identificação - [Adler Parnas](https://github.com/adlerparnas)
+[Veja como contribuir](https://github.com/tiagoporto/.github/blob/main/CONTRIBUTING.md).
 
 ## Licença
 

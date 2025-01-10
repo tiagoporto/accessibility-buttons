@@ -1,0 +1,9 @@
+{
+  "plugins": [
+    "@tiagoporto/remark-config",
+    [
+      "remark-lint-no-file-name-mixed-case",
+      false
+    ]
+  ]
+}
