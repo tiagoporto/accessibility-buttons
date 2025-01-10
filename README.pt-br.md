@@ -111,4 +111,4 @@ body.accessibility-contrast {
 
 ## Licença
 
-Accessibility Buttons é lançado sob os termos da licença [MIT license](https://github.com/tiagoporto/accessibility-buttons/blob/master/LICENSE).
+Este projeto está sob os termos da [licença MIT](LICENSE).
