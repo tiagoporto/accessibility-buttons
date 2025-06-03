@@ -14,21 +14,27 @@ function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.it
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-/**
- * accessibilityButtons
- * @param  {Array}  -
- * @return
- */
+// Funções auxiliares de armazenamento
+function savePreference(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch (e) {
+    console.warn('Não foi possível salvar a preferência:', e);
+  }
+}
 
-/* exported accessibilityButtons */
+function loadPreference(key) {
+  try {
+    return localStorage.getItem(key);
+  } catch (e) {
+    console.warn('Não foi possível carregar a preferência:', e);
+    return null;
+  }
+}
+
 var accessibilityButtons = function accessibilityButtons(options) {
   'use strict';
-  /**
-   * hasClass
-   * @param  {string}  element - DOM element
-   * @param  {string}  clazz   - Class Name
-   * @return {Boolean}
-   */
+
   function hasClass(element, clazz) {
     return (" ".concat(element.className, " ").indexOf(" ".concat(clazz, " ")) > -1);
   }
@@ -48,7 +54,7 @@ var accessibilityButtons = function accessibilityButtons(options) {
     }
   };
 
-  // Set buttons name and aria label
+  // Personalização via options
   if (options) {
     for (var key in options) {
       if (options.hasOwnProperty(key)) {
@@ -70,42 +76,36 @@ var accessibilityButtons = function accessibilityButtons(options) {
     $contrastButton = $accessibilityButtons.filter(function (button) {
       return button.getAttribute('data-accessibility') === 'contrast';
     }),
-    storageFont = localStorage.accessibility_font,
-    storageContrast = localStorage.accessibility_contrast;
+    storageFont = loadPreference('accessibility_font'),
+    storageContrast = loadPreference('accessibility_contrast');
 
-  // Check if exist storage and set the correct button names and aria attributes
-  if (storageFont && $fontButton) {
+  // Estado inicial baseado no armazenamento
+  if (storageFont) {
     $body.classList.add('accessibility-font');
     $fontButton.forEach(function (button) {
       button.innerHTML = setting.font.nameButtonDecrease;
       button.setAttribute('aria-label', setting.font.ariaLabelButtonDecrease);
     });
-  } else if ($fontButton) {
+  } else {
     $fontButton.forEach(function (button) {
       button.innerHTML = setting.font.nameButtonIncrease;
       button.setAttribute('aria-label', setting.font.ariaLabelButtonIncrease);
     });
   }
 
-  if (storageContrast && $contrastButton) {
+  if (storageContrast) {
     $body.classList.add('accessibility-contrast');
     $contrastButton.forEach(function (button) {
       button.innerHTML = setting.contrast.nameButtonRemove;
       button.setAttribute('aria-label', setting.contrast.ariaLabelButtonRemove);
     });
-  } else if ($contrastButton) {
+  } else {
     $contrastButton.forEach(function (button) {
       button.innerHTML = setting.contrast.nameButtonAdd;
       button.setAttribute('aria-label', setting.contrast.ariaLabelButtonAdd);
     });
   }
 
-  /**
-   * Get the click event
-   * Rename the buttons
-   * Apply/Remove Contrast or Font Size
-   * Manage storage
-   */
   function accessibility() {
     return function () {
       var $this = this;
@@ -119,28 +119,24 @@ var accessibilityButtons = function accessibilityButtons(options) {
             button.innerHTML = setting.font.nameButtonIncrease;
             button.setAttribute('aria-label', setting.font.ariaLabelButtonIncrease);
           });
-          localStorage.removeItem('accessibility_font');
+          savePreference('accessibility_font', '');
         } else if (type === 'contrast') {
           $contrastButton.forEach(function (button) {
             button.innerHTML = setting.contrast.nameButtonAdd;
             button.setAttribute('aria-label', setting.contrast.ariaLabelButtonAdd);
           });
-          localStorage.removeItem('accessibility_contrast');
+          savePreference('accessibility_contrast', '');
         }
       } else {
         $body.classList.add(classname);
         if (type === 'font') {
-          if (!storageFont) {
-            localStorage.setItem('accessibility_font', true);
-          }
+          savePreference('accessibility_font', 'true');
           $fontButton.forEach(function (button) {
             button.innerHTML = setting.font.nameButtonDecrease;
             button.setAttribute('aria-label', setting.font.ariaLabelButtonDecrease);
           });
         } else if (type === 'contrast') {
-          if (!storageContrast) {
-            localStorage.setItem('accessibility_contrast', true);
-          }
+          savePreference('accessibility_contrast', 'true');
           $contrastButton.forEach(function (button) {
             button.innerHTML = setting.contrast.nameButtonRemove;
             button.setAttribute('aria-label', setting.contrast.ariaLabelButtonRemove);
@@ -150,10 +146,10 @@ var accessibilityButtons = function accessibilityButtons(options) {
     };
   }
 
-  // Listening Click Event
-  for (var i = 0; i < $accessibilityButtons.length; i++) {
-    $accessibilityButtons[i].addEventListener('click', accessibility());
-  }
+  // Eventos de clique
+  $accessibilityButtons.forEach(function (btn) {
+    btn.addEventListener('click', accessibility());
+  });
 };
 
 // Nova funcionalidade: Aplicar preferência de tema do sistema
@@ -164,15 +160,16 @@ function applySystemThemePreference() {
     if (prefersDark) {
       document.body.style.backgroundColor = 'black';
       document.body.style.color = 'white';
-      console.log('dark');
+      console.log('Tema escuro aplicado automaticamente.');
     } else {
       document.body.style.backgroundColor = 'white';
       document.body.style.color = 'black';
-      console.log('white');
+      console.log('Tema claro aplicado automaticamente.');
     }
   }
 }
 
-
 // Aplicar automaticamente ao carregar a página
-document.addEventListener('DOMContentLoaded', applySystemThemePreference);
+document.addEventListener('DOMContentLoaded', function () {
+  applySystemThemePreference();
+});
