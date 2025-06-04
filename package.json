@@ -1,0 +1,41 @@
+{
+  "name": "accessibility-buttons-root",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22",
+    "npm": ">=10"
+  },
+  "workspaces": [
+    "packages/accessibility-buttons"
+  ],
+  "scripts": {
+    "prepare": "husky",
+    "checks": "npm run check-docs && npm run  formatting:check && npm run lint && npm run lint:styles",
+    "check-docs": "remark --frail . --ext md,markdown,mdx",
+    "formatting:check": "prettier --check --ignore-unknown \"**/*\"",
+    "formatting": "npm run formatting:check -- --write",
+    "lint": "eslint --max-warnings 0",
+    "lint:fix": "npm run lint -- --write",
+    "lint:styles": "stylelint \"**/*.{css,scss}\"",
+    "lint:styles:fix": "stylelint \"**/*.{css,scss}\" --fix"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@tiagoporto/dependabot-config": "^1.2.0",
+    "@tiagoporto/editor-config": "^1.3.0",
+    "@tiagoporto/eslint-config": "^2.6.0",
+    "@tiagoporto/prettier-config": "^1.2.0",
+    "@tiagoporto/remark-config": "^1.6.0",
+    "@tiagoporto/stylelint-config": "^1.1.0",
+    "eslint": "^9.17.0",
+    "globals": "^15.14.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.3.0",
+    "prettier": "^3.4.2",
+    "remark": "^15.0.1",
+    "remark-cli": "^12.0.1",
+    "stylelint": "^16.13.2"
+  }
+}
