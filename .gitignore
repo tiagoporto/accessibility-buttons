@@ -5,10 +5,11 @@ PLANO.md
 # Folder config file
 Desktop.ini
 test
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
 package-lock.json
 package.json
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
 # Mac crap
 .DS_Store
 

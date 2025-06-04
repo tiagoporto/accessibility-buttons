@@ -75,12 +75,13 @@ var accessibilityButtons = function accessibilityButtons(options) {
     }),
     $contrastButton = $accessibilityButtons.filter(function (button) {
       return button.getAttribute('data-accessibility') === 'contrast';
-    }),
-    storageFont = loadPreference('accessibility_font'),
-    storageContrast = loadPreference('accessibility_contrast');
+    });
+
+  var storageFont = loadPreference('accessibility_font');
+  var storageContrast = loadPreference('accessibility_contrast');
 
   // Estado inicial baseado no armazenamento
-  if (storageFont) {
+  if (storageFont === 'true') {
     $body.classList.add('accessibility-font');
     $fontButton.forEach(function (button) {
       button.innerHTML = setting.font.nameButtonDecrease;
@@ -93,7 +94,7 @@ var accessibilityButtons = function accessibilityButtons(options) {
     });
   }
 
-  if (storageContrast) {
+  if (storageContrast === 'true') {
     $body.classList.add('accessibility-contrast');
     $contrastButton.forEach(function (button) {
       button.innerHTML = setting.contrast.nameButtonRemove;
@@ -119,13 +120,13 @@ var accessibilityButtons = function accessibilityButtons(options) {
             button.innerHTML = setting.font.nameButtonIncrease;
             button.setAttribute('aria-label', setting.font.ariaLabelButtonIncrease);
           });
-          savePreference('accessibility_font', '');
+          savePreference('accessibility_font', 'false');
         } else if (type === 'contrast') {
           $contrastButton.forEach(function (button) {
             button.innerHTML = setting.contrast.nameButtonAdd;
             button.setAttribute('aria-label', setting.contrast.ariaLabelButtonAdd);
           });
-          savePreference('accessibility_contrast', '');
+          savePreference('accessibility_contrast', 'false');
         }
       } else {
         $body.classList.add(classname);
