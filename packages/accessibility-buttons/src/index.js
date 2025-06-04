@@ -32,11 +32,11 @@ function loadPreference(key) {
   }
 }
 
-function accessibilityButtons(options) {
+var accessibilityButtons = function accessibilityButtons(options) {
   'use strict';
 
   function hasClass(element, clazz) {
-    return (" " + element.className + " ").indexOf(" " + clazz + " ") > -1;
+    return (" ".concat(element.className, " ").indexOf(" ".concat(clazz, " ")) > -1);
   }
 
   var setting = {
@@ -54,6 +54,7 @@ function accessibilityButtons(options) {
     }
   };
 
+  // Personalização via options
   if (options) {
     for (var key in options) {
       if (options.hasOwnProperty(key)) {
@@ -79,26 +80,27 @@ function accessibilityButtons(options) {
   var storageFont = loadPreference('accessibility_font');
   var storageContrast = loadPreference('accessibility_contrast');
 
-  if (storageFont === 'true' && $fontButton) {
+  // Estado inicial baseado no armazenamento
+  if (storageFont === 'true') {
     $body.classList.add('accessibility-font');
     $fontButton.forEach(function (button) {
       button.innerHTML = setting.font.nameButtonDecrease;
       button.setAttribute('aria-label', setting.font.ariaLabelButtonDecrease);
     });
-  } else if ($fontButton) {
+  } else {
     $fontButton.forEach(function (button) {
       button.innerHTML = setting.font.nameButtonIncrease;
       button.setAttribute('aria-label', setting.font.ariaLabelButtonIncrease);
     });
   }
 
-  if (storageContrast === 'true' && $contrastButton) {
+  if (storageContrast === 'true') {
     $body.classList.add('accessibility-contrast');
     $contrastButton.forEach(function (button) {
       button.innerHTML = setting.contrast.nameButtonRemove;
       button.setAttribute('aria-label', setting.contrast.ariaLabelButtonRemove);
     });
-  } else if ($contrastButton) {
+  } else {
     $contrastButton.forEach(function (button) {
       button.innerHTML = setting.contrast.nameButtonAdd;
       button.setAttribute('aria-label', setting.contrast.ariaLabelButtonAdd);
@@ -109,7 +111,7 @@ function accessibilityButtons(options) {
     return function () {
       var $this = this;
       var type = $this.getAttribute('data-accessibility');
-      var classname = "accessibility-" + type;
+      var classname = "accessibility-".concat(type);
 
       if (hasClass($body, classname)) {
         $body.classList.remove(classname);
@@ -118,24 +120,24 @@ function accessibilityButtons(options) {
             button.innerHTML = setting.font.nameButtonIncrease;
             button.setAttribute('aria-label', setting.font.ariaLabelButtonIncrease);
           });
-          savePreference('accessibility_font', false);
+          savePreference('accessibility_font', 'false');
         } else if (type === 'contrast') {
           $contrastButton.forEach(function (button) {
             button.innerHTML = setting.contrast.nameButtonAdd;
             button.setAttribute('aria-label', setting.contrast.ariaLabelButtonAdd);
           });
-          savePreference('accessibility_contrast', false);
+          savePreference('accessibility_contrast', 'false');
         }
       } else {
         $body.classList.add(classname);
         if (type === 'font') {
-          savePreference('accessibility_font', true);
+          savePreference('accessibility_font', 'true');
           $fontButton.forEach(function (button) {
             button.innerHTML = setting.font.nameButtonDecrease;
             button.setAttribute('aria-label', setting.font.ariaLabelButtonDecrease);
           });
         } else if (type === 'contrast') {
-          savePreference('accessibility_contrast', true);
+          savePreference('accessibility_contrast', 'true');
           $contrastButton.forEach(function (button) {
             button.innerHTML = setting.contrast.nameButtonRemove;
             button.setAttribute('aria-label', setting.contrast.ariaLabelButtonRemove);
@@ -145,33 +147,30 @@ function accessibilityButtons(options) {
     };
   }
 
-  $accessibilityButtons.forEach(function (button) {
-    button.addEventListener('click', accessibility());
+  // Eventos de clique
+  $accessibilityButtons.forEach(function (btn) {
+    btn.addEventListener('click', accessibility());
   });
+};
+
+// Nova funcionalidade: Aplicar preferência de tema do sistema
+function applySystemThemePreference() {
+  if (window.matchMedia) {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (prefersDark) {
+      document.body.style.backgroundColor = 'black';
+      document.body.style.color = 'white';
+      console.log('Tema escuro aplicado automaticamente.');
+    } else {
+      document.body.style.backgroundColor = 'white';
+      document.body.style.color = 'black';
+      console.log('Tema claro aplicado automaticamente.');
+    }
+  }
 }
 
-// Funções de toggle independentes
-function toggleContrast() {
-  document.body.classList.toggle('accessibility-contrast');
-  var hasContrast = document.body.classList.contains('accessibility-contrast');
-  savePreference('accessibility_contrast', hasContrast);
-}
-
-function toggleFontSize() {
-  document.body.classList.toggle('accessibility-fontsize');
-  var hasFontSize = document.body.classList.contains('accessibility-fontsize');
-  savePreference('accessibility_fontsize', hasFontSize);
-}
-
-// Restaurar preferências ao carregar a página
+// Aplicar automaticamente ao carregar a página
 document.addEventListener('DOMContentLoaded', function () {
-  var contrastPref = loadPreference('accessibility_contrast');
-  var fontSizePref = loadPreference('accessibility_fontsize');
-
-  if (contrastPref === 'true') {
-    document.body.classList.add('accessibility-contrast');
-  }
-  if (fontSizePref === 'true') {
-    document.body.classList.add('accessibility-fontsize');
-  }
+  applySystemThemePreference();
 });

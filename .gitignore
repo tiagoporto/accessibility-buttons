@@ -1,14 +1,15 @@
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
-
+PLANO.md
 # Folder config file
 Desktop.ini
-
+test
+package-lock.json
+package.json
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
-test
-PLANO.md
+
 # Mac crap
 .DS_Store
 
