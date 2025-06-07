@@ -24,6 +24,7 @@ body {
     Georgia,
     serif;
   font-feature-settings: 'liga', 'kern';
+  font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-smoothing: auto;
