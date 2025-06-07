@@ -52,7 +52,7 @@ export default defineConfig({
     ],
   },
   plugins: [
-    new rspack.HtmlRspackPlugin({ template: './src/handlebars/index.html' }),
+    new rspack.HtmlRspackPlugin({ template: './src/index.html' }),
     new rspack.CopyRspackPlugin({
       patterns: [{ from: 'public' }],
     }),

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400">
+  <style>
+    .triangle, .plus {
+      fill: #000;
+    }
+    .box, .minus {
+      fill: #fff;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .triangle, .plus {
+        fill: #e3ff17;
+      }
+      .box, .minus {
+        fill: unset;
+      }
+    }
+  </style>
+  <rect class="box" width="400" height="400"/>
+  <polygon class="triangle" points="400 400.3474 0 400.3474 400 .3474 400 400.3474"/>
+  <polygon class="plus" points="219.7536 82.232 152.0579 82.232 152.0579 28.0755 84.3623 28.0755 84.3623 82.232 16.6667 82.232 16.6667 143.1581 84.3623 143.1581 84.3623 204.0842 152.0579 204.0842 152.0579 143.1581 219.7536 143.1581 219.7536 82.232"/>
+  <rect class="minus" x="169.4287" y="291.9531" width="198.267" height="48.7544"/>
+</svg>
