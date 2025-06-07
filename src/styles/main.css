@@ -1,0 +1,26 @@
+.main {
+  display: block;
+  width: auto;
+  max-width: 900px;
+  padding: 0 15px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  gap: 1%;
+}
+
+.row button {
+  flex-grow: 1;
+}
+
+@media (width <= 600px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .row button {
+    margin-bottom: 10px;
+  }
+}

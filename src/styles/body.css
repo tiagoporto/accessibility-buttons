@@ -1,0 +1,31 @@
+::selection {
+  background: #000;
+  color: #fff;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+  font:
+    16px/1.5em Lora,
+    'Times New Roman',
+    Times,
+    Georgia,
+    serif;
+  font-feature-settings: 'liga', 'kern';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: auto;
+  text-rendering: optimizelegibility;
+}

@@ -1,3 +1,5 @@
+import './accessibility-buttons.css'
+
 /**
  * accessibilityButtons
  * @param  {Array}  -

@@ -1,0 +1,8 @@
+kbd {
+  padding: 0.2em;
+  border-radius: 3px;
+  background-color: rgb(0 0 0 / 40%);
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
