@@ -1,0 +1,10 @@
+.header {
+  width: auto;
+  max-width: 900px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-bottom: 3em;
+  margin-left: auto;
+  float: none;
+}

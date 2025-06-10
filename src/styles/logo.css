@@ -1,0 +1,10 @@
+.accessibility-contrast .accessibility-buttons-logo__minus,
+.accessibility-contrast .accessibility-buttons-logo__background {
+  fill: #fff;
+}
+
+.accessibility-contrast .accessibility-buttons-logo__lettering,
+.accessibility-contrast .accessibility-buttons-logo__plus,
+.accessibility-contrast .accessibility-buttons-logo__box {
+  fill: #000;
+}

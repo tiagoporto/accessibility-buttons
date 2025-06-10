@@ -1,0 +1,13 @@
+.footer {
+  display: block;
+  width: auto;
+  max-width: 900px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-bottom: 1.5em;
+  margin-left: auto;
+  float: none;
+  font-size: 1.2em;
+  text-align: center;
+}
