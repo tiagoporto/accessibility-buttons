@@ -1,31 +1,30 @@
 import { queryByTestId } from '@testing-library/dom'
-// eslint-disable-next-line import/no-unresolved
 import { accessibilityButtons } from 'accessibility-buttons'
 
-describe('Functions events', () => {
-  function storageMock() {
-    let storage = {}
+const storageMock = () => {
+  const storage = {}
 
-    return {
-      setItem: function (key, value) {
-        storage[key] = value || ''
-      },
-      getItem: function (key) {
-        return key in storage ? storage[key] : null
-      },
-      removeItem: function (key) {
-        delete storage[key]
-      },
-      get length() {
-        return Object.keys(storage).length
-      },
-      key: function (i) {
-        const keys = Object.keys(storage)
-        return keys[i] || null
-      },
-    }
+  return {
+    setItem: function (key, value) {
+      storage[key] = value || ''
+    },
+    getItem: function (key) {
+      return key in storage ? storage[key] : null
+    },
+    removeItem: function (key) {
+      delete storage[key]
+    },
+    get length() {
+      return Object.keys(storage).length
+    },
+    key: function (i) {
+      const keys = Object.keys(storage)
+      return keys[i] || null
+    },
   }
+}
 
+describe('Functions events', () => {
   beforeEach(function () {
     const body = document.body
     body.outerHTML = `

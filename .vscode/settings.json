@@ -2,5 +2,6 @@
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit"
   },
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "eslint.validate": ["yaml", "github-actions-workflow"]
 }

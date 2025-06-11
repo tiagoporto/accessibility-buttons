@@ -1,12 +1,13 @@
-import './styles'
-// @ts-ignore
+// @ts-expect-error: convert to ts
 import { accessibilityButtons } from 'accessibility-buttons'
 
+import './styles'
+
 const ready = (callback: () => void) => {
-  if (document.readyState !== 'loading') {
-    callback()
-  } else {
+  if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', callback)
+  } else {
+    callback()
   }
 }
 
@@ -21,7 +22,7 @@ ready(() => {
       nameButtonRemove: 'Click me and things will be lighten again',
     },
   })
-  const yearElement = document.getElementById('year')
+  const yearElement = document.querySelector('#year')
   if (yearElement) {
     yearElement.innerHTML = String(new Date().getFullYear())
   }
@@ -33,32 +34,32 @@ ready(() => {
   // }
 })
 
-function hasClass(element: HTMLElement, clazz: string) {
-  return ` ${element.className} `.indexOf(` ${clazz} `) > -1
-}
+// const hasClass = (element: HTMLElement, clazz: string) => {
+//   return ` ${element.className} `.includes(` ${clazz} `)
+// }
 
-function analytics() {
-  // return function () {
-  //   var $this = this
-  //   var $body = document.body
-  //   if ($this.getAttribute('id') === 'accessibility-contrast') {
-  //     if (
-  //       hasClass($body, $this.getAttribute('id') && typeof ga === 'function')
-  //     ) {
-  //       ga('send', 'event', 'accessibility', 'click', 'Add Contrast')
-  //     } else {
-  //       ga('send', 'event', 'accessibility', 'click', 'Remove Contrast')
-  //     }
-  //   }
-  //   if ($this.getAttribute('id') === 'accessibility-font') {
-  //     if (
-  //       hasClass($body, $this.getAttribute('id')) &&
-  //       typeof ga === 'function'
-  //     ) {
-  //       ga('send', 'event', 'accessibility', 'click', 'Increase Font')
-  //     } else {
-  //       ga('send', 'event', 'accessibility', 'click', 'Decrease Font')
-  //     }
-  //   }
-  // }
-}
+// function analytics() {
+// return function () {
+//   var $this = this
+//   var $body = document.body
+//   if ($this.getAttribute('id') === 'accessibility-contrast') {
+//     if (
+//       hasClass($body, $this.getAttribute('id') && typeof ga === 'function')
+//     ) {
+//       ga('send', 'event', 'accessibility', 'click', 'Add Contrast')
+//     } else {
+//       ga('send', 'event', 'accessibility', 'click', 'Remove Contrast')
+//     }
+//   }
+//   if ($this.getAttribute('id') === 'accessibility-font') {
+//     if (
+//       hasClass($body, $this.getAttribute('id')) &&
+//       typeof ga === 'function'
+//     ) {
+//       ga('send', 'event', 'accessibility', 'click', 'Increase Font')
+//     } else {
+//       ga('send', 'event', 'accessibility', 'click', 'Decrease Font')
+//     }
+//   }
+// }
+// }

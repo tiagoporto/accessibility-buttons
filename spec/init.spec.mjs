@@ -1,9 +1,8 @@
 import { queryByTestId } from '@testing-library/dom'
-// eslint-disable-next-line import/no-unresolved
 import { accessibilityButtons } from 'accessibility-buttons'
 
-function storageMock() {
-  let storage = {}
+const storageMock = () => {
+  const storage = {}
 
   return {
     setItem: function (key, value) {
