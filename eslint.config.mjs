@@ -6,6 +6,7 @@ export default [
   {
     ignores: ['**/dist/'],
   },
-  { languageOptions: { globals: globals.browser } },
+  { languageOptions: { globals: { ...globals.browser, ...globals.jasmine } } },
+
   ...tpConfig.configs.base,
 ]
