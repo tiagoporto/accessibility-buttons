@@ -35,7 +35,7 @@ jobs:
           cache: npm
 
       - name: Install Dependencies
-        run: npm run ci
+        run: npm ci
 
       - name: Run Check Docs
         run: npm run check-docs
