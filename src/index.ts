@@ -1,4 +1,5 @@
 import { accessibilityButtons } from 'accessibility-buttons'
+import 'accessibility-buttons/styles'
 
 import './styles'
 
