@@ -1,0 +1,41 @@
+name: Check Docs
+
+on:
+  schedule:
+    # Run on the 1st of February, April, June, August, October, and December @ 00:00AM UTC-3
+    - cron: '0 3 1 FEB,APR,JUN,AUG,OCT,DEC *'
+  push:
+    branches: [main]
+  pull_request:
+    types:
+      - synchronize # PR was updated
+      - opened # PR was open
+      - reopened # PR was closed and is now open again
+      - ready_for_review # PR was converted from draft to open
+
+concurrency:
+  group: check-docs_${{ github.workflow }}_${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  check_docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install Dependencies
+        run: npm run ci
+
+      - name: Run Check Docs
+        run: npm run check-docs
