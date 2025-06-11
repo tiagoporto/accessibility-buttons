@@ -5,15 +5,22 @@ on:
   push:
     branches: [main]
   pull_request:
-    types: [synchronize, opened, reopened, ready_for_review, converted_to_draft]
+    types:
+      - opened # PR was open
+      - synchronize # PR was updated
+      - reopened # PR was closed and is now open again
+      - ready_for_review # PR was converted from draft to open
+      - converted_to_draft # PR was converted from open to draft
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
   checks:
-    name: Run Checks
     runs-on: ubuntu-latest
 
     steps:
@@ -29,20 +36,26 @@ jobs:
       - name: Install Dependencies
         run: npm ci --ignore-scripts
 
-      # - name: Check Docs
-      #   run: npm run check-docs
-
-      - name: Check Formatting
+      - name: Formatting Check
         run: npm run formatting:check
 
-      # - name: Check Typing
-      #   run: pnpm typecheck
+      - name: Typecheck
+        if: success() || failure()
+        run: npm run typecheck
 
-      # - name: Lint Styles
-      #   run: pnpm lint:styles
+      - name: Lint Styles
+        if: success() || failure()
+        run: npm run lint:styles
 
       - name: Lint
+        if: success() || failure()
         run: npm run lint
 
-      # - name: Lint styles
-      #   run: npm run lint:styles
+      - name: Build Site
+        if: success() || failure()
+        run: npm run build
+
+      # - name: Pack Libs
+      #   if: success() || failure()
+      #   run: |
+      #     pnpm pack --recursive
