@@ -19,7 +19,7 @@
   },
   "funding": "https://github.com/sponsors/tiagoporto",
   "type": "module",
-  "exports": "./src/index.js",
+  "exports": "./src/index.ts",
   "engines": {
     "node": ">=18"
   },

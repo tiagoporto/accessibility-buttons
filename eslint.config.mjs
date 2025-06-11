@@ -6,7 +6,23 @@ export default [
   {
     ignores: ['**/dist/'],
   },
-  { languageOptions: { globals: { ...globals.browser, ...globals.jasmine } } },
-
+  {
+    languageOptions: {
+      globals: { ...globals.browser, ...globals.jasmine },
+      sourceType: 'module',
+      ecmaVersion: 'latest',
+    },
+  },
   ...tpConfig.configs.base,
+  {
+    files: ['**/*.{ts,js}'],
+    rules: {
+      'n/no-unsupported-features/node-builtins': [
+        'error',
+        {
+          ignores: ['localStorage'],
+        },
+      ],
+    },
+  },
 ]

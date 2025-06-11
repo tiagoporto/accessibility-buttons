@@ -1,4 +1,3 @@
-// @ts-expect-error: convert to ts
 import { accessibilityButtons } from 'accessibility-buttons'
 
 import './styles'
