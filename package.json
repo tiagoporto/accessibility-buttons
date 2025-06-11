@@ -41,7 +41,7 @@
     "@tiagoporto/editor-config": "^2.0.0",
     "@tiagoporto/eslint-config": "^4.7.0",
     "@tiagoporto/prettier-config": "^2.0.0",
-    "@tiagoporto/remark-config": "^1.6.0",
+    "@tiagoporto/remark-config": "^1.7.0",
     "@tiagoporto/stylelint-config": "^1.1.0",
     "eslint": "^9.28.0",
     "globals": "^15.14.0",
