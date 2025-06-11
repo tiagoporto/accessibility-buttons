@@ -45,7 +45,7 @@ accessibilityButtons()
 
 **Observação:** Font size só funciona com as unidades `em` ou `rem`.
 
-# Configurações
+## Configurações
 
 Para configurar os `nomes dos botões` e `aria-labels`, use os seguinte parâmetros:
 
@@ -111,4 +111,4 @@ body.accessibility-contrast {
 
 ## Licença
 
-Este projeto está sob os termos da [licença MIT](LICENSE).
+Accessibility Buttons © 2015 por Tiago Porto está sob os termos da [MIT License](LICENSE).
