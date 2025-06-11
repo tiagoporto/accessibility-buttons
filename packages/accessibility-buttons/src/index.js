@@ -6,9 +6,7 @@
  * @return
  */
 
-export const accessibilityButtons = (options) => {
-  'use strict'
-
+export const accessibilityButtons = ({ font, contrast } = {}) => {
   /**
    * hasClass
    * @param  {string}  element - DOM element
@@ -25,6 +23,7 @@ export const accessibilityButtons = (options) => {
       ariaLabelButtonIncrease: 'Increase Font',
       nameButtonDecrease: '-A',
       ariaLabelButtonDecrease: 'Decrease Font',
+      ...font,
     },
 
     contrast: {
@@ -32,22 +31,8 @@ export const accessibilityButtons = (options) => {
       ariaLabelButtonAdd: 'Add Contrast',
       nameButtonRemove: 'Remove Contrast',
       ariaLabelButtonRemove: 'Remove Contrast',
+      ...contrast,
     },
-  }
-
-  // Set buttons name and aria label
-  if (options) {
-    for (var key in options) {
-      if (options.hasOwnProperty(key)) {
-        var obj = options[key]
-
-        for (var prop in obj) {
-          if (obj.hasOwnProperty(prop)) {
-            setting[key][prop] = obj[prop]
-          }
-        }
-      }
-    }
   }
 
   var $body = document.body,

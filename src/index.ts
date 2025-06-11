@@ -1,4 +1,5 @@
 import './styles'
+// @ts-ignore
 import { accessibilityButtons } from 'accessibility-buttons'
 
 const ready = (callback: () => void) => {
@@ -20,7 +21,10 @@ ready(() => {
       nameButtonRemove: 'Click me and things will be lighten again',
     },
   })
-  document.getElementById('year').innerHTML = new Date().getFullYear()
+  const yearElement = document.getElementById('year')
+  if (yearElement) {
+    yearElement.innerHTML = String(new Date().getFullYear())
+  }
 
   // var $accessibilityButtons = document.getElementsByClassName('js-acessibility')
   // for (var i = 0; i < $accessibilityButtons.length; i++) {
@@ -29,7 +33,7 @@ ready(() => {
   // }
 })
 
-function hasClass(element, clazz) {
+function hasClass(element: HTMLElement, clazz: string) {
   return ` ${element.className} `.indexOf(` ${clazz} `) > -1
 }
 
