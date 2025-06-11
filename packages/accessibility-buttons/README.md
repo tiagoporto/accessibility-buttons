@@ -36,7 +36,7 @@ Add buttons
 Initialize after DOM ready
 
 ```js
-accessibilityButtons();
+accessibilityButtons()
 ```
 
 **Note:** Note: Font size works only with `em` or `rem` units.
@@ -49,19 +49,19 @@ To set up `buttons names` and `aria-labels`, use the following parameters.
 // default values
 accessibilityButtons({
   font: {
-    nameButtonIncrease: "+A",
-    ariaLabelButtonIncrease: "Increase Font",
-    nameButtonDecrease: "-A",
-    ariaLabelButtonDecrease: "Decrease Font",
+    nameButtonIncrease: '+A',
+    ariaLabelButtonIncrease: 'Increase Font',
+    nameButtonDecrease: '-A',
+    ariaLabelButtonDecrease: 'Decrease Font'
   },
 
   contrast: {
-    nameButtonAdd: "Add Contrast",
-    ariaLabelButtonAdd: "Add Contrast",
-    nameButtonRemove: "Remove Contrast",
-    ariaLabelButtonRemove: "Remove Contrast",
-  },
-});
+    nameButtonAdd: 'Add Contrast',
+    ariaLabelButtonAdd: 'Add Contrast',
+    nameButtonRemove: 'Remove Contrast',
+    ariaLabelButtonRemove: 'Remove Contrast'
+  }
+})
 ```
 
 `Font size` and `contrast colors` could be customized only overwritting class values.

@@ -52,19 +52,19 @@ Para configurar os `nomes dos botões` e `aria-labels`, use os seguinte parâmet
 ```js
 // default values
 accessibilityButtons({
-    font: {
-        nameButtonIncrease: '+A',
-        ariaLabelButtonIncrease: 'Increase Font',
-        nameButtonDecrease: '-A',
-        ariaLabelButtonDecrease: 'Decrease Font'
-    },
+  font: {
+    nameButtonIncrease: '+A',
+    ariaLabelButtonIncrease: 'Increase Font',
+    nameButtonDecrease: '-A',
+    ariaLabelButtonDecrease: 'Decrease Font'
+  },
 
-    contrast: {
-        nameButtonAdd: 'Add Contrast',
-        ariaLabelButtonAdd: 'Add Contrast',
-        nameButtonRemove: 'Remove Contrast',
-        ariaLabelButtonRemove: 'Remove Contrast'
-    }
+  contrast: {
+    nameButtonAdd: 'Add Contrast',
+    ariaLabelButtonAdd: 'Add Contrast',
+    nameButtonRemove: 'Remove Contrast',
+    ariaLabelButtonRemove: 'Remove Contrast'
+  }
 })
 ```
 
@@ -74,34 +74,34 @@ Exemplo
 
 ```css
 body {
-    font-size: 1em;
-    color: #a9a9a9;
-    background: #000;
+  font-size: 1em;
+  color: #a9a9a9;
+  background: #000;
 }
 
 body input,
 body textarea,
 body select,
 body button {
-/* The default font-size of these elements is approximately 20% less than the body */
+  /* The default font-size of these elements is approximately 20% less than the body */
   font-size: 0.9em;
 }
 
 body.accessibility-font {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 body.accessibility-font input,
 body.accessibility-font textarea,
 body.accessibility-font select,
 body.accessibility-font button {
-/* The default font-size of these elements is approximately 20% less than the body */
+  /* The default font-size of these elements is approximately 20% less than the body */
   font-size: 1.2em;
 }
 
 body.accessibility-contrast {
-    color: #000;
-    background: #a9a9a9;
+  color: #000;
+  background: #a9a9a9;
 }
 ```
 
