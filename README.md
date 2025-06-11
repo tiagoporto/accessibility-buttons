@@ -1,5 +1,3 @@
-<p align="right"><img src="https://raw.githubusercontent.com/ellerbrock/open-source-badges/refs/heads/master/badges/open-source-v3/open-source.svg" alt="Open Source Love"></p>
-
 <p align="center"><img src="./public/img//logos/accessibility-buttons-logo.svg" alt="Accessibility Buttons" width="600" /></p>
 
 Buttons to add/remove contrast and increase/decrease font size.
