@@ -11,19 +11,19 @@
     "increase font",
     "decrease font"
   ],
-  "author": {
-    "name": "Tiago Porto",
-    "url": "http://tiagoporto.com"
-  },
+  "author": "Tiago Porto (https://tiagoporto.com)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tiagoporto/accessibility-buttons.git"
+    "url": "git+https://github.com/tiagoporto/accessibility-buttons.git",
+    "directory": "packages/accessibility-buttons"
   },
-  "exports": "./src/index.js",
+  "funding": "https://github.com/sponsors/tiagoporto",
   "type": "module",
+  "exports": "./src/index.js",
   "engines": {
     "node": ">=18"
   },
+  "files": [],
   "license": "MIT",
   "scripts": {}
 }
