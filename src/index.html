@@ -72,6 +72,21 @@
       href="https://fonts.googleapis.com/css2?family=Lora:wght@400..700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=<%= GTAG_ID %>"
+    ></script>
+    <script>
+      globalThis.dataLayer = globalThis.dataLayer || []
+      function gtag() {
+        globalThis.dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+
+      gtag('config', '<%= GTAG_ID %>')
+    </script>
   </head>
   <body>
     <header class="header">

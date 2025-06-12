@@ -29,8 +29,8 @@ jobs:
         run: npm ci
 
       - name: Build website
-        # env:
-        #   GTAG_ID: ${{ vars.GTAG_ID }}
+        env:
+          GTAG_ID: ${{ vars.GTAG_ID }}
         run: npm run build
 
       - name: Upload artifact

@@ -52,7 +52,15 @@ export default defineConfig({
     ],
   },
   plugins: [
-    new rspack.HtmlRspackPlugin({ template: './src/index.html' }),
+    new rspack.DefinePlugin({
+      GTAG_ID: JSON.stringify(true),
+    }),
+    new rspack.HtmlRspackPlugin({
+      template: './src/index.html',
+      templateParameters: {
+        GTAG_ID: process.env.GTAG_ID || '',
+      },
+    }),
     new rspack.CopyRspackPlugin({
       patterns: [{ from: 'public' }],
     }),

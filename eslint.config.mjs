@@ -25,4 +25,8 @@ export default [
       ],
     },
   },
+  {
+    files: ['**/*.html'],
+    rules: { 'jsdoc/require-jsdoc': 'off' },
+  },
 ]
