@@ -17,15 +17,12 @@ html {
 body {
   background-color: #fff;
   color: #000;
-  font:
-    16px/1.5em Lora,
-    'Times New Roman',
-    Times,
-    Georgia,
-    serif;
+  font-family: Lora, 'Times New Roman', Times, Georgia, serif;
   font-feature-settings: 'liga', 'kern';
   font-optical-sizing: auto;
+  font-size: 1rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5em;
   text-rendering: optimizelegibility;
 }

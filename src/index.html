@@ -251,11 +251,17 @@
 
     <main class="main">
       <div class="row">
-        <button type="button" data-accessibility="font">+A</button>
+        <a11y-button-contrast
+          add-contrast-label="Click me and things will be darken"
+          remove-contrast-label="Click me and things will be lighten again"
+        >
+        </a11y-button-contrast>
 
-        <button type="button" data-accessibility="contrast">
-          Add Contrast
-        </button>
+        <a11y-button-font-size
+          increase-label="Click me and things will be big"
+          decrease-label="Click me and things will be back to normal"
+        >
+        </a11y-button-font-size>
       </div>
 
       <h2>Install</h2>

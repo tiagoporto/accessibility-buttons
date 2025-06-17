@@ -22,22 +22,14 @@ button:hover {
   color: #fff;
 }
 
-button:focus {
-  box-shadow: 0 0 0 0.2rem rgba(#000, 0.5);
-  outline: none;
-}
-
-.accessibility-contrast button {
+.a11y-contrast a11y-button-contrast button,
+.a11y-contrast a11y-button-font-size button {
   border-color: #e3ff17;
   color: #e3ff17;
 }
 
-.accessibility-contrast button:hover {
+.a11y-contrast a11y-button-contrast button:hover,
+.a11y-contrast a11y-button-font-size button:hover {
   background: #e3ff17;
   color: #000;
-}
-
-.accessibility-contrast button:focus {
-  box-shadow: 0 0 0 0.2rem rgba(#fff, 0.5);
-  outline: none;
 }

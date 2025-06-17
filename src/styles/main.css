@@ -11,16 +11,17 @@
   gap: 1%;
 }
 
-.row button {
+.row * {
+  flex-basis: 0;
   flex-grow: 1;
 }
 
-@media (width <= 600px) {
+@media (width <= 800px) {
   .row {
     flex-direction: column;
   }
 
-  .row button {
+  .row * {
     margin-bottom: 10px;
   }
 }

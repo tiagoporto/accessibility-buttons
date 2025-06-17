@@ -1,5 +1,6 @@
-import { accessibilityButtons } from 'accessibility-buttons'
-import 'accessibility-buttons/styles'
+import 'accessibility-buttons/FontSizeButton'
+
+import 'accessibility-buttons/ContrastButton'
 
 import './styles'
 
@@ -12,16 +13,6 @@ const ready = (callback: () => void) => {
 }
 
 ready(() => {
-  accessibilityButtons({
-    font: {
-      nameButtonIncrease: 'Click me and things will be big',
-      nameButtonDecrease: 'Click me and things will be back to normal',
-    },
-    contrast: {
-      nameButtonAdd: 'Click me and things will be darken',
-      nameButtonRemove: 'Click me and things will be lighten again',
-    },
-  })
   const yearElement = document.querySelector('#year')
   if (yearElement) {
     yearElement.innerHTML = String(new Date().getFullYear())

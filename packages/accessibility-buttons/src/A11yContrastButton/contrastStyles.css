@@ -1,0 +1,10 @@
+body {
+  transition: var(--a11y-bg-transition, background 0.95s ease-in),
+    var(--a11y-color-transition, color 0.95s ease-in),
+    var(--a11y-font-size-transition, font-size 0.7s linear);
+}
+
+.a11y-contrast body {
+  background: var(--a11y-background, #000);
+  color: var(--a11y-color, #fff);
+}
