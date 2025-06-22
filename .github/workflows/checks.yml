@@ -34,26 +34,26 @@ jobs:
           cache: npm
 
       - name: Install Dependencies
-        run: npm ci --ignore-scripts
+        run: pnpm install --frozen-lockfile --ignore-scripts
 
       - name: Format Check
-        run: npm run format:check
+        run: pnpm format:check
 
       - name: Typecheck
         if: success() || failure()
-        run: npm run typecheck
+        run: pnpm typecheck
 
       - name: Lint Styles
         if: success() || failure()
-        run: npm run lint:styles
+        run: pnpm lint:styles
 
       - name: Lint
         if: success() || failure()
-        run: npm run lint
+        run: pnpm lint
 
       - name: Build Site
         if: success() || failure()
-        run: npm run build
+        run: pnpm build
 
       # - name: Pack Libs
       #   if: success() || failure()

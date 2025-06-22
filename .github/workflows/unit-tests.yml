@@ -34,10 +34,10 @@ jobs:
           cache: npm
 
       - name: Install Dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile --ignore-scripts
 
       - name: Run Unit Tests
-        run: npm run test
+        run: pnpm test
 
       # - name: Coveralls
       #   uses: coverallsapp/github-action@648a8eb78e6d50909eff900e4ec85cab4524a45b
