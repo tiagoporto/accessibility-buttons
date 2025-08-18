@@ -20,7 +20,7 @@
   "funding": "https://github.com/sponsors/tiagoporto",
   "type": "module",
   "exports": {
-    "./ContrastButton": "./src/A11yContrastButton/a11y-button-contrast.ts",
+    "./ContrastButton": "./src/A11yContrastButton/a11y-contrast-button.ts",
     "./FontSizeButton": "./src/A11yFontSizeButton/a11y-font-size-button.ts"
   },
   "engines": {

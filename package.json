@@ -27,7 +27,7 @@
     "test": "jasmine"
   },
   "dependencies": {
-    "accessibility-buttons": "^4.0.0",
+    "accessibility-buttons": "workspace:*",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {

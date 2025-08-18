@@ -13,6 +13,18 @@ export default [
       ecmaVersion: 'latest',
     },
   },
+  {
+    // web component
+    files: ['**/A11yContrastButton.ts', '**/A11yFontSizeButton.ts'],
+    rules: {
+      'unicorn/filename-case': [
+        'warn',
+        {
+          case: 'pascalCase',
+        },
+      ],
+    },
+  },
   ...tpConfig.configs.base,
   {
     files: ['**/*.{ts,js}'],

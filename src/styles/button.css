@@ -22,14 +22,14 @@ button:hover {
   color: #fff;
 }
 
-.a11y-contrast a11y-button-contrast button,
-.a11y-contrast a11y-button-font-size button {
+.a11y-contrast a11y-contrast-button button,
+.a11y-contrast a11y-font-size-button button {
   border-color: #e3ff17;
   color: #e3ff17;
 }
 
-.a11y-contrast a11y-button-contrast button:hover,
-.a11y-contrast a11y-button-font-size button:hover {
+.a11y-contrast a11y-contrast-button button:hover,
+.a11y-contrast a11y-font-size-button button:hover {
   background: #e3ff17;
   color: #000;
 }

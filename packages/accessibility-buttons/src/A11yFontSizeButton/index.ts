@@ -1,1 +1,1 @@
-export { A11yButtonContrast } from './A11yFontSizeButton'
+export { A11yFontSizeButton } from './A11yFontSizeButton'
