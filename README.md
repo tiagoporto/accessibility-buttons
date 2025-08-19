@@ -1,19 +1,22 @@
-<p align="center"><img src="./public/img//logos/accessibility-buttons-logo.svg" alt="Accessibility Buttons" width="600" /></p>
+<p align="center"><img src="./public/img/logos/accessibility-buttons-logo.svg" alt="Accessibility Buttons" width="600" /></p>
 
 Buttons to add/remove contrast and increase/decrease font size.
+
+## ▶️ Demo
+
+<http://tiagoporto.com/accessibility-buttons/>
 
 ## ✅ Status
 
 [![Docs GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/accessibility-buttons/check-docs.yml?branch=main&label=docs&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/accessibility-buttons/actions/workflows/check-docs.yml?query=branch%3Amain)
 [![Checks GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/accessibility-buttons/checks.yml?branch=main&label=checks&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/accessibility-buttons/actions/workflows/checks.yml?query=branch%3Amain)
-[![Tests GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/accessibility-buttons/unit-tests.yml?branch=main&label=unit%20tests&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/accessibility-buttons/actions/workflows/unit-tests.yml?query=branch%3Amain)
 
+<!-- [![Tests GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/accessibility-buttons/unit-tests.yml?branch=main&label=unit%20tests&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/accessibility-buttons/actions/workflows/unit-tests.yml?query=branch%3Amain) -->
 <!-- [![E2E Tests GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/accessibility-buttons/e2e-tests.yml?branch=main&label=e2e%20tests&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/accessibility-buttons/actions/workflows/e2e-tests.yml?query=branch%3Amain) -->
+<!-- [![Coverage Status](https://img.shields.io/coverallsCoverage/github/tiagoporto/accessibility-buttons.svg?logo=coveralls&style=flat-square)](https://coveralls.io/github/tiagoporto/accessibility-buttons) -->
 
 ![Website](https://img.shields.io/website?logo=githubpages&style=flat-square&url=https://tiagoporto.com/accessibility-buttons)
 [![W3C Validation](https://img.shields.io/w3c-validation/html.svg?style=flat-square&targetUrl=https://tiagoporto.com/accessibility-buttons/)](https://validator.nu/?doc=https%3A%2F%2Ftiagoporto.github.io%2Faccessibility-buttons)
-
-[![Coverage Status](https://img.shields.io/coverallsCoverage/github/tiagoporto/accessibility-buttons.svg?logo=coveralls&style=flat-square)](https://coveralls.io/github/tiagoporto/accessibility-buttons)
 
 ## 🧰 Stack
 
@@ -88,7 +91,7 @@ npm run dev
 
 ## 🤜🤛 Donating
 
-This project is developed on my free time, any donation is welcome.
+This project was developed in my free time. Any donations are greatly appreciated.
 
 [![GITHUB Sponsor](https://img.shields.io/badge/-github-black?logo=github)](https://github.com/sponsors/tiagoporto)
 [![Paypal Donate](https://img.shields.io/badge/PayPal-blue?logo=paypal)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YTDUQ8RZ2G4Q8&lc=BR&item_name=tiagoporto&item_number=geradorcpf&currency_code=BRL&bn=PP%2dDonationsBF:btn_donateCC_LG%2egif:NonHosted)
