@@ -21,85 +21,13 @@ npm install accessibility-buttons --save
 
 ## Usage
 
-Import
-
-- accessibility-buttons/dist/css/accessibility-buttons.css
-- accessibility-buttons/dist/js/accessibility-buttons.js
-
-Add buttons
-
-```html
-<button type="button" data-accessibility="font">+A</button>
-<button type="button" data-accessibility="contrast">Add Contrast</button>
-```
-
-Initialize after DOM ready
-
-```js
-accessibilityButtons()
-```
+TO-DO
 
 **Note:** Note: Font size works only with `em` or `rem` units.
 
-## Settings
+## Styling
 
-To set up `buttons names` and `aria-labels`, use the following parameters.
-
-```js
-// default values
-accessibilityButtons({
-  font: {
-    nameButtonIncrease: '+A',
-    ariaLabelButtonIncrease: 'Increase Font',
-    nameButtonDecrease: '-A',
-    ariaLabelButtonDecrease: 'Decrease Font'
-  },
-
-  contrast: {
-    nameButtonAdd: 'Add Contrast',
-    ariaLabelButtonAdd: 'Add Contrast',
-    nameButtonRemove: 'Remove Contrast',
-    ariaLabelButtonRemove: 'Remove Contrast'
-  }
-})
-```
-
-`Font size` and `contrast colors` could be customized only overwritting class values.
-
-Example:
-
-```css
-body {
-  font-size: 1em;
-  color: #a9a9a9;
-  background: #000;
-}
-
-body input,
-body textarea,
-body select,
-body button {
-  /* The default font-size of these elements is approximately 20% less than the body */
-  font-size: 0.9em;
-}
-
-body.accessibility-font {
-  font-size: 1.5em;
-}
-
-body.accessibility-font input,
-body.accessibility-font textarea,
-body.accessibility-font select,
-body.accessibility-font button {
-  /* The default font-size of these elements is approximately 20% less than the body */
-  font-size: 1.2em;
-}
-
-body.accessibility-contrast {
-  color: #000;
-  background: #a9a9a9;
-}
-```
+TO-DO
 
 ## Contributing
 
