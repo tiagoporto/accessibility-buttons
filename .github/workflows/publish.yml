@@ -1,0 +1,59 @@
+name: Publish Packages
+
+on: workflow_dispatch
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    uses: ./.github/workflows/checks.yml
+    secrets: inherit
+
+  # unit_tests:
+  #   uses: ./.github/workflows/unit-tests.yml
+  #   secrets: inherit
+
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      id-token: write # to enable use of OIDC for npm provenance
+      attestations: write # necessary to persist the attestation
+    needs: [checks]
+    # needs: [checks, unit_tests]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
+
+      - name: Configure .npmrc
+        run: echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> .npmrc
+
+      - name: Bump version, add tag, and publish github release
+        env:
+          BRANCH: ${{github.ref_name}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
+        run: pnpm recursive run release
+
+      - name: Remove node_modules
+        run: |
+          rm -rf packages/**/node_modules/
+
+      - uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: packages

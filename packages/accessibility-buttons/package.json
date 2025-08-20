@@ -1,6 +1,6 @@
 {
   "name": "accessibility-buttons",
-  "version": "4.0.0",
+  "version": "0.0.0-development",
   "description": "Buttons to add/remove contrast and increase/decrease font size.",
   "homepage": "https://tiagoporto.github.io/accessibility-buttons",
   "keywords": [
@@ -9,7 +9,8 @@
     "contrast",
     "font size",
     "increase font",
-    "decrease font"
+    "decrease font",
+    "web-component"
   ],
   "author": "Tiago Porto (https://tiagoporto.com)",
   "repository": {
@@ -24,6 +25,13 @@
     "./ContrastButton": "./src/A11yContrastButton/a11y-contrast-button.ts",
     "./FontSizeButton": "./src/A11yFontSizeButton/a11y-font-size-button.ts"
   },
+  "publishConfig": {
+    "exports": {
+      ".": "./dist/index.js",
+      "./ContrastButton": "./dist/a11y-contrast-button.js",
+      "./FontSizeButton": "./dist/a11y-font-size-button.js"
+    }
+  },
   "engines": {
     "node": ">=18"
   },
@@ -33,7 +41,9 @@
   "license": "MIT",
   "scripts": {
     "prepack": "pnpm build",
-    "build": "rm -rf dist && rollup --config"
+    "build": "rm -rf dist && rollup --config",
+    "release": "semantic-release",
+    "release:dry-run": "semantic-release --dry-run"
   },
   "dependencies": {
     "lit": "^3.1.4",
