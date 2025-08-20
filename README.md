@@ -4,7 +4,7 @@ Buttons to add/remove contrast and increase/decrease font size.
 
 ## ▶️ Demo
 
-<http://tiagoporto.com/accessibility-buttons/>
+<https://tiagoporto.github.io/accessibility-buttons/>
 
 ## ✅ Status
 
