@@ -44,7 +44,7 @@
     "@tiagoporto/prettier-config": "^2.0.0",
     "@tiagoporto/remark-config": "^1.7.0",
     "@tiagoporto/stylelint-config": "^1.1.1",
-    "eslint": "^9.28.0",
+    "eslint": "^9.33.0",
     "globals": "^15.14.0",
     "husky": "^9.1.7",
     "jasmine": "^5.8.0",
