@@ -2,7 +2,7 @@
   "name": "accessibility-buttons",
   "version": "4.0.0",
   "description": "Buttons to add/remove contrast and increase/decrease font size.",
-  "homepage": "http://tiagoporto.github.io/accessibility-buttons",
+  "homepage": "https://tiagoporto.github.io/accessibility-buttons",
   "keywords": [
     "accessibility",
     "button",
@@ -20,16 +20,29 @@
   "funding": "https://github.com/sponsors/tiagoporto",
   "type": "module",
   "exports": {
+    ".": "./src/index.ts",
     "./ContrastButton": "./src/A11yContrastButton/a11y-contrast-button.ts",
     "./FontSizeButton": "./src/A11yFontSizeButton/a11y-font-size-button.ts"
   },
   "engines": {
     "node": ">=18"
   },
-  "files": [],
+  "files": [
+    "/dist"
+  ],
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "prepack": "pnpm build",
+    "build": "rm -rf dist && rollup --config"
+  },
+  "dependencies": {
+    "lit": "^3.1.4",
+    "tslib": "^2.8.1"
+  },
   "devDependencies": {
-    "lit": "^3.1.4"
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.4",
+    "rollup": "^4.46.3",
+    "rollup-plugin-postcss": "^4.0.2"
   }
 }
