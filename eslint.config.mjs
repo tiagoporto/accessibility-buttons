@@ -8,7 +8,7 @@ export default [
   },
   {
     languageOptions: {
-      globals: { ...globals.browser, ...globals.jasmine },
+      globals: { ...globals.browser, ...globals.node, ...globals.jasmine },
       sourceType: 'module',
       ecmaVersion: 'latest',
     },
