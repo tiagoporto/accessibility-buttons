@@ -3,13 +3,14 @@ name: Deploy GH Pages
 on: workflow_dispatch
 
 jobs:
-  # checks:
-  #   uses: ./.github/workflows/checks.yml
-  #   secrets: inherit
+  checks:
+    uses: ./.github/workflows/checks.yml
+    secrets: inherit
 
   build:
     name: Generate Build
     runs-on: ubuntu-latest
+    needs: [checks]
     # needs: [checks, unit_tests, e2e_tests]
     steps:
       - name: Checkout
