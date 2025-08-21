@@ -2,3 +2,8 @@
   background: var(--a11y-background, #000);
   color: var(--a11y-color, #fff);
 }
+
+.a11y-contrast ::selection {
+  background: var(--a11y-color, #fff);
+  color: var(--a11y-background, #000);
+}
