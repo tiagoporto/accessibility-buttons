@@ -28,7 +28,7 @@ export class A11yContrastButton extends LitElement {
   }
 
   updateLabel(featEnabled?: boolean) {
-    const addContrastLabel = this.addContrastLabel || 'Add contrast'
+    const addContrastLabel = this.addContrastLabel || 'Add Contrast'
     const removeContrastLabel = this.removeContrastLabel || 'Remove Contrast'
     const addContrastAriaLabel = this.addContrastAriaLabel || 'Add contrast'
     const removeContrastAriaLabel =
