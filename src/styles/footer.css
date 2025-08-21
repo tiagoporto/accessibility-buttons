@@ -1,13 +1,8 @@
 .footer {
-  display: block;
-  width: auto;
   max-width: 900px;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-bottom: 1.5em;
-  margin-left: auto;
-  float: none;
+  padding: 30px 15px 20px;
+  border-top: 1px solid #eee;
+  margin: auto;
   font-size: 1.2em;
   text-align: center;
 }

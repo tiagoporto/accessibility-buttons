@@ -1,7 +1,17 @@
+import hljs from 'highlight.js'
+import cmake from 'highlight.js/lib/languages/cmake'
+import javascript from 'highlight.js/lib/languages/javascript'
+import xml from 'highlight.js/lib/languages/xml'
+import 'highlight.js/styles/atom-one-dark.min.css'
+
 import 'accessibility-buttons/ContrastButton'
 import 'accessibility-buttons/FontSizeButton'
 
 import './styles'
+
+hljs.registerLanguage('javascript', javascript)
+hljs.registerLanguage('xml', xml)
+hljs.registerLanguage('bash', cmake)
 
 const ready = (callback: () => void) => {
   if (document.readyState === 'loading') {
@@ -12,11 +22,16 @@ const ready = (callback: () => void) => {
 }
 
 ready(() => {
+  const codeBlocks = document.querySelectorAll('pre code')
   const yearElement = document.querySelector('#year')
+
   if (yearElement) {
     yearElement.innerHTML = String(new Date().getFullYear())
   }
 
+  for (const element of codeBlocks) {
+    hljs.highlightElement(element as HTMLElement)
+  }
   // var $accessibilityButtons = document.getElementsByClassName('js-acessibility')
   // for (var i = 0; i < $accessibilityButtons.length; i++) {
   //   $accessibilityButtons[i].addEventListener('click', analytics())

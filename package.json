@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "accessibility-buttons": "workspace:*",
+    "highlight.js": "^11.11.1",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {

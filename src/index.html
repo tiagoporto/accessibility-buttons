@@ -230,49 +230,35 @@
 
       <h2>Install</h2>
 
-      <code><pre>npm install accessibility-buttons --save</pre></code>
+      <pre><code class="language-bash">npm install accessibility-buttons --save</code></pre>
 
       <h2>Usage</h2>
 
       <p>Import</p>
-      <ul>
-        <li>
-          <kbd>accessibility-buttons/dist/css/accessibility-buttons.css</kbd>
-        </li>
-        <li>
-          <kbd>accessibility-buttons/dist/js/accessibility-buttons.js</kbd>
-        </li>
-      </ul>
+
+      <pre><code class="language-javascript">import 'accessibility-buttons/ContrastButton'
+import 'accessibility-buttons/FontSizeButton'</code></pre>
 
       <p>Add buttons</p>
 
-      <code>
-        <pre>
-&lt;button type="button" data-accessibility="font">+A&lt;/button>
-&lt;button type="button" data-accessibility="contrast">Add Contrast&lt;/button></pre
-        >
-      </code>
-
-      <p>Initialize after DOM ready</p>
-
-      <code>
-        <pre>accessibilityButtons()</pre>
-      </code>
+      <pre><code class="language-xml">&lt;a11y-contrast-button>&lt;/a11y-contrast-button>
+&lt;a11y-font-size-button>&lt;/a11y-font-size-button></code></pre>
 
       <p>
-        <strong>Note:</strong> Font size works only with "em" or "rem" units.
+        Font size works only with relative units, example <kbd>em</kbd> or
+        <kbd>rem</kbd>.
       </p>
 
-      <h2>Settings</h2>
+      <h2>Documentation</h2>
 
       <p>
-        Check
+        Full documentation is available at
         <a
-          href="https://github.com/tiagoporto/accessibility-buttons/blob/master/README.md"
+          href="https://github.com/tiagoporto/accessibility-buttons/tree/main/packages/accessibility-buttons"
+          target="_blank"
         >
-          github.com/tiagoporto/accessibility-buttons
-        </a>
-        for more details
+          GitHub</a
+        >.
       </p>
     </main>
 
