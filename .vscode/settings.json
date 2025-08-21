@@ -3,6 +3,5 @@
     "source.fixAll": "explicit"
   },
   "editor.formatOnSave": true,
-  "eslint.validate": ["yaml", "github-actions-workflow"],
   "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
