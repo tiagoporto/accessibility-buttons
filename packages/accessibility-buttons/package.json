@@ -1,7 +1,7 @@
 {
   "name": "accessibility-buttons",
   "version": "0.0.0-development",
-  "description": "Buttons to add/remove contrast and increase/decrease font size.",
+  "description": "Web component buttons for adding/removing contrast and increasing/decreasing font size, enhancing the user experience for everyone.",
   "homepage": "https://tiagoporto.github.io/accessibility-buttons",
   "keywords": [
     "accessibility",
@@ -10,7 +10,7 @@
     "font size",
     "increase font",
     "decrease font",
-    "web-component"
+    "web component"
   ],
   "author": "Tiago Porto (https://tiagoporto.com)",
   "repository": {
@@ -36,7 +36,8 @@
     "node": ">=18"
   },
   "files": [
-    "/dist"
+    "/dist",
+    "/docs"
   ],
   "license": "MIT",
   "scripts": {
