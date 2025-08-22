@@ -1,7 +1,7 @@
 {
   "name": "accessibility-buttons",
   "version": "0.0.0-development",
-  "description": "Web component buttons for adding/removing contrast and increasing/decreasing font size, enhancing the user experience for everyone.",
+  "description": "Web component for adding/removing contrast and increasing/decreasing font size, enhancing the user experience for everyone.",
   "homepage": "https://tiagoporto.github.io/accessibility-buttons",
   "keywords": [
     "accessibility",
