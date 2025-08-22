@@ -1,6 +1,13 @@
 <p align="center"><img src="./public/img/logos/accessibility-buttons-logo.svg" alt="Accessibility Buttons" width="600" /></p>
 
-Buttons to add/remove contrast and increase/decrease font size.
+[![version](https://img.shields.io/npm/v/accessibility-buttons?style=flat-square&label=)](https://www.npmjs.com/package/accessibility-buttons)
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg?style=flat-square)](https://www.webcomponents.org/element/accessibility-buttons)
+[![Downloads](https://img.shields.io/npm/dm/accessibility-buttons.svg?style=flat-square)](https://www.npmjs.com/package/accessibility-buttons)
+[![npm bundle size](https://img.shields.io/bundlephobia/min/accessibility-buttons?style=flat-square)](https://bundlephobia.com/package/accessibility-buttons)
+
+<!-- ![npm type definitions](https://img.shields.io/npm/types/gerador-validador-cpf.svg?style=flat-square) -->
+
+Web component for adding/removing contrast and increasing/decreasing font size, enhancing the user experience for everyone.
 
 ## ▶️ Demo
 
@@ -91,7 +98,7 @@ import 'accessibility-buttons/FontSizeButton'
 nvm install
 ```
 
-### Install
+### Install Dependencies
 
 ```bash
 npm install
