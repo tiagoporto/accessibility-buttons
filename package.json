@@ -14,6 +14,7 @@
     "prepare": "husky",
     "build": "rspack build",
     "dev": "rspack dev",
+    "test-app": "rspack dev --config ./tests/app/rspack.config.ts",
     "preview": "rspack preview",
     "checks": "pnpm check-docs && pnpm format:check && pnpm typecheck && pnpm lint:styles && pnpm lint",
     "check-docs": "remark --frail . --ext md,markdown,mdx",
@@ -24,7 +25,9 @@
     "lint:styles:fix": "stylelint \"**/*.{css,scss}\" --fix",
     "lint": "eslint --max-warnings 0",
     "lint:fix": "npm run lint -- --write",
-    "test": "jasmine"
+    "test": "jasmine",
+    "test:e2e": "start-server-and-test test-app http-get://localhost:8080 'playwright test'",
+    "test:e2e:dev": "start-server-and-test test-app http-get://localhost:8080 'playwright test --ui'"
   },
   "dependencies": {
     "accessibility-buttons": "workspace:*",
@@ -35,6 +38,7 @@
     "@anolilab/semantic-release-pnpm": "^2.0.3",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
+    "@playwright/test": "^1.55.0",
     "@rspack/cli": "^1.3.15",
     "@rspack/core": "^1.3.15",
     "@testing-library/dom": "^10.4.0",
@@ -45,6 +49,7 @@
     "@tiagoporto/prettier-config": "^2.0.0",
     "@tiagoporto/remark-config": "^1.7.0",
     "@tiagoporto/stylelint-config": "^1.1.1",
+    "@types/node": "^24.3.0",
     "eslint": "^9.33.0",
     "globals": "^15.14.0",
     "husky": "^9.1.7",
@@ -56,6 +61,7 @@
     "remark-cli": "^12.0.1",
     "semantic-release": "^24.2.7",
     "semantic-release-monorepo": "github:tiagoporto/semantic-release-monorepo",
+    "start-server-and-test": "^2.0.13",
     "stylelint": "^16.13.2",
     "typescript": "^5.8.3"
   },
