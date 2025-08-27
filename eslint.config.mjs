@@ -4,7 +4,7 @@ import globals from 'globals'
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   {
-    ignores: ['**/dist/'],
+    ignores: ['**/dist/', '**/coverage/**', 'playwright-report/'],
   },
   {
     languageOptions: {
