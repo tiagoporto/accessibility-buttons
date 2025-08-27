@@ -24,7 +24,7 @@
     "lint:styles": "stylelint \"**/*.{css,scss}\"",
     "lint:styles:fix": "stylelint \"**/*.{css,scss}\" --fix",
     "lint": "eslint --max-warnings 0",
-    "lint:fix": "npm run lint -- --write",
+    "lint:fix": "pnpm lint --fix",
     "test:e2e": "start-server-and-test test-app http-get://localhost:8080 'playwright test'",
     "test:e2e:dev": "start-server-and-test test-app http-get://localhost:8080 'playwright test --ui'"
   },
