@@ -51,6 +51,7 @@
     "tslib": "^2.8.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.55.0",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.4",
     "rollup": "^4.46.3",
