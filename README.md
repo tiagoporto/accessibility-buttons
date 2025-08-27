@@ -40,13 +40,15 @@ Web component for adding/removing contrast and increasing/decreasing font size, 
 ![Web Component](https://img.shields.io/badge/web%20components-%23FFF?style=for-the-badge&logo=webcomponents.org)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![CSS](https://img.shields.io/badge/css-%23663399?style=for-the-badge&logo=css)
-![PWA](https://img.shields.io/badge/pwa-%235A0FC8?style=for-the-badge&logo=pwa&logoColor=white)
 
 <!--
+![PWA](https://img.shields.io/badge/pwa-%235A0FC8?style=for-the-badge&logo=pwa&logoColor=white)
 ![PostCSS](https://img.shields.io/badge/postcss-%23DD3A0A?style=for-the-badge&logo=postcss)
 ![Autoprefixer](https://img.shields.io/badge/autoprefixer-%23DD3735?style=for-the-badge&logo=autoprefixer&logoColor=white) -->
 
 ![Rollup](https://img.shields.io/badge/rollup-%231B1B1F?style=for-the-badge&logo=rollup.js)
+![Jest](https://img.shields.io/badge/jest-%23C21325?style=for-the-badge&logo=jest)
+![Testing Library](https://img.shields.io/badge/testing%20library-%231C1A1D?style=for-the-badge&logo=testing-library)
 ![Playwright](https://img.shields.io/badge/Playwright-%23242526?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDM2OSAyNjciPgogIDxwYXRoIGZpbGw9IiMyZWFkMzMiIGQ9Ik0xNTEuNywxOTIuM3YtMjIuNGwtNjIuMywxNy43czQuNi0yNi44LDM3LjEtMzZjOS45LTIuOCwxOC4zLTIuOCwyNS4yLTEuNFY1OC4xaDMxLjJjLTMuNC0xMC41LTYuNy0xOC42LTkuNC0yNC4yLTQuNi05LjMtOS4yLTMuMS0xOS45LDUuOC03LjUsNi4zLTI2LjQsMTkuNi01NC45LDI3LjMtMjguNSw3LjctNTEuNSw1LjYtNjEuMSw0LTEzLjYtMi4zLTIwLjctNS4zLTIwLjEsNSwuNiw5LjEsMi44LDIzLjMsNy43LDQyLDEwLjgsNDAuNSw0Ni40LDExOC42LDExMy44LDEwMC40LDE3LjYtNC43LDMwLTE0LjEsMzguNi0yNi4xaC0yNlpNNTEuMSwxMTguNWw0Ny45LTEyLjZzLTEuNCwxOC40LTE5LjMsMjMuMWMtMTcuOSw0LjctMjguNS0xMC41LTI4LjUtMTAuNVoiLz4KICA8cGF0aCBmaWxsPSIjZTI1NzRjIiBkPSJNMzMxLjgsNTkuMmMtMTIuNCwyLjItNDIuMyw0LjktNzkuMi01LTM2LjktOS45LTYxLjQtMjcuMi03MS4xLTM1LjMtMTMuNy0xMS41LTE5LjgtMTkuNS0yNS43LTcuNC01LjMsMTAuNy0xMiwyOC4xLTE4LjUsNTIuNC0xNC4xLDUyLjctMjQuNywxNjMuOCw2Mi42LDE4Ny4yLDg3LjIsMjMuNCwxMzMuNy03OC4yLDE0Ny44LTEzMC45LDYuNS0yNC4zLDkuNC00Mi43LDEwLjItNTQuNi45LTEzLjUtOC4zLTkuNS0yNi02LjVaTTE1Ni41LDEwMi44czEzLjctMjEuNCwzNy4xLTE0LjhjMjMuMyw2LjYsMjUuMSwzMi40LDI1LjEsMzIuNGwtNjIuMi0xNy43Wk0yMTMuNCwxOTguN2MtNDEtMTItNDcuMy00NC43LTQ3LjMtNDQuN2wxMTAuMiwzMC44cy0yMi4yLDI1LjgtNjIuOCwxMy45Wk0yNTIuNCwxMzEuNXMxMy43LTIxLjQsMzctMTQuN2MyMy4zLDYuNiwyNS4xLDMyLjQsMjUuMSwzMi40bC02Mi4yLTE3LjdaIi8+Cjwvc3ZnPg==)
 
 ![EditorConfig](https://img.shields.io/badge/EditorConfig-%23E0EFEF.svg?style=for-the-badge&logo=editorconfig&logoColor=black)

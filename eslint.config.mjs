@@ -1,4 +1,5 @@
 import tpConfig from '@tiagoporto/eslint-config'
+import pluginJest from 'eslint-plugin-jest'
 import globals from 'globals'
 
 /** @type {import('eslint').Linter.Config[]} */
@@ -35,6 +36,17 @@ export default [
           ignores: ['localStorage'],
         },
       ],
+    },
+  },
+  {
+    files: ['**/*.test.{ts,js}'],
+    plugins: { jest: pluginJest },
+    languageOptions: {
+      globals: pluginJest.environments.globals.globals,
+    },
+    rules: {
+      ...pluginJest.configs['flat/all'].rules,
+      'jest/unbound-method': 'off',
     },
   },
   {

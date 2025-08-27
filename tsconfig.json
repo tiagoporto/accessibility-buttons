@@ -12,5 +12,5 @@
     "useDefineForClassFields": true,
     "allowImportingTsExtensions": true
   },
-  "include": ["src"]
+  "include": ["./jest/jest-setup.ts", "src"]
 }
