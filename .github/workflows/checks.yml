@@ -58,7 +58,7 @@ jobs:
         if: success() || failure()
         run: pnpm build
 
-      # - name: Pack Libs
-      #   if: success() || failure()
-      #   run: |
-      #     pnpm pack --recursive
+      - name: Pack Libs
+        if: success() || failure()
+        run: |
+          pnpm pack --recursive
