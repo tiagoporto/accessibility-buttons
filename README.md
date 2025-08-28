@@ -1,6 +1,6 @@
 <p align="center"><img src="./public/img/logos/accessibility-buttons-logo.svg" alt="Accessibility Buttons" width="600" /></p>
 
-[![version](https://img.shields.io/npm/v/accessibility-buttons?style=flat-square&label=)](https://www.npmjs.com/package/accessibility-buttons)
+[![version](https://img.shields.io/npm/v/accessibility-buttons?style=flat-square)](https://www.npmjs.com/package/accessibility-buttons)
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg?style=flat-square)](https://www.webcomponents.org/element/accessibility-buttons)
 [![Downloads](https://img.shields.io/npm/dm/accessibility-buttons.svg?style=flat-square)](https://www.npmjs.com/package/accessibility-buttons)
 [![npm bundle size](https://img.shields.io/bundlephobia/min/accessibility-buttons?style=flat-square)](https://bundlephobia.com/package/accessibility-buttons)
@@ -17,9 +17,9 @@ Web component for adding/removing contrast and increasing/decreasing font size, 
 
 [![Docs GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/accessibility-buttons/check-docs.yml?branch=main&label=docs&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/accessibility-buttons/actions/workflows/check-docs.yml?query=branch%3Amain)
 [![Checks GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/accessibility-buttons/checks.yml?branch=main&label=checks&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/accessibility-buttons/actions/workflows/checks.yml?query=branch%3Amain)
+[![Tests GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/accessibility-buttons/unit-tests.yml?branch=main&label=unit%20tests&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/accessibility-buttons/actions/workflows/unit-tests.yml?query=branch%3Amain)
 [![E2E Tests GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/accessibility-buttons/e2e-tests.yml?branch=main&label=e2e%20tests&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/accessibility-buttons/actions/workflows/e2e-tests.yml?query=branch%3Amain)
 
-<!-- [![Tests GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/accessibility-buttons/unit-tests.yml?branch=main&label=unit%20tests&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/accessibility-buttons/actions/workflows/unit-tests.yml?query=branch%3Amain) -->
 <!-- [![Coverage Status](https://img.shields.io/coverallsCoverage/github/tiagoporto/accessibility-buttons.svg?logo=coveralls&style=flat-square)](https://coveralls.io/github/tiagoporto/accessibility-buttons) -->
 
 ![Website](https://img.shields.io/website?logo=githubpages&style=flat-square&url=https://tiagoporto.com/accessibility-buttons)

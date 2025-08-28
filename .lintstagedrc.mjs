@@ -9,6 +9,6 @@ export default {
   '*.{html,yml,json,jsonc,json5}': 'eslint --max-warnings 0 --no-warn-ignored',
   '*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}': [
     'eslint --max-warnings 0 --no-warn-ignored',
-    'jest --bail --findRelatedTests --passWithNoTests',
+    'jest --config ./jest/jest.config.ts --bail --findRelatedTests --passWithNoTests',
   ],
 }

@@ -25,6 +25,7 @@
     "lint:styles:fix": "stylelint \"**/*.{css,scss}\" --fix",
     "lint": "eslint --max-warnings 0",
     "lint:fix": "pnpm lint --fix",
+    "coverage": "pnpm test --coverage",
     "test": "jest --config ./jest/jest.config.ts",
     "test:watch": "pnpm test --watch",
     "test:package": "jest --config jest.config.package.mjs",

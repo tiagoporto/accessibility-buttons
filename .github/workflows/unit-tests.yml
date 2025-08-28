@@ -40,8 +40,8 @@ jobs:
         run: pnpm install --frozen-lockfile --ignore-scripts
 
       - name: Run Unit Tests
-        run: pnpm test
+        run: pnpm coverage
 
-      # - name: Coveralls
-      #   uses: coverallsapp/github-action@648a8eb78e6d50909eff900e4ec85cab4524a45b
-      #   if: github.event_name != 'workflow_call'
+      - name: Coveralls
+        uses: coverallsapp/github-action@648a8eb78e6d50909eff900e4ec85cab4524a45b
+        if: github.event_name != 'workflow_call'

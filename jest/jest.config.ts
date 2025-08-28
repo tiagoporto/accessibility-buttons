@@ -9,6 +9,17 @@ const config: Config = {
   rootDir: '../',
   injectGlobals: false,
   // roots: ['<rootDir>/src'],
+  collectCoverageFrom: ['packages/**/*.{ts,tsx,js,jsx}'],
+  coverageThreshold: {
+    global: {
+      statements: 80,
+      branches: 80,
+      functions: 80,
+      lines: 80,
+    },
+  },
+  coveragePathIgnorePatterns: ['dist', 'tests'],
+  coverageReporters: process.env.CI ? ['lcov'] : ['text', 'html'],
   setupFilesAfterEnv: ['<rootDir>/jest/jest-setup.ts'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   moduleNameMapper: {
