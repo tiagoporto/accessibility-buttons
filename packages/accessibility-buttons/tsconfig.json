@@ -2,16 +2,15 @@
   "compilerOptions": {
     "target": "es2020",
     "module": "ESNext",
-    "lib": ["DOM", "ES2020"],
     "moduleResolution": "bundler",
+    "lib": ["DOM", "ES2020"],
     "strict": true,
     "outDir": "dist",
-    "rootDir": ".",
     "skipLibCheck": true,
-    "noEmit": true,
     "useDefineForClassFields": false,
     "isolatedModules": true,
-    "resolveJsonModule": true
+    "declaration": true,
+    "noEmitOnError": true
   },
-  "include": ["src", "../../jest/jest-setup.ts"]
+  "exclude": ["**/*.test.ts", "tests"]
 }
