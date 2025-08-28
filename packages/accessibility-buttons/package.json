@@ -26,6 +26,8 @@
     "./FontSizeButton": "./src/A11yFontSizeButton/a11y-font-size-button.ts"
   },
   "publishConfig": {
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
     "exports": {
       ".": "./dist/index.js",
       "./ContrastButton": "./dist/a11y-contrast-button.js",
