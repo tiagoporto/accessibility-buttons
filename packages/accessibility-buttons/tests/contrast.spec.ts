@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+import { test, expect } from '@chromatic-com/playwright'
 
 test('should apply contrast', async ({ page }) => {
   await page.goto('http://localhost:8080/')

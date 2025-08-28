@@ -15,9 +15,13 @@ concurrency:
   group: e2e-tests_${{ github.workflow }}_${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
   e2e_tests:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -42,9 +46,47 @@ jobs:
       - name: Run tests
         run: pnpm test:e2e
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
-          name: playwright-report
-          path: playwright-report/
+          name: test-results
+          path: test-results/
           retention-days: 30
+
+  visual_tests:
+    runs-on: ubuntu-latest
+    needs: [e2e_tests]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
+
+      - name: Download Playwright test results
+        uses: actions/download-artifact@v4
+        with:
+          name: test-results
+          path: ./test-results
+
+      - name: Run Visual tests
+        uses: chromaui/action@1fc59b137c52d2f7571c8cf0b40daad2794fd551
+        env:
+          CHROMATIC_ARCHIVE_LOCATION: ./test-results
+        with:
+          playwright: true
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          exitZeroOnChanges: false
