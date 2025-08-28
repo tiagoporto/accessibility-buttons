@@ -34,17 +34,21 @@
       "./FontSizeButton": "./dist/a11y-font-size-button.js"
     }
   },
+  "customElements": "custom-elements.json",
   "engines": {
     "node": ">=18"
   },
   "files": [
+    "custom-elements.json",
     "/dist",
     "/docs"
   ],
   "license": "MIT",
   "scripts": {
     "prepack": "pnpm build",
+    "analyze": "custom-elements-manifest analyze --litelement",
     "build": "rm -rf dist && rollup --config",
+    "postbuild": "pnpm analyze",
     "release": "semantic-release",
     "release:dry-run": "semantic-release --dry-run"
   },
@@ -54,6 +58,7 @@
   },
   "devDependencies": {
     "@chromatic-com/playwright": "^0.12.7",
+    "@custom-elements-manifest/analyzer": "^0.10.5",
     "@jest/globals": "^30.1.1",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.4",

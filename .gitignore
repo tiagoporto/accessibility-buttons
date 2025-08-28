@@ -153,3 +153,6 @@ dist
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+
+custom-elements.json
