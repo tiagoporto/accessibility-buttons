@@ -54,8 +54,8 @@ export default [
       'jest/unbound-method': 'off',
     },
   },
-  {
-    files: ['**/*.html'],
-    rules: { 'jsdoc/require-jsdoc': 'off' },
-  },
+  // {
+  //   files: ['**/*.html'],
+  //   rules: { 'jsdoc/require-jsdoc': 'off' },
+  // },
 ]
