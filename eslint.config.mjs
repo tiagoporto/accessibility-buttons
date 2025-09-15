@@ -19,6 +19,7 @@ export default [
       ecmaVersion: 'latest',
     },
   },
+  ...tpConfig.configs.base,
   {
     // web component
     files: ['**/A11yContrastButton.ts', '**/A11yFontSizeButton.ts'],
@@ -27,18 +28,6 @@ export default [
         'warn',
         {
           case: 'pascalCase',
-        },
-      ],
-    },
-  },
-  ...tpConfig.configs.base,
-  {
-    files: ['**/*.{ts,js}'],
-    rules: {
-      'n/no-unsupported-features/node-builtins': [
-        'error',
-        {
-          ignores: ['localStorage'],
         },
       ],
     },
@@ -54,8 +43,4 @@ export default [
       'jest/unbound-method': 'off',
     },
   },
-  // {
-  //   files: ['**/*.html'],
-  //   rules: { 'jsdoc/require-jsdoc': 'off' },
-  // },
 ]
