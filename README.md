@@ -21,8 +21,10 @@ Web component for adding/removing contrast and increasing/decreasing font size, 
 [![E2E Tests GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/accessibility-buttons/e2e-tests.yml?branch=main&label=e2e%20tests&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/accessibility-buttons/actions/workflows/e2e-tests.yml?query=branch%3Amain)
 [![Coverage Status](https://img.shields.io/coverallsCoverage/github/tiagoporto/accessibility-buttons.svg?logo=coveralls&style=flat-square)](https://coveralls.io/github/tiagoporto/accessibility-buttons)
 
-![Website](https://img.shields.io/website?logo=githubpages&style=flat-square&url=https://tiagoporto.com/accessibility-buttons)
-[![W3C Validation](https://img.shields.io/w3c-validation/html.svg?style=flat-square&targetUrl=https://tiagoporto.com/accessibility-buttons/)](https://validator.nu/?doc=https%3A%2F%2Ftiagoporto.github.io%2Faccessibility-buttons)
+![Website](https://img.shields.io/website.svg?logo=githubpages&down_message=offline&up_message=online&style=flat-square&url=https://tiagoporto.com/accessibility-buttons)
+![W3C Validation](https://img.shields.io/w3c-validation/html.svg?style=flat-square&targetUrl=https://tiagoporto.com/accessibility-buttons/)
+[![WCAG](https://img.shields.io/badge/wcag-F1FBF5?style=flat-square)](https://www.accessibilitychecker.org/audit/?website=https://tiagoporto.com/accessibility-buttons)
+[![Pagespeed](https://img.shields.io/badge/pagespeed-066AFE?style=flat-square)](https://pagespeed.web.dev/analysis/https-tiagoporto-com-accessibility-buttons/zhogllvqdq?form_factor=mobile)
 
 ## 🧰 Stack
 

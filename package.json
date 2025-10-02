@@ -55,7 +55,7 @@
     "@tiagoporto/editor-config": "^2.0.0",
     "@tiagoporto/eslint-config": "^4.10.0",
     "@tiagoporto/prettier-config": "^2.0.0",
-    "@tiagoporto/remark-config": "^1.7.0",
+    "@tiagoporto/remark-config": "^1.10.0",
     "@tiagoporto/stylelint-config": "^1.1.1",
     "@types/node": "^24.3.0",
     "babel-jest": "^30.0.5",
