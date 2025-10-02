@@ -1,0 +1,16 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Accessibility Buttons
+message: 'If you use this software, please cite it as below.'
+date-released: 2015-02-07
+type: software
+authors:
+  - given-names: Tiago
+    family-names: Porto
+    email: tiago@tiagoporto.com
+repository-code: 'https://github.com/tiagoporto/accessibility-buttons'
+url: 'https://tiagoporto.github.io/accessibility-buttons/'
+repository-artifact: 'https://www.npmjs.com/package/accessibility-buttons'
+license: MIT
