@@ -1,24 +1,8 @@
 import tpConfig from '@tiagoporto/eslint-config'
 import pluginJest from 'eslint-plugin-jest'
-import globals from 'globals'
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  {
-    ignores: [
-      '**/dist/',
-      '**/coverage/**',
-      'playwright-report/',
-      'test-results/',
-    ],
-  },
-  {
-    languageOptions: {
-      globals: { ...globals.browser, ...globals.node },
-      sourceType: 'module',
-      ecmaVersion: 'latest',
-    },
-  },
   ...tpConfig.configs.base,
   {
     // web component

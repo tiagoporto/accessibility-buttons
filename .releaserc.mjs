@@ -1,3 +1,5 @@
+import { env } from 'node:process'
+
 const config = {
   extends: 'semantic-release-monorepo',
   branches: [
@@ -22,7 +24,7 @@ const config = {
 }
 
 // NOTE: add BRANCH env in the workflow
-if (process.env.BRANCH === 'main') {
+if (env.BRANCH === 'main') {
   config.plugins.push('@semantic-release/github')
 }
 
