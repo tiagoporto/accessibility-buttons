@@ -56,7 +56,7 @@
     "@tiagoporto/eslint-config": "^4.10.0",
     "@tiagoporto/prettier-config": "^2.1.0",
     "@tiagoporto/remark-config": "^1.10.0",
-    "@tiagoporto/stylelint-config": "^1.1.1",
+    "@tiagoporto/stylelint-config": "^1.2.0",
     "@types/node": "^24.3.0",
     "babel-jest": "^30.0.5",
     "chromatic": "^13.1.3",

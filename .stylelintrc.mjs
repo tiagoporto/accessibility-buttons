@@ -1,5 +1,5 @@
 export default {
-  ignoreFiles: ['dist/**/*'],
+  ignoreFiles: ['dist/**/*', 'coverage/**/*', 'test-results/**/*'],
   extends: ['@tiagoporto/stylelint-config'],
   overrides: [
     {
