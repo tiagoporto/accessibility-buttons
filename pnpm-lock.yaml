@@ -70,8 +70,8 @@ importers:
         specifier: ^4.10.0
         version: 4.10.0(@typescript-eslint/utils@8.43.0(eslint@9.35.0(jiti@2.4.2))(typescript@5.9.2))(eslint@9.35.0(jiti@2.4.2))(jiti@2.4.2)(remark-lint-file-extension@3.0.1)(typescript@5.9.2)
       '@tiagoporto/prettier-config':
-        specifier: ^2.0.0
-        version: 2.0.0(prettier@3.6.2)
+        specifier: ^2.1.0
+        version: 2.1.0(prettier@3.6.2)
       '@tiagoporto/remark-config':
         specifier: ^1.10.0
         version: 1.10.0(prettier@3.6.2)(remark-cli@12.0.1)(remark@15.0.1)
@@ -2020,9 +2020,9 @@ packages:
     peerDependencies:
       eslint: '>= 9.35'
 
-  '@tiagoporto/prettier-config@2.0.0':
-    resolution: {integrity: sha512-Jec4b37dBL+i8SU6RWcMA4OHq2qB8V71DhaCaGwxiojsGTBPUpueAqSzsbPT3R/h/gg/4N+106GUcfktSdo78w==}
-    engines: {node: '>=18'}
+  '@tiagoporto/prettier-config@2.1.0':
+    resolution: {integrity: sha512-n/cRD+L6XJ9fBgp+gFKASRzDdLdjonWfb2b9f4/F8t4HhiBawjgO4nsMxvJdgsR7qMYAYzLljBwwrn0NCpDRiA==}
+    engines: {node: '>=20'}
     peerDependencies:
       prettier: '>= 3'
 
@@ -10764,7 +10764,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@tiagoporto/prettier-config@2.0.0(prettier@3.6.2)':
+  '@tiagoporto/prettier-config@2.1.0(prettier@3.6.2)':
     dependencies:
       prettier: 3.6.2
 
