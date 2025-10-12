@@ -18,6 +18,7 @@
     "preview": "rspack preview",
     "checks": "pnpm check-docs && pnpm format:check && pnpm typecheck && pnpm lint:styles && pnpm lint",
     "check-docs": "remark --frail . --ext md,markdown,mdx",
+    "check-update": "pnpm update --interactive --latest",
     "format:check": "prettier --check --ignore-unknown \"**/*\"",
     "format": "pnpm format:check --write",
     "typecheck": "tsc --project tsconfig.json",
