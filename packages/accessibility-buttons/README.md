@@ -4,8 +4,6 @@ Web component for adding/removing contrast and increasing/decreasing font size, 
 
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg?style=flat-square)](https://www.webcomponents.org/element/accessibility-buttons)
 
-<!-- [![Coverage Status](https://img.shields.io/coverallsCoverage/github/tiagoporto/accessibility-buttons.svg?style=flat-square)](https://coveralls.io/github/tiagoporto/accessibility-buttons) -->
-
 ## Install
 
 ```bash

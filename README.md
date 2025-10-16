@@ -19,7 +19,7 @@ Web component for adding/removing contrast and increasing/decreasing font size, 
 [![Checks GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/accessibility-buttons/checks.yml?branch=main&label=checks&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/accessibility-buttons/actions/workflows/checks.yml?query=branch%3Amain)
 [![Tests GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/accessibility-buttons/unit-tests.yml?branch=main&label=unit%20tests&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/accessibility-buttons/actions/workflows/unit-tests.yml?query=branch%3Amain)
 [![E2E Tests GA Workflow Status](https://img.shields.io/github/actions/workflow/status/tiagoporto/accessibility-buttons/e2e-tests.yml?branch=main&label=e2e%20tests&logo=githubactions&logoColor=white&style=flat-square)](https://github.com/tiagoporto/accessibility-buttons/actions/workflows/e2e-tests.yml?query=branch%3Amain)
-[![Coverage Status](https://img.shields.io/coverallsCoverage/github/tiagoporto/accessibility-buttons.svg?logo=coveralls&style=flat-square)](https://coveralls.io/github/tiagoporto/accessibility-buttons)
+[![Coverage Status](https://img.shields.io/codecov/c/github/tiagoporto/accessibility-buttons/main?style=flat-square)](https://app.codecov.io/gh/tiagoporto/accessibility-buttons/tree/main)
 
 ![Website](https://img.shields.io/website.svg?logo=githubpages&down_message=offline&up_message=online&style=flat-square&url=https://tiagoporto.com/accessibility-buttons)
 ![W3C Validation](https://img.shields.io/w3c-validation/html.svg?style=flat-square&targetUrl=https://tiagoporto.com/accessibility-buttons/)
@@ -64,7 +64,7 @@ Web component for adding/removing contrast and increasing/decreasing font size, 
 ![Lint Staged](https://img.shields.io/badge/%F0%9F%9A%AB%20Lint%20Staged-%23fef9f9.svg?style=for-the-badge)
 ![Commitlint](https://img.shields.io/badge/Commitlint-%23000.svg?style=for-the-badge&logo=commitlint&logoColor=white)
 
-![Coveralls](https://img.shields.io/badge/coveralls-%233F5767?style=for-the-badge&logo=coveralls)
+![Codecov](https://img.shields.io/badge/codecov-%231C1E24?style=for-the-badge&logo=codecov)
 ![Dependabot](https://img.shields.io/badge/dependabot-%23025E8C?style=for-the-badge&logo=dependabot&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
 ![GitHub Pages](https://img.shields.io/badge/Github%20Pages-%23222222?style=for-the-badge&logo=githubpages&logoColor=white)
