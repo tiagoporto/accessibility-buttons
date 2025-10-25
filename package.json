@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@anolilab/semantic-release-pnpm": "^2.0.3",
-    "@babel/core": "^7.28.3",
+    "@babel/core": "^7.28.5",
     "@babel/preset-env": "^7.28.3",
     "@babel/preset-typescript": "^7.27.1",
     "@chromatic-com/playwright": "^0.12.7",
