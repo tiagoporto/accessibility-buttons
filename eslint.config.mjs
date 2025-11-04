@@ -5,6 +5,11 @@ import pluginJest from 'eslint-plugin-jest'
 export default [
   ...tpConfig.configs.base,
   {
+    rules: {
+      '@html-eslint/indent': 'off',
+    },
+  },
+  {
     // web component
     files: ['**/A11yContrastButton.ts', '**/A11yFontSizeButton.ts'],
     rules: {

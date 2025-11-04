@@ -47,13 +47,13 @@ export class A11yFontSizeButton extends LitElement {
   render() {
     return html`
       <button
-        type="button"
-        aria-label=${ifDefined(
-          this.ariaLabel === null ? undefined : this.ariaLabel,
-        )}
-        @click=${this.__handleClick}
+          type="button"
+          aria-label=${ifDefined(
+            this.ariaLabel === null ? undefined : this.ariaLabel,
+          )}
+          @click=${this.__handleClick}
       >
-        ${this.label}
+          ${this.label}
       </button>
     `
   }
