@@ -25,11 +25,7 @@ export const hasStorage = (type: 'contrast' | 'font') => {
 
   const $body = document.documentElement
 
-  if (storage === 'true') {
-    $body.classList.add(CLASSES[type])
-  } else {
-    $body.classList.remove(CLASSES[type])
-  }
+  $body.classList.toggle(CLASSES[type], storage === 'true')
 
   return !!storage
 }
