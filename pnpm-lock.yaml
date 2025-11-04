@@ -61,8 +61,8 @@ importers:
         specifier: ^6.8.0
         version: 6.8.0
       '@tiagoporto/dependabot-config':
-        specifier: ^2.4.2
-        version: 2.4.2
+        specifier: ^2.5.0
+        version: 2.5.0
       '@tiagoporto/editor-config':
         specifier: ^2.0.0
         version: 2.0.0
@@ -2047,8 +2047,8 @@ packages:
     resolution: {integrity: sha512-WgXcWzVM6idy5JaftTVC8Vs83NKRmGJz4Hqs4oyOuO2J4r/y79vvKZsb+CaGyCSEbUPI6OsewfPd0G1A0/TUZQ==}
     engines: {node: '>=14', npm: '>=6', yarn: '>=1'}
 
-  '@tiagoporto/dependabot-config@2.4.2':
-    resolution: {integrity: sha512-bdDWRbtJ6OBS/XouhEzQPQzeiGsCdkLM/dlxxk8JmDifjDptThTC09IFIlj4guLN0g73aGMj3B4KcZWBZiDUlQ==}
+  '@tiagoporto/dependabot-config@2.5.0':
+    resolution: {integrity: sha512-BMwoflRH1ceeM42fN7airys0oQB4SXkViSzV5x3u5Rc98ChNHTUNPHqumdHFBwze4eP9w8DMvQ58rdkmOGmBXQ==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -10823,7 +10823,7 @@ snapshots:
       picocolors: 1.1.1
       redent: 3.0.0
 
-  '@tiagoporto/dependabot-config@2.4.2': {}
+  '@tiagoporto/dependabot-config@2.5.0': {}
 
   '@tiagoporto/editor-config@2.0.0': {}
 
