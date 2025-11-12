@@ -6,6 +6,7 @@ export default [
   ...tpConfig.configs.base,
   {
     rules: {
+      // TODO: investigate why this rule is causing issues
       '@html-eslint/indent': 'off',
     },
   },
