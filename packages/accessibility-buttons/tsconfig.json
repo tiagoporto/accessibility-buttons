@@ -2,13 +2,13 @@
   "compilerOptions": {
     "target": "es2020",
     "module": "ESNext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "lib": ["DOM", "ES2020"],
     "strict": true,
     "outDir": "dist",
     "skipLibCheck": true,
     "useDefineForClassFields": false,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "declaration": true,
     "noEmitOnError": true
   },

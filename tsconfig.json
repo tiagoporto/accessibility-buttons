@@ -10,7 +10,8 @@
     "resolveJsonModule": true,
     "moduleResolution": "bundler",
     "useDefineForClassFields": true,
-    "allowImportingTsExtensions": true
+    "allowImportingTsExtensions": true,
+    "typeRoots": ["./types", "./node_modules/@types"]
   },
-  "include": ["./jest/jest-setup.ts", "src"]
+  "include": ["./jest/jest-setup.ts", "src", "types/**/*.d.ts"]
 }
