@@ -103,16 +103,22 @@ import 'accessibility-buttons/FontSizeButton'
 nvm install
 ```
 
+### Enable pnpm
+
+```bash
+corepack enable
+```
+
 ### Install Dependencies
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### Running dev server
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 ## 🤝 Contributing
