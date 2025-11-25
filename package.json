@@ -2,14 +2,20 @@
   "name": "accessibility-buttons-root",
   "private": true,
   "type": "module",
-  "engines": {
-    "node": ">=22",
-    "npm": "uses pnpm",
-    "pnpm": ">=10"
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": ">=22",
+      "onFail": "error"
+    },
+    "packageManager": {
+      "name": "pnpm",
+      "version": ">=10",
+      "onFail": "error"
+    }
   },
   "packageManager": "pnpm@10.23.0",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "postinstall": "$CI = true || (dependabot-config && editor-config)",
     "build": "rspack build",
     "dev": "rspack dev",
