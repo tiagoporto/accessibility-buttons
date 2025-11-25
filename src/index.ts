@@ -1,17 +1,19 @@
-import hljs from 'highlight.js/lib/core'
-import bash from 'highlight.js/lib/languages/bash'
+import hljs from 'highlight.js'
+import cmake from 'highlight.js/lib/languages/cmake'
 import javascript from 'highlight.js/lib/languages/javascript'
-import xml from 'highlight.js/lib/languages/xml' // HTML agora é tratado como XML/HTML mixed
+import xml from 'highlight.js/lib/languages/xml'
 import 'highlight.js/styles/atom-one-dark.min.css'
 
 import 'accessibility-buttons/ContrastButton'
 import 'accessibility-buttons/FontSizeButton'
+import 'accessibility-buttons/FontSizeDecreaseButton'
+import 'accessibility-buttons/FontSizeIncreaseButton'
 
 import './styles'
 
 hljs.registerLanguage('javascript', javascript)
-hljs.registerLanguage('bash', bash)
-hljs.registerLanguage('html', xml)
+hljs.registerLanguage('xml', xml)
+hljs.registerLanguage('bash', cmake)
 
 const ready = (callback: () => void) => {
   if (document.readyState === 'loading') {
