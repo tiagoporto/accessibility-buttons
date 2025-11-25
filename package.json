@@ -7,7 +7,7 @@
     "npm": "uses pnpm",
     "pnpm": ">=10"
   },
-  "packageManager": "pnpm@10.11.0",
+  "packageManager": "pnpm@10.23.0",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "postinstall": "$CI = true || (dependabot-config && editor-config)",
