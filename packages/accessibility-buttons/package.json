@@ -23,7 +23,9 @@
   "exports": {
     ".": "./src/index.ts",
     "./ContrastButton": "./src/A11yContrastButton/a11y-contrast-button.ts",
-    "./FontSizeButton": "./src/A11yFontSizeButton/a11y-font-size-button.ts"
+    "./FontSizeButton": "./src/A11yFontSizeButton/a11y-font-size-button.ts",
+    "./FontSizeDecreaseButton": "./src/A11yFontSizeDecreaseButton/a11y-font-size-decrease-button.ts",
+    "./FontSizeIncreaseButton": "./src/A11yFontSizeIncreaseButton/a11y-font-size-increase-button.ts"
   },
   "publishConfig": {
     "main": "./dist/index.js",
@@ -31,7 +33,9 @@
     "exports": {
       ".": "./dist/index.js",
       "./ContrastButton": "./dist/a11y-contrast-button.js",
-      "./FontSizeButton": "./dist/a11y-font-size-button.js"
+      "./FontSizeButton": "./dist/a11y-font-size-button.js",
+      "./FontSizeDecreaseButton": "./dist/a11y-font-size-decrease-button.js",
+      "./FontSizeIncreaseButton": "./dist/a11y-font-size-increase-button.js"
     }
   },
   "customElements": "custom-elements.json",

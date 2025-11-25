@@ -1,6 +1,6 @@
-import { DEFAULT_STEPS, getCurrentStep, applyStep } from '../A11yFontSteps'
+import { DEFAULT_STEPS, getCurrentStep, applyStep } from '../utils/font-steps'
 
-export class A11yFontIncreaseButton extends HTMLElement {
+export class A11yFontDecreaseButton extends HTMLElement {
   private btn!: HTMLButtonElement
 
   constructor() {
@@ -8,7 +8,7 @@ export class A11yFontIncreaseButton extends HTMLElement {
     const shadow = this.attachShadow({ mode: 'open' })
     this.btn = document.createElement('button')
     this.btn.type = 'button'
-    this.btn.textContent = this.getAttribute('label') || '+A'
+    this.btn.textContent = this.getAttribute('label') || '-A'
     this.btn.addEventListener('click', () => this.handleClick())
     shadow.append(this.btn)
   }
@@ -19,7 +19,7 @@ export class A11yFontIncreaseButton extends HTMLElement {
 
   attributeChangedCallback(name: string, _oldValue: string | null, newValue: string | null) {
     if (name === 'label' && this.btn) {
-      this.btn.textContent = newValue || '+A'
+      this.btn.textContent = newValue || '-A'
     }
   }
 
@@ -31,13 +31,7 @@ export class A11yFontIncreaseButton extends HTMLElement {
   private handleClick() {
     const steps = this.getSteps()
     const current = getCurrentStep()
-    const next = Math.min(steps, current + 1)
+    const next = Math.max(-steps, current - 1)
     applyStep(next)
   }
 }
-
-if (!customElements.get('accessibility-font-increase')) {
-  customElements.define('accessibility-font-increase', A11yFontIncreaseButton)
-}
-
-export default A11yFontIncreaseButton
