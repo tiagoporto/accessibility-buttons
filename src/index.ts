@@ -6,6 +6,8 @@ import 'highlight.js/styles/atom-one-dark.min.css'
 
 import 'accessibility-buttons/ContrastButton'
 import 'accessibility-buttons/FontSizeButton'
+import 'accessibility-buttons/FontSizeDecreaseButton'
+import 'accessibility-buttons/FontSizeIncreaseButton'
 
 import './styles'
 
