@@ -33,3 +33,82 @@ button:hover {
   background: #e3ff17;
   color: #000;
 }
+
+/*
+ * Language switcher.
+ * These rules match the standalone version that had the desired appearance.
+ */
+.language-switcher {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.language-switcher button {
+  display: inline;
+  width: auto;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #000;
+  font: inherit;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.language-switcher button:hover,
+.language-switcher button:focus-visible,
+.language-switcher button.is-active {
+  background: transparent;
+  color: #000;
+  text-decoration: underline;
+}
+
+.language-switcher .separator {
+  color: #000;
+  user-select: none;
+}
+
+.a11y-contrast .language-switcher button,
+.a11y-contrast .language-switcher button:hover,
+.a11y-contrast .language-switcher button:focus-visible,
+.a11y-contrast .language-switcher button.is-active,
+.a11y-contrast .language-switcher .separator {
+  color: #e3ff17;
+}
+
+/*
+ * The current accessibility component applies .a11y-contrast to <html>.
+ * This keeps the logo correct with the current component.
+ */
+.a11y-contrast .accessibility-buttons-logo__minus,
+.a11y-contrast .accessibility-buttons-logo__background {
+  fill: #fff;
+}
+
+.a11y-contrast .accessibility-buttons-logo__lettering,
+.a11y-contrast .accessibility-buttons-logo__plus,
+.a11y-contrast .accessibility-buttons-logo__box {
+  fill: #000;
+}
+
+/*
+ * In narrower layouts the selector enters normal document flow,
+ * exactly like the standalone version.
+ */
+@media (width <= 1050px) {
+  .language-switcher {
+    position: static;
+    margin: 18px 15px 0;
+  }
+}
