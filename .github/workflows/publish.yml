@@ -54,6 +54,6 @@ jobs:
         run: |
           rm -rf packages/**/node_modules/
 
-      - uses: actions/attest-build-provenance@v3
+      - uses: actions/attest-build-provenance@v4
         with:
           subject-path: packages
