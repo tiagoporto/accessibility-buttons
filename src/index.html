@@ -220,11 +220,18 @@
         >
         </a11y-contrast-button>
 
-        <a11y-font-size-button
-          increase-label="Click me and things will be big"
-          decrease-label="Click me and things will be back to normal"
+        <a11y-font-decrease-button
+          decrease-label="Click me and things will be small"
+          decrease-aria-label="Decrease font size button"
         >
-        </a11y-font-size-button>
+        </a11y-font-decrease-button>
+
+        <a11y-font-increase-button
+          increase-label="Click me and things will be big"
+          increase-aria-label="Increase font size button"
+        >
+        </a11y-font-increase-button>
+
       </div>
 
       <h2>Install</h2>
@@ -236,12 +243,14 @@
       <p>Import</p>
 
       <pre><code class="language-javascript">import 'accessibility-buttons/ContrastButton'
-import 'accessibility-buttons/FontSizeButton'</code></pre>
+import 'accessibility-buttons/FontIncreaseButton'
+import 'accessibility-buttons/FontDecreaseButton'</code></pre>
 
       <p>Add buttons</p>
 
       <pre><code class="language-xml">&lt;a11y-contrast-button>&lt;/a11y-contrast-button>
-&lt;a11y-font-size-button>&lt;/a11y-font-size-button></code></pre>
+&lt;a11y-font-increase-button>&lt;/a11y-font-increase-button>
+&lt;a11y-font-decrease-button>&lt;/a11y-font-decrease-button></code></pre>
 
       <p>
         Font size works only with relative units, example <kbd>em</kbd> or
