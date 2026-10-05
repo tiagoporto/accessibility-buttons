@@ -23,7 +23,9 @@
   "exports": {
     ".": "./src/index.ts",
     "./ContrastButton": "./src/A11yContrastButton/a11y-contrast-button.ts",
-    "./FontSizeButton": "./src/A11yFontSizeButton/a11y-font-size-button.ts"
+    "./FontSizeButton": "./src/A11yFontSizeButton/a11y-font-size-button.ts",
+    "./FontIncreaseButton": "./src/A11yFontIncreaseButton/a11y-font-increase-button.ts",
+    "./FontDecreaseButton": "./src/A11yFontDecreaseButton/a11y-font-decrease-button.ts"
   },
   "publishConfig": {
     "main": "./dist/index.js",
