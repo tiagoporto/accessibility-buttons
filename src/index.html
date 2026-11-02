@@ -30,7 +30,7 @@
       data-title="Print file (.eps)"
     />
 
-    <!--  Open graphs -->
+    <!-- Open graphs -->
     <meta property="og:title" content="Accessibility Buttons" />
     <meta
       property="og:description"
@@ -88,9 +88,44 @@
       gtag('config', '<%= GTAG_ID %>')
     </script>
   </head>
+
   <body>
+    <!-- Language switcher -->
+          <nav class="language-switcher" aria-label="Language selector">
+            <button
+              type="button"
+              class="language-switcher__button is-active"
+              data-language="en"
+              aria-pressed="true"
+            >
+              en
+            </button>
+    
+            <span class="separator" aria-hidden="true">|</span>
+    
+            <button
+              type="button"
+              class="language-switcher__button"
+              data-language="es"
+              aria-pressed="false"
+            >
+              es
+            </button>
+    
+            <span class="separator" aria-hidden="true">|</span>
+    
+            <button
+              type="button"
+              class="language-switcher__button"
+              data-language="pt"
+              aria-pressed="false"
+            >
+              pt
+            </button>
+          </nav>
+
     <header class="header">
-      <h1>
+<h1>
         <a href="/" id="logo">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -186,7 +221,9 @@
         </a>
       </h1>
 
-      <p>Buttons to add/remove contrast and increase/decrease font size.</p>
+      <p data-i18n="description">
+        Buttons to add/remove contrast and increase/decrease font size.
+      </p>
 
       <a
         href="https://github.com/tiagoporto/accessibility-buttons"
@@ -227,31 +264,33 @@
         </a11y-font-size-button>
       </div>
 
-      <h2>Install</h2>
+      <h2 data-i18n="install">Install</h2>
 
       <pre><code class="language-bash">npm install accessibility-buttons --save</code></pre>
 
-      <h2>Usage</h2>
+      <h2 data-i18n="usage">Usage</h2>
 
-      <p>Import</p>
+      <p data-i18n="import">Import</p>
 
       <pre><code class="language-javascript">import 'accessibility-buttons/ContrastButton'
 import 'accessibility-buttons/FontSizeButton'</code></pre>
 
-      <p>Add buttons</p>
+      <p data-i18n="addButtons">Add buttons</p>
 
       <pre><code class="language-xml">&lt;a11y-contrast-button>&lt;/a11y-contrast-button>
 &lt;a11y-font-size-button>&lt;/a11y-font-size-button></code></pre>
 
-      <p>
+      <p data-i18n-html="fontSizeInfo">
         Font size works only with relative units, example <kbd>em</kbd> or
         <kbd>rem</kbd>.
       </p>
 
-      <h2>Documentation</h2>
+      <h2 data-i18n="documentation">Documentation</h2>
 
       <p>
-        Full documentation is available at
+        <span data-i18n="documentationText">
+          Full documentation is available at
+        </span>
         <a
           href="https://github.com/tiagoporto/accessibility-buttons/tree/main/packages/accessibility-buttons"
           target="_blank"
