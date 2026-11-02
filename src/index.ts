@@ -15,7 +15,7 @@ hljs.registerLanguage('bash', cmake)
 
 type Language = 'en' | 'es' | 'pt'
 
-type Translation = {
+interface Translation {
   pageTitle: string
   description: string
   install: string
@@ -111,7 +111,7 @@ const translations: Record<Language, Translation> = {
   },
 }
 
-const isLanguage = (value: string | null): value is Language =>
+const isLanguage = (value?: string): value is Language =>
   value === 'en' || value === 'es' || value === 'pt'
 
 const updateMetaDescription = (description: string) => {
@@ -149,8 +149,8 @@ const changeLanguage = (language: Language) => {
   const languageSwitcher = document.querySelector('.language-switcher')
   languageSwitcher?.setAttribute('aria-label', translation.languageSelector)
 
-  const textElements =
-    document.querySelectorAll<HTMLElement>('[data-i18n]')
+  const textElements
+    = document.querySelectorAll<HTMLElement>('[data-i18n]')
 
   for (const element of textElements) {
     const key = element.dataset.i18n as keyof Translation | undefined
@@ -160,8 +160,8 @@ const changeLanguage = (language: Language) => {
     }
   }
 
-  const htmlElements =
-    document.querySelectorAll<HTMLElement>('[data-i18n-html]')
+  const htmlElements
+    = document.querySelectorAll<HTMLElement>('[data-i18n-html]')
 
   for (const element of htmlElements) {
     const key = element.dataset.i18nHtml as keyof Translation | undefined
@@ -190,8 +190,8 @@ const changeLanguage = (language: Language) => {
       translation.contrastRemoveAria,
     )
 
-    const contrastEnabled =
-      document.documentElement.classList.contains('a11y-contrast')
+    const contrastEnabled
+      = document.documentElement.classList.contains('a11y-contrast')
 
     contrastButton.updateLabel(contrastEnabled)
   }
@@ -217,8 +217,8 @@ const changeLanguage = (language: Language) => {
     fontButton.updateLabel(fontEnabled)
   }
 
-  const languageButtons =
-    document.querySelectorAll<HTMLButtonElement>(
+  const languageButtons
+    = document.querySelectorAll<HTMLButtonElement>(
       '.language-switcher__button',
     )
 
@@ -252,8 +252,8 @@ ready(() => {
     hljs.highlightElement(element as HTMLElement)
   }
 
-  const languageButtons =
-    document.querySelectorAll<HTMLButtonElement>(
+  const languageButtons
+    = document.querySelectorAll<HTMLButtonElement>(
       '.language-switcher__button',
     )
 
@@ -261,13 +261,13 @@ ready(() => {
     button.addEventListener('click', () => {
       const language = button.dataset.language
 
-      if (isLanguage(language ?? null)) {
+      if (isLanguage(language)) {
         changeLanguage(language)
       }
     })
   }
 
-  const storedLanguage = localStorage.getItem('preferred-language')
+  const storedLanguage = localStorage.getItem('preferred-language') ?? undefined
 
   changeLanguage(isLanguage(storedLanguage) ? storedLanguage : 'en')
 
