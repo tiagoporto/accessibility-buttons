@@ -3,6 +3,19 @@
     "source.fixAll": "explicit"
   },
   "editor.formatOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "mdx",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml",
+    "github-actions-workflow"
+  ],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "js/ts.tsdk.path": "node_modules/typescript/lib"
 }
