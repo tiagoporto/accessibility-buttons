@@ -12,8 +12,8 @@ export const storage = (type: 'contrast' | 'font', action?: 'increase' | 'decrea
     const currentSize = getComputedStyle($body)
       .getPropertyValue('--a11y-font-size')
       .trim() // the current size from body
-    const newSize = (parseFloat(currentSize) || 16) + 3 // create the new size
-    $body.style.setProperty('--a11y-font-size', `${newSize}px`) //set the neqw size
+    const newSize = (Number.parseFloat(currentSize) || 16) + 3 // create the new size
+    $body.style.setProperty('--a11y-font-size', `${newSize}px`) // set the neqw size
     $body.classList.add(CLASSES[type])
     localStorage.setItem(`${STORAGE}-${type}`, 'true')
 
@@ -22,7 +22,7 @@ export const storage = (type: 'contrast' | 'font', action?: 'increase' | 'decrea
     const currentSize = getComputedStyle($body)
       .getPropertyValue('--a11y-font-size')
       .trim()
-    const newSize = (parseFloat(currentSize) || 16) - 3
+    const newSize = (Number.parseFloat(currentSize) || 16) - 3
     $body.style.setProperty('--a11y-font-size', `${newSize}px`)
     $body.classList.add(CLASSES[type])
     localStorage.setItem(`${STORAGE}-${type}`, 'true')

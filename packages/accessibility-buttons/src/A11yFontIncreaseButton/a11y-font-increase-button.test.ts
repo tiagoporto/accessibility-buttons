@@ -54,8 +54,8 @@ describe('a11y-font-increase-button', () => {
       .getPropertyValue('--a11y-font-size')
       .trim()
 
-    expect(parseFloat(sizeAfterFirst)).toBeGreaterThan(0)
-    expect(parseFloat(sizeAfterSecond)).toBeGreaterThan(parseFloat(sizeAfterFirst))
+    expect(Number.parseFloat(sizeAfterFirst)).toBeGreaterThan(0)
+    expect(Number.parseFloat(sizeAfterSecond)).toBeGreaterThan(Number.parseFloat(sizeAfterFirst))
   })
 
   it('persists state to localStorage on click', async () => {

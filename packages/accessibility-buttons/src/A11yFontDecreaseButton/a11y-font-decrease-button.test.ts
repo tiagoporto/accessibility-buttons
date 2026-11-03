@@ -57,8 +57,8 @@ describe('a11y-font-decrease-button', () => {
       .getPropertyValue('--a11y-font-size')
       .trim()
 
-    expect(parseFloat(sizeAfterFirst)).toBeLessThan(20)
-    expect(parseFloat(sizeAfterSecond)).toBeLessThan(parseFloat(sizeAfterFirst))
+    expect(Number.parseFloat(sizeAfterFirst)).toBeLessThan(20)
+    expect(Number.parseFloat(sizeAfterSecond)).toBeLessThan(Number.parseFloat(sizeAfterFirst))
   })
 
   it('persists state to localStorage on click', async () => {

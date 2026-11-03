@@ -3,7 +3,7 @@ import { ifDefined } from 'lit/directives/if-defined.js'
 
 import './fontStyles.css'
 import '../transitionStyles.css'
-import { storage, hasStorage } from '../utils'
+import { storage } from '../utils'
 
 export class A11yFontIncreaseButton extends LitElement {
   declare label: string
@@ -11,7 +11,7 @@ export class A11yFontIncreaseButton extends LitElement {
 
   static properties = {
     label: { type: String, attribute: 'increase-label' },
-    ariaLabel: { type: String, attribute: 'increase-aria-label' }
+    ariaLabel: { type: String, attribute: 'increase-aria-label' },
   }
 
   constructor() {
@@ -42,5 +42,3 @@ export class A11yFontIncreaseButton extends LitElement {
     `
   }
 }
-
-  
