@@ -36,6 +36,7 @@ export default [
     rules: {
       ...pluginJest.configs['flat/all'].rules,
       'jest/unbound-method': 'off',
+      'jest/no-hooks': 'off',
     },
   },
 ]

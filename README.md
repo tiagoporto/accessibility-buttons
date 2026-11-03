@@ -79,8 +79,8 @@ npm install accessibility-buttons --save
 ```js
 // js
 import 'accessibility-buttons/ContrastButton'
-import 'accessibility-buttons/FontIncreaseButton'
 import 'accessibility-buttons/FontDecreaseButton'
+import 'accessibility-buttons/FontIncreaseButton'
 ```
 
 ```html
