@@ -79,15 +79,13 @@ npm install accessibility-buttons --save
 ```js
 // js
 import 'accessibility-buttons/ContrastButton'
-import 'accessibility-buttons/FontDecreaseButton'
-import 'accessibility-buttons/FontIncreaseButton'
+import 'accessibility-buttons/FontSizeButton'
 ```
 
 ```html
 <!-- html -->
 <a11y-contrast-button></a11y-contrast-button>
-<a11y-font-increase-button></a11y-font-increase-button>
-<a11y-font-decrease-button></a11y-font-decrease-button>
+<a11y-font-size-button></a11y-font-size-button>
 ```
 
 [Check full documentation](packages/accessibility-buttons/README.md)
