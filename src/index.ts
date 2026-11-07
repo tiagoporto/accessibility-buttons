@@ -5,8 +5,7 @@ import xml from 'highlight.js/lib/languages/xml'
 import 'highlight.js/styles/atom-one-dark.min.css'
 
 import 'accessibility-buttons/ContrastButton'
-import 'accessibility-buttons/FontDecreaseButton'
-import 'accessibility-buttons/FontIncreaseButton'
+import 'accessibility-buttons/FontSizeButton'
 
 import './styles'
 
