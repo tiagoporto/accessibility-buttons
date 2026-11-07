@@ -13,12 +13,12 @@ export const storage = (type: 'contrast' | 'font', action?: 'increase' | 'decrea
       .getPropertyValue('--a11y-font-size')
       .trim() // the current size from body
     const newSize = (Number.parseFloat(currentSize) || 16) + 3 // create the new size
-    $body.style.setProperty('--a11y-font-size', `${newSize}px`) // set the neqw size
+    $body.style.setProperty('--a11y-font-size', `${newSize}px`) // set the new size
     $body.classList.add(CLASSES[type])
     localStorage.setItem(`${STORAGE}-${type}`, 'true')
 
     return true
-  } else if (action === 'decrease') { // same thing thing, but decrese
+  } else if (action === 'decrease') {
     const currentSize = getComputedStyle($body)
       .getPropertyValue('--a11y-font-size')
       .trim()
