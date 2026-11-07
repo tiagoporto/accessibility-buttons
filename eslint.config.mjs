@@ -12,7 +12,12 @@ export default [
   },
   {
     // web component
-    files: ['**/A11yContrastButton.ts', '**/A11yFontSizeButton.ts'],
+    files: [
+      '**/A11yContrastButton.ts',
+      '**/A11yFontSizeButton.ts',
+      '**/A11yFontIncreaseButton.ts',
+      '**/A11yFontDecreaseButton.ts',
+    ],
     rules: {
       'unicorn/filename-case': [
         'warn',
@@ -31,6 +36,7 @@ export default [
     rules: {
       ...pluginJest.configs['flat/all'].rules,
       'jest/unbound-method': 'off',
+      'jest/no-hooks': 'off',
     },
   },
 ]
